@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b3f1vydebqnhb"]
+
+[ext_resource type="PackedScene" uid="uid://c8tfog1w6sb3i" path="res://scenes/mapa.tscn" id="1_sq8yp"]
+[ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="2_1b3iq"]
+
+[node name="Jogo" type="Node2D" unique_id=748497634]
+
+[node name="Mapa" parent="." unique_id=1891813993 instance=ExtResource("1_sq8yp")]
+
+[node name="Player" parent="." unique_id=1284986966 instance=ExtResource("2_1b3iq")]
