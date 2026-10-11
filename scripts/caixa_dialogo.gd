@@ -3,8 +3,8 @@ extends Control
 @onready var Player: Sprite2D = $NinePatchRect/Player
 @onready var Npc: Sprite2D = $NinePatchRect/Npc
 @onready var caixa: NinePatchRect = $NinePatchRect
-@onready var PlayerName: Label = $NinePatchRect/PlayerName
-@onready var NpcName: Label = $NinePatchRect/NpcName
+@onready var PlayerName: Label = $NinePatchRect/CaixaPlayerName/PlayerName
+@onready var NpcName: Label = $NinePatchRect/CaixaNpcName/NpcName
 @onready var Texto: RichTextLabel = $NinePatchRect/Texto
 
 const velocidade_texto = 0.03
@@ -15,10 +15,27 @@ var exibindo_texto: bool = false
 var i_fala = 0
 
 var nomeNpc = ""
+var iNpc: int
+var iPlayer: int
 
 
 func _ready() -> void:
 	carregar_dialogo("teste")
+
+func pegar_indice() -> void:
+	iNpc = -1
+	iPlayer = -1
+	
+	var jogador_atual = Global.sequencia_players[Global.atual]
+	
+	for i in range(Global.textures_dialogo.size()):
+		var dict_atual = Global.textures_dialogo[i]
+		
+		if dict_atual.has(nomeNpc):
+			iNpc = i
+			
+		if dict_atual.has(jogador_atual):
+			iPlayer = i
 
 
 func carregar_dialogo(nome_dialogo: String) -> void:
@@ -30,7 +47,7 @@ func carregar_dialogo(nome_dialogo: String) -> void:
 			for i in range(dialogo.size()):
 				if dialogo[i]["quem"][0] == "Npc":
 					nomeNpc = dialogo[i]["quem"][1]
-		
+		pegar_indice()
 		mostrar_texto()
 	else:
 		print("n tem esse dialogo n")
@@ -64,10 +81,22 @@ func mostrar_letras() -> void:
 	texto_completo = true
 
 func atualizar_interface(quem: String, Nome) -> void:
-	Player.texture = load(Global.textures_dialogo[Global.sequencia_players[Global.atual]])
-	print(nomeNpc)
-	Npc.texture = load(Global.textures_dialogo[nomeNpc])
+	var jogador_atual = Global.sequencia_players[Global.atual]
 	
+	# 1. Carrega a textura do Player e ajusta a origem para o centro inferior
+	if iPlayer != -1 and Global.textures_dialogo[iPlayer].has(jogador_atual):
+		Player.texture = load(Global.textures_dialogo[iPlayer][jogador_atual])
+		if Player.texture:
+			Player.offset.x = 0
+			Player.offset.y = (-Player.texture.get_height() / 2.0)
+	
+	# 2. Carrega a textura do Npc e ajusta a origem para o centro inferior
+	if iNpc != -1 and Global.textures_dialogo[iNpc].has(nomeNpc):
+		Npc.texture = load(Global.textures_dialogo[iNpc][nomeNpc])
+		if Npc.texture:
+			Npc.offset.x = 0
+			Npc.offset.y = (-Npc.texture.get_height() / 2.0)
+
 	if quem == "Player":
 		PlayerName.visible = true
 		NpcName.visible = false

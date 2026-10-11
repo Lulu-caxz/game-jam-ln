@@ -2,11 +2,9 @@ class_name Dialogos
 
 const DIALOGOS = {
 	"teste" : [
-	{"quem" : ["Player", "CapiTalista"], "texto":"lalalalllalaalal"},
-	{"quem" : ["Npc", "CobraDora"], "texto":"lilililililillilili"},
-	{"quem" : ["Player", "CapiTalista"], "texto":"lalalalllalaalal"},
-	{"quem" : ["Npc", "CobraDora"], "texto":"lilililililillilili"},
+	{"quem" : ["Player", "Capi Talista"], "texto":"lalalalllalaalal"},
+	{"quem" : ["Npc", "Veado"], "texto":"lilililililillilili"},
+	{"quem" : ["Player", "Capi Talista"], "texto":"lalalalllalaalal"},
+	{"quem" : ["Npc", "Veado"], "texto":"lilililililillilili"},
 	],
-	
-	
 }

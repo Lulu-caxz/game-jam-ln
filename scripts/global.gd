@@ -9,7 +9,8 @@ const Nomes = [
 	{"Veado" : "AdVeado"}
 ]
 
-const textures_dialogo = {
-	Capivara = "res://sprites/iconDialogo/Capivara.png",
-	CobraDora = "res://sprites/iconDialogo/Capivara.png"
-}
+const textures_dialogo = [
+	{"Capivara" : "res://sprites/iconDialogo/Capivara.png"},
+	{"Veado" : "res://sprites/iconDialogo/Veado.png"},
+	{"Cobra Dora" : "res://sprites/iconDialogo/Capivara.png"}
+]
