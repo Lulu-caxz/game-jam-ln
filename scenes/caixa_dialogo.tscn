@@ -12,9 +12,9 @@ script = ExtResource("1_red54")
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1413159459]
 layout_mode = 0
 offset_left = -103.0
-offset_top = 87.0
+offset_top = 36.0
 offset_right = 104.0
-offset_bottom = 146.0
+offset_bottom = 95.0
 texture = ExtResource("1_gdc72")
 region_rect = Rect2(0, 0, 48, 48)
 patch_margin_left = 4
@@ -23,11 +23,10 @@ patch_margin_right = 4
 patch_margin_bottom = 4
 
 [node name="Player" type="Sprite2D" parent="." unique_id=1262303699]
-position = Vector2(-84, 127)
+position = Vector2(-84, 76)
 
 [node name="Npc" type="Sprite2D" parent="." unique_id=1244208906]
-position = Vector2(85, 127)
+position = Vector2(85, 76)
 flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=748360917]
-enabled = false

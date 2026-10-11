@@ -22,7 +22,7 @@ Global="*uid://ctsyku6tvtpwl"
 [display]
 
 window/size/viewport_width=384
-window/size/viewport_height=309
+window/size/viewport_height=216
 window/size/mode=4
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
