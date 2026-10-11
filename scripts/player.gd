@@ -7,10 +7,10 @@ const ANIMACOES_DIRECAO = {
 	Vector2.DOWN: "baixo",
 	Vector2.LEFT: "esquerda",
 	Vector2.RIGHT: "direita",
-	Vector2(-1, -1): "esquerda",  # cima-esquerda -> usa animação da esquerda
-	Vector2(1, -1): "direita",    # cima-direita -> usa animação da direita
-	Vector2(-1, 1): "esquerda",   # baixo-esquerda -> usa animação da esquerda
-	Vector2(1, 1): "direita"      # baixo-direita -> usa animação da direita
+	Vector2(-1, -1): "esquerda",  # cima-esquerda
+	Vector2(1, -1): "direita",    # cima-direita
+	Vector2(-1, 1): "esquerda",   # baixo-esquerda
+	Vector2(1, 1): "direita"      # baixo-direita
 }
 
 var animacao: AnimatedSprite2D
@@ -45,3 +45,16 @@ func _physics_process(_delta: float) -> void:
 		velocity = Vector2.ZERO
 		
 	move_and_slide()
+	
+	
+	
+	#trocar de animal
+	if Input.is_action_just_pressed("1"):
+		Global.atual = 0
+		mudarAnimacao()
+	if Input.is_action_just_pressed("2"):
+		Global.atual = 1
+		mudarAnimacao()
+	if Input.is_action_just_pressed("3"):
+		Global.atual = 2
+		mudarAnimacao()

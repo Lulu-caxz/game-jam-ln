@@ -2,9 +2,16 @@
 
 [ext_resource type="PackedScene" uid="uid://c8tfog1w6sb3i" path="res://scenes/mapa.tscn" id="1_sq8yp"]
 [ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="2_1b3iq"]
+[ext_resource type="AudioStream" uid="uid://dcm35x4knjw7t" path="res://sounds/MusicaBaseJogo.mp3" id="3_1b3iq"]
 
 [node name="Jogo" type="Node2D" unique_id=748497634]
 
 [node name="Mapa" parent="." unique_id=1891813993 instance=ExtResource("1_sq8yp")]
 
 [node name="Player" parent="." unique_id=1284986966 instance=ExtResource("2_1b3iq")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1668779587]
+stream = ExtResource("3_1b3iq")
+autoplay = true
+mix_target = 1
+parameters/looping = true
