@@ -1,41 +1,47 @@
 extends CharacterBody2D
 
-@onready var animacao: AnimatedSprite2D = $AnimatedSprite2D 
+const VELOCIDADE = 200.0
 
-const velocidade = 200.0
+const ANIMACOES_DIRECAO = {
+	Vector2.UP: "cima",
+	Vector2.DOWN: "baixo",
+	Vector2.LEFT: "esquerda",
+	Vector2.RIGHT: "direita",
+	Vector2(-1, -1): "esquerda",  # cima-esquerda -> usa animação da esquerda
+	Vector2(1, -1): "direita",    # cima-direita -> usa animação da direita
+	Vector2(-1, 1): "esquerda",   # baixo-esquerda -> usa animação da esquerda
+	Vector2(1, 1): "direita"      # baixo-direita -> usa animação da direita
+}
 
-const direcoes = ["cima", "baixo", "direita", "esquerda", "cima-esquerda", "baixo-esquerda", "cima-direita", "baixo-direita"]
-#	0-^  1-V  2-> 3-<  4-^<  5- V<  6-^>  7-V>
-var ultima_direcao;
+var animacao: AnimatedSprite2D
+var player_atual: String
+var ultima_direcao_nome: String = "baixo"
+
+func mudarAnimacao() -> void:
+	for player in Global.sequencia_players:
+		var no = get_node_or_null("Animacao" + player)
+		if no: no.hide()
+	
+	animacao = get_node("Animacao" + Global.sequencia_players[Global.atual])
+	animacao.show()
 
 func _ready() -> void:
-	ultima_direcao = direcoes[1]
+	player_atual = Global.sequencia_players[0]
+	mudarAnimacao()
 
-func _physics_process(delta: float) -> void:
-	var direction = Vector2.ZERO
+func _physics_process(_delta: float) -> void:
+	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
-	if Input.is_action_pressed("ui_up"):
-		direction.y -= velocidade
-		ultima_direcao = direcoes[0]
-		animacao.play(ultima_direcao + "_move")
-	if Input.is_action_pressed("ui_down"):
-		direction.y += velocidade
-		ultima_direcao = direcoes[1]
-		animacao.play(ultima_direcao + "_move")
-	if Input.is_action_pressed("ui_left"):
-		direction.x -= velocidade
-		ultima_direcao = direcoes[3]
-		animacao.play(ultima_direcao + "_move")
-	if Input.is_action_pressed("ui_right"):
-		direction.x += velocidade
-		ultima_direcao = direcoes[2]
-		animacao.play(ultima_direcao + "_move")
-	
-	
-	if direction != Vector2.ZERO:
-		direction = direction.normalized()
+	if input_dir != Vector2.ZERO:
+		var dir_chave := input_dir.round()
+		
+		if dir_chave in ANIMACOES_DIRECAO:
+			ultima_direcao_nome = ANIMACOES_DIRECAO[dir_chave]
+		
+		animacao.play(ultima_direcao_nome + "_move")
+		velocity = input_dir * VELOCIDADE
 	else:
-		animacao.play(ultima_direcao + "_move")
-	
-	velocity = direction * velocidade
+		animacao.play(ultima_direcao_nome + "_idle")
+		velocity = Vector2.ZERO
+		
 	move_and_slide()
