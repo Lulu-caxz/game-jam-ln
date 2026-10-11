@@ -7,6 +7,8 @@ extends Control
 @onready var NpcName: Label = $NinePatchRect/CaixaNpcName/NpcName
 @onready var Texto: RichTextLabel = $NinePatchRect/Texto
 
+var idDialogo = "teste"
+
 const velocidade_texto = 0.03
 var texto_completo: bool = false
 
@@ -20,7 +22,7 @@ var iPlayer: int
 
 
 func _ready() -> void:
-	carregar_dialogo("teste")
+	carregar_dialogo(idDialogo)
 
 func pegar_indice() -> void:
 	iNpc = -1
