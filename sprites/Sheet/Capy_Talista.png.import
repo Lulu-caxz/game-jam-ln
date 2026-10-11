@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bch72wbree8ao"
-path="res://.godot/imported/Capy_Talista.png-70b69ff831453451824ac730daeb0927.ctex"
+path="res://.godot/imported/Capy_Talista.png-2349d6c14e5fc9e577b4b6788b539f64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Capy_Talista.png"
-dest_files=["res://.godot/imported/Capy_Talista.png-70b69ff831453451824ac730daeb0927.ctex"]
+source_file="res://sprites/Sheet/Capy_Talista.png"
+dest_files=["res://.godot/imported/Capy_Talista.png-2349d6c14e5fc9e577b4b6788b539f64.ctex"]
 
 [params]
 

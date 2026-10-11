@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const VELOCIDADE = 200.0
+const VELOCIDADE = 80.0
 
 const ANIMACOES_DIRECAO = {
 	Vector2.UP: "cima",

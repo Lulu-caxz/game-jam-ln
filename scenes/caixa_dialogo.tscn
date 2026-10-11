@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://b07ah7vwnas0o"]
+
+[ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="1_gdc72"]
+[ext_resource type="Script" uid="uid://njqbp022fcc7" path="res://scripts/caixa_dialogo.gd" id="1_red54"]
+
+[node name="CaixaDialogo" type="Control" unique_id=1630927294]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_red54")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1413159459]
+layout_mode = 0
+offset_left = -103.0
+offset_top = 87.0
+offset_right = 104.0
+offset_bottom = 146.0
+texture = ExtResource("1_gdc72")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Player" type="Sprite2D" parent="." unique_id=1262303699]
+position = Vector2(-84, 127)
+
+[node name="Npc" type="Sprite2D" parent="." unique_id=1244208906]
+position = Vector2(85, 127)
+flip_h = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=748360917]
+enabled = false
