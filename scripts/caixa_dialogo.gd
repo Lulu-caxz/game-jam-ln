@@ -6,6 +6,7 @@ extends Control
 @onready var PlayerName: Label = $NinePatchRect/CaixaPlayerName/PlayerName
 @onready var NpcName: Label = $NinePatchRect/CaixaNpcName/NpcName
 @onready var Texto: RichTextLabel = $NinePatchRect/Texto
+@onready var som:AudioStreamPlayer = $AudioStreamPlayer
 
 var idDialogo = "teste"
 
@@ -23,6 +24,7 @@ var iPlayer: int
 
 func _ready() -> void:
 	carregar_dialogo(idDialogo)
+	Global.dialogo_ativo = true
 
 func pegar_indice() -> void:
 	iNpc = -1
@@ -77,6 +79,11 @@ func mostrar_letras() -> void:
 	while Texto.visible_characters < Texto.get_total_character_count() and Texto.visible_characters != -1:
 		Texto.visible_characters += 1
 		await get_tree().create_timer(velocidade_texto).timeout
+		som.playing = true
+		
+	if !exibindo_texto:
+		som.playing = false
+		
 
 
 	exibindo_texto = false
@@ -133,4 +140,9 @@ func avancar_dialogo():
 	if i_fala < dialogo.size():
 		mostrar_texto()
 	else:
+		Global.dialogo_ativo = false
 		queue_free()
+
+func _process(delta: float) -> void:
+	pass
+		

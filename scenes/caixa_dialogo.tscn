@@ -3,11 +3,18 @@
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="1_gdc72"]
 [ext_resource type="Script" uid="uid://njqbp022fcc7" path="res://scripts/caixa_dialogo.gd" id="1_red54"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="4_red54"]
+[ext_resource type="AudioStream" uid="uid://ccwb6xgdgyc44" path="res://sounds/Typing.wav" id="4_rn1cx"]
 
 [node name="CaixaDialogo" type="Control" unique_id=1630927294]
 z_index = 10
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_red54")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1413159459]
@@ -95,3 +102,8 @@ theme_override_font_sizes/font_size = 5
 text = "NPC"
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=748360917]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1165727091]
+stream = ExtResource("4_rn1cx")
+volume_db = -10.0
+pitch_scale = 8.0

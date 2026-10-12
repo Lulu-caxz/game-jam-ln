@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://gmp0jsw3nssa"]
 
 [ext_resource type="Script" uid="uid://cdidvfku40v22" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://bch72wbree8ao" path="res://sprites/Sheet/Capy_Talista.png" id="2_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://c7jodccsiu7v2" path="res://sprites/Sheet/PsicoPatoSheet.png" id="3_qhqgy"]
-[ext_resource type="Texture2D" uid="uid://7x0krw6u1qal" path="res://sprites/Sheet/Ad_Veado.png" id="4_dqkch"]
+[ext_resource type="Texture2D" uid="uid://bch72wbree8ao" path="res://sprites/sheet/Capy_Talista.png" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c7jodccsiu7v2" path="res://sprites/sheet/PsicoPatoSheet.png" id="3_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://7x0krw6u1qal" path="res://sprites/sheet/Ad_Veado.png" id="4_dqkch"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
 size = Vector2(18.661259, 23.529411)

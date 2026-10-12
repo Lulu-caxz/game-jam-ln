@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7jodccsiu7v2"
-path="res://.godot/imported/PsicoPatoSheet.png-703c0b466f662f3942dec77ffb1a43ba.ctex"
+path="res://.godot/imported/PsicoPatoSheet.png-b9ee7ad81d31e0fef6da0df3a365ddcc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Sheet/PsicoPatoSheet.png"
-dest_files=["res://.godot/imported/PsicoPatoSheet.png-703c0b466f662f3942dec77ffb1a43ba.ctex"]
+source_file="res://sprites/sheet/PsicoPatoSheet.png"
+dest_files=["res://.godot/imported/PsicoPatoSheet.png-b9ee7ad81d31e0fef6da0df3a365ddcc.ctex"]
 
 [params]
 

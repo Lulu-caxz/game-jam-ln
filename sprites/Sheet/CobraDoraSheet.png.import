@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bonqyde8bbfxy"
-path="res://.godot/imported/CobraDoraSheet.png-73ae2d969353809b6bd14e46d5f5ddc0.ctex"
+path="res://.godot/imported/CobraDoraSheet.png-522e92ddbd5bddaa43ab2ae42a087fd2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Sheet/CobraDoraSheet.png"
-dest_files=["res://.godot/imported/CobraDoraSheet.png-73ae2d969353809b6bd14e46d5f5ddc0.ctex"]
+source_file="res://sprites/sheet/CobraDoraSheet.png"
+dest_files=["res://.godot/imported/CobraDoraSheet.png-522e92ddbd5bddaa43ab2ae42a087fd2.ctex"]
 
 [params]
 

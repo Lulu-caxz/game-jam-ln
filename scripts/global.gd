@@ -3,6 +3,9 @@ extends Node
 var sequencia_players = ["Capivara", "Pato", "Veado"]
 var atual = 0
 
+var dialogo_ativo: bool = false
+
+
 const Nomes = [
 	{"Capivara" : "CapiTalista"},
 	{"Pato" : "PsicoPato"},

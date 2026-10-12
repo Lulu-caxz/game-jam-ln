@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://b3f1vydebqnhb"]
 
-[ext_resource type="PackedScene" uid="uid://b07ah7vwnas0o" path="res://scenes/caixa_dialogo.tscn" id="1_k05ng"]
 [ext_resource type="PackedScene" uid="uid://c8tfog1w6sb3i" path="res://scenes/mapa.tscn" id="1_sq8yp"]
 [ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="2_1b3iq"]
 [ext_resource type="AudioStream" uid="uid://dcm35x4knjw7t" path="res://sounds/MusicaBaseJogo.mp3" id="3_1b3iq"]
 [ext_resource type="PackedScene" uid="uid://ddcs11ilecq7w" path="res://scenes/npcs/cobraDora.tscn" id="5_0c0ry"]
 
 [node name="Jogo" type="Node2D" unique_id=748497634]
-
-[node name="CaixaDialogo" parent="." unique_id=1642679731 instance=ExtResource("1_k05ng")]
 
 [node name="Mapa" parent="." unique_id=1891813993 instance=ExtResource("1_sq8yp")]
 

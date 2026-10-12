@@ -30,6 +30,12 @@ func _ready() -> void:
 	mudarAnimacao()
 
 func _physics_process(_delta: float) -> void:
+	
+	if Global.dialogo_ativo:
+		velocity = Vector2.ZERO
+		animacao.play(ultima_direcao_nome + "_idle")
+		return 
+	
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if input_dir != Vector2.ZERO:
