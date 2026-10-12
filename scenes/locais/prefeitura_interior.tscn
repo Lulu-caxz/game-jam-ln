@@ -33,11 +33,11 @@ tile_set = SubResource("TileSet_shdkb")
 [node name="Sair" type="Area2D" parent="Portas" unique_id=1441457998]
 script = ExtResource("3_dip3u")
 cena_destino = "uid://b3f1vydebqnhb"
+posicaoSaida = Vector2(-72, -449)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Sair" unique_id=1962800133]
 position = Vector2(0, 51)
 shape = SubResource("RectangleShape2D_26022")
-disabled = true
 
 [node name="Sprite2D" type="Sprite2D" parent="Portas/Sair" unique_id=1471232468]
 position = Vector2(0, 74)

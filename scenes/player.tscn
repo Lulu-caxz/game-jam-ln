@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://bch72wbree8ao" path="res://sprites/sheet/Capy_Talista.png" id="2_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://c7jodccsiu7v2" path="res://sprites/sheet/PsicoPatoSheet.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://7x0krw6u1qal" path="res://sprites/sheet/Ad_Veado.png" id="4_dqkch"]
+[ext_resource type="AudioStream" uid="uid://cmuy5kaedacaw" path="res://sounds/SFX/Passo_Piso.mp3" id="5_qlg0r"]
+[ext_resource type="AudioStream" uid="uid://dho13l4g7e0q5" path="res://sounds/SFX/Quack.mp3" id="6_tuyoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
 size = Vector2(18.661259, 23.529411)
@@ -585,3 +587,12 @@ speed_scale = 1.5
 sprite_frames = SubResource("SpriteFrames_shdkb")
 animation = &"esquerda_move"
 speed_scale = 1.5
+
+[node name="PassoPiso" type="AudioStreamPlayer" parent="." unique_id=1435570468]
+stream = ExtResource("5_qlg0r")
+volume_db = 10.0
+parameters/looping = true
+
+[node name="Quack" type="AudioStreamPlayer" parent="." unique_id=72698709]
+stream = ExtResource("6_tuyoq")
+volume_db = -5.0

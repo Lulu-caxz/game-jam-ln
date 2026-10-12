@@ -1,6 +1,17 @@
 extends CharacterBody2D
 
+@onready var camera: Camera2D = $Camera2D
+@onready var somPassoPiso: AudioStreamPlayer = $PassoPiso
+@onready var somQuack: AudioStreamPlayer = $Quack
+
 const VELOCIDADE = 80.0
+const INTERVALO_PASSO = 0.35
+
+var passo_timer: float = 0.0
+
+# Temporizadores para o Quack aleatório
+var quack_timer: float = 0.0
+var tempo_proximo_quack: float = 0.0
 
 const ANIMACOES_DIRECAO = {
 	Vector2.UP: "cima",
@@ -24,16 +35,34 @@ func mudarAnimacao() -> void:
 	
 	animacao = get_node("Animacao" + Global.sequencia_players[Global.atual])
 	animacao.show()
+	
+	# Quando muda de personagem para o Pato, gera o primeiro tempo aleatório
+	if Global.sequencia_players[Global.atual] == "Pato":
+		quack_timer = 0.0
+		tempo_proximo_quack = randf_range(10.0, 30.0)
+
+func _enter_tree() -> void:
+	if Global.definir_posicao:
+		global_position = Global.posicao_player
+		Global.definir_posicao = false
 
 func _ready() -> void:
 	player_atual = Global.sequencia_players[0]
 	mudarAnimacao()
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
+	
+	if not Global.dialogo_ativo and Global.sequencia_players[Global.atual] == "Pato":
+		quack_timer += delta
+		if quack_timer >= tempo_proximo_quack:
+			somQuack.play()
+			quack_timer = 0.0
+			tempo_proximo_quack = randf_range(10.0, 30.0)
 	
 	if Global.dialogo_ativo:
 		velocity = Vector2.ZERO
 		animacao.play(ultima_direcao_nome + "_idle")
+		passo_timer = 0.0
 		return 
 	
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
@@ -46,21 +75,15 @@ func _physics_process(_delta: float) -> void:
 		
 		animacao.play(ultima_direcao_nome + "_move")
 		velocity = input_dir * VELOCIDADE
+		
+		passo_timer += delta
+		if passo_timer >= INTERVALO_PASSO:
+			somPassoPiso.play()
+			passo_timer = 0.0
 	else:
 		animacao.play(ultima_direcao_nome + "_idle")
 		velocity = Vector2.ZERO
-		
+		passo_timer = INTERVALO_PASSO 
+		somPassoPiso.stop()
+	
 	move_and_slide()
-	
-	
-	
-	#trocar de animal
-	if Input.is_action_just_pressed("1"):
-		Global.atual = 0
-		mudarAnimacao()
-	if Input.is_action_just_pressed("2"):
-		Global.atual = 1
-		mudarAnimacao()
-	if Input.is_action_just_pressed("3"):
-		Global.atual = 2
-		mudarAnimacao()

@@ -9,8 +9,6 @@
 
 [node name="Mapa" parent="." unique_id=1891813993 instance=ExtResource("1_sq8yp")]
 
-[node name="Player" parent="." unique_id=1284986966 instance=ExtResource("2_1b3iq")]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1668779587]
 stream = ExtResource("3_1b3iq")
 autoplay = true
@@ -18,4 +16,7 @@ mix_target = 1
 parameters/looping = true
 
 [node name="CobraDora" parent="." unique_id=505782711 instance=ExtResource("5_0c0ry")]
-position = Vector2(-56, -53)
+position = Vector2(-203, -459)
+
+[node name="Player" parent="." unique_id=1284986966 groups=["player"] instance=ExtResource("2_1b3iq")]
+position = Vector2(-78, -214)

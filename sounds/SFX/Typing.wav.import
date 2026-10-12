@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://ccwb6xgdgyc44"
-path="res://.godot/imported/Typing.wav-45ba3da2fa0663f7a48cba44f7c038e7.sample"
+path="res://.godot/imported/Typing.wav-272300b4faeb2c2bdca5407199930e48.sample"
 
 [deps]
 
-source_file="res://sounds/Typing.wav"
-dest_files=["res://.godot/imported/Typing.wav-45ba3da2fa0663f7a48cba44f7c038e7.sample"]
+source_file="res://sounds/SFX/Typing.wav"
+dest_files=["res://.godot/imported/Typing.wav-272300b4faeb2c2bdca5407199930e48.sample"]
 
 [params]
 

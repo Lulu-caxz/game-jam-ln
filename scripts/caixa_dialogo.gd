@@ -6,11 +6,11 @@ extends Control
 @onready var PlayerName: Label = $NinePatchRect/CaixaPlayerName/PlayerName
 @onready var NpcName: Label = $NinePatchRect/CaixaNpcName/NpcName
 @onready var Texto: RichTextLabel = $NinePatchRect/Texto
-@onready var som:AudioStreamPlayer = $AudioStreamPlayer
+@onready var som:AudioStreamPlayer = $Typing
 
 var idDialogo = "teste"
 
-const velocidade_texto = 0.03
+const velocidade_texto = 0.04
 var texto_completo: bool = false
 
 var dialogo = []
@@ -54,7 +54,6 @@ func carregar_dialogo(nome_dialogo: String) -> void:
 		pegar_indice()
 		mostrar_texto()
 	else:
-		print("n tem esse dialogo n")
 		queue_free()
 
 
@@ -92,14 +91,12 @@ func mostrar_letras() -> void:
 func atualizar_interface(quem: String, Nome) -> void:
 	var jogador_atual = Global.sequencia_players[Global.atual]
 	
-	# 1. Carrega a textura do Player e ajusta a origem para o centro inferior
 	if iPlayer != -1 and Global.textures_dialogo[iPlayer].has(jogador_atual):
 		Player.texture = load(Global.textures_dialogo[iPlayer][jogador_atual])
 		if Player.texture:
 			Player.offset.x = 0
 			Player.offset.y = (-Player.texture.get_height() / 2.0)
 	
-	# 2. Carrega a textura do Npc e ajusta a origem para o centro inferior
 	if iNpc != -1 and Global.textures_dialogo[iNpc].has(nomeNpc):
 		Npc.texture = load(Global.textures_dialogo[iNpc][nomeNpc])
 		if Npc.texture:

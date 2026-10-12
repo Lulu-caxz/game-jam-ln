@@ -1,0 +1,200 @@
+[gd_scene format=3 uid="uid://b0we5uyiu5peq"]
+
+[ext_resource type="Texture2D" uid="uid://baf6773ncj67q" path="res://sprites/telaInicial/selecaoDePersonagem/TelaSelecao.png" id="1_cysgm"]
+[ext_resource type="Script" uid="uid://70cen7jwekhs" path="res://scripts/Personagem.gd" id="1_eba47"]
+[ext_resource type="Script" uid="uid://cd5iv6c1u1syg" path="res://scripts/SelecaoPersonagem.gd" id="1_mt2qv"]
+[ext_resource type="FontFile" uid="uid://cdhr7r6y8g2k0" path="res://fonts/ByteBounce.ttf" id="4_mt2qv"]
+[ext_resource type="AudioStream" uid="uid://dg3g6rim0drmr" path="res://sounds/SFX/Click.mp3" id="5_h4ntx"]
+[ext_resource type="AudioStream" uid="uid://oykbytxx0g1v" path="res://sounds/SFX/Selecao.mp3" id="6_snka6"]
+
+[node name="SelecaoPersonagem" type="Control" unique_id=430990663]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_mt2qv")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1794892200]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="NinePatchRect" unique_id=1723725284]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Capivara" type="Control" parent="." unique_id=109983221]
+custom_minimum_size = Vector2(128, 216)
+anchors_preset = 0
+script = ExtResource("1_eba47")
+
+[node name="BG" type="Sprite2D" parent="Capivara" unique_id=452874014]
+position = Vector2(64, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(416, 0, 128, 216)
+
+[node name="IMG" type="Sprite2D" parent="Capivara" unique_id=1704807581]
+position = Vector2(64, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(0, 0, 128, 216)
+
+[node name="Area2D" type="Area2D" parent="Capivara" unique_id=1584855288]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Capivara/Area2D" unique_id=468543801]
+polygon = PackedVector2Array(0, 216, 128, 216, 103, 0, 0, 0)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Capivara" unique_id=1340871248]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 168.0
+offset_right = 97.0
+offset_bottom = 194.0
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Capivara/NinePatchRect" unique_id=493847053]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 66.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.12941177, 0.0627451, 0.03529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mt2qv")
+theme_override_font_sizes/font_size = 14
+text = "Capi Talista"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Veado" type="Control" parent="." unique_id=1378610636]
+custom_minimum_size = Vector2(128, 216)
+anchors_preset = 0
+offset_left = 128.0
+offset_right = 256.0
+offset_bottom = 216.0
+offset_transform_enabled = true
+script = ExtResource("1_eba47")
+
+[node name="BG" type="Sprite2D" parent="Veado" unique_id=1047801849]
+position = Vector2(64, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(544, 0, 169, 216)
+
+[node name="IMG" type="Sprite2D" parent="Veado" unique_id=228387494]
+position = Vector2(64, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(128, 0, 155, 216)
+
+[node name="Area2D" type="Area2D" parent="Veado" unique_id=208504237]
+position = Vector2(-18, 0)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Veado/Area2D" unique_id=1484128108]
+position = Vector2(1, 0)
+polygon = PackedVector2Array(25, 216, 137, 216, 162, 0, 0, 0)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Veado" unique_id=378581969]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 101.0
+offset_bottom = 194.0
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Veado/NinePatchRect" unique_id=171468255]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 66.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.12941177, 0.0627451, 0.03529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mt2qv")
+theme_override_font_sizes/font_size = 14
+text = "Ad Veado"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pato" type="Control" parent="." unique_id=1152767091]
+custom_minimum_size = Vector2(128, 216)
+anchors_preset = 0
+offset_left = 256.0
+offset_right = 384.0
+offset_bottom = 216.0
+script = ExtResource("1_eba47")
+
+[node name="BG" type="Sprite2D" parent="Pato" unique_id=1889653929]
+position = Vector2(61, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(720, 0, 134, 216)
+
+[node name="IMG" type="Sprite2D" parent="Pato" unique_id=851792368]
+position = Vector2(67, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(288, 0, 128, 216)
+
+[node name="Area2D" type="Area2D" parent="Pato" unique_id=1006809907]
+position = Vector2(25, 0)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Pato/Area2D" unique_id=242224754]
+polygon = PackedVector2Array(-25, 216, 103, 216, 103, 0, 0, 0)
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Pato" unique_id=227471026]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 101.0
+offset_bottom = 194.0
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="Pato/NinePatchRect" unique_id=1480948454]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 66.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.12941177, 0.0627451, 0.03529412, 1)
+theme_override_constants/outline_size = 3
+theme_override_fonts/font = ExtResource("4_mt2qv")
+theme_override_font_sizes/font_size = 14
+text = "Psico Pato"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Linhas" type="Control" parent="." unique_id=776270986]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Linhas" unique_id=1768188554]
+position = Vector2(192, 108)
+texture = ExtResource("1_cysgm")
+region_enabled = true
+region_rect = Rect2(1248, 0, 384, 216)
+
+[node name="Hover" type="AudioStreamPlayer" parent="." unique_id=211030087]
+stream = ExtResource("5_h4ntx")
+
+[node name="Select" type="AudioStreamPlayer" parent="." unique_id=288086685]
+stream = ExtResource("6_snka6")
