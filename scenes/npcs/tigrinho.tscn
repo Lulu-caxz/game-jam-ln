@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dr0csejcymely"]
 
-[ext_resource type="Script" uid="uid://bbmaokxwd2f0k" path="res://scripts/npc.gd" id="1_ey4oj"]
+[ext_resource type="Script" uid="uid://c3gugfv0rxopm" path="res://scenes/npcs/tigrinho.gd" id="1_ey4oj"]
 [ext_resource type="Texture2D" uid="uid://cbais2hxjg74t" path="res://sprites/npcs/tigrinho.jpg" id="1_xtccj"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ey4oj"]
 
@@ -16,15 +16,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkuky"]
-size = Vector2(8, 20)
+size = Vector2(8, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wd4"]
 size = Vector2(42, 25.5)
 
-[node name="tigrinho" type="RigidBody2D" unique_id=104609030 node_paths=PackedStringArray("botao")]
+[node name="tigrinho" type="RigidBody2D" unique_id=104609030]
 gravity_scale = 0.0
 script = ExtResource("1_ey4oj")
-botao = NodePath("Botao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329932903]
 position = Vector2(-1.1920929e-07, 1)
@@ -34,6 +33,7 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916662912]
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_bkuky")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=917400649]

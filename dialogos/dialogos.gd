@@ -41,6 +41,38 @@ const DIALOGOS = {
 			"texto": "O caso foi encerrado.",
 			"fim": true
 		}
+	],
+	
+	"tigrinho": [
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "E aí, meu cria! Bora testar a sorte?"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Vai querer apostar? (Só pode uma vez por personagem)",
+			"opcoes": [
+				{
+					"texto": "Apostar",
+					"proxima_fala": 2
+				},
+				{
+					"texto": "Hoje não",
+					"proxima_fala": 3
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "",
+			"resultado_aposta": true,
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "Suave então. Volta quando quiser!",
+			"fim": true
+		}
 	]
 }
 

@@ -17,6 +17,8 @@ signal escolha_realizada(resultado: int)
 @onready var textoEscolha1: Label = $NinePatchRect/Escolha1/texto
 @onready var textoEscolha2: Label = $NinePatchRect/Escolha2/texto
 
+@onready var Sair: Sprite2D = $NinePatchRect/Sair
+
 var idDialogo = "teste"
 
 const velocidade_texto = 0.04
@@ -116,6 +118,9 @@ func mostrar_texto() -> void:
 	var quem_dialogo = dialogo_data["quem"][0]
 	var quem_nome = dialogo_data["quem"][1]
 	var texto_dialogo = dialogo_data["texto"]
+	
+	if dialogo_data.get("resultado_aposta", false):
+		texto_dialogo = Global.resultadoTigrinhoTexto
 
 	Texto.text = texto_dialogo
 	Texto.visible_characters = 0
@@ -204,6 +209,18 @@ func atualizar_interface(quem: String, Nome: String) -> void:
 
 
 func _input(event: InputEvent) -> void:
+	# Fechar ao clicar no Sprite2D Sair.
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			if is_instance_valid(Sair) and Sair.visible:
+				var mouse_local = Sair.to_local(get_global_mouse_position())
+
+				if Sair.get_rect().has_point(mouse_local):
+					encerrar_dialogo()
+					get_viewport().set_input_as_handled()
+					return
+
+	# Controles normais do diálogo.
 	if event.is_action_pressed("e"):
 		if escolhas_visiveis:
 			return
@@ -211,6 +228,7 @@ func _input(event: InputEvent) -> void:
 		if exibindo_texto:
 			Texto.visible_characters = -1
 			exibindo_texto = false
+			texto_completo = true
 			som.playing = false
 		else:
 			avancar_dialogo()
@@ -291,6 +309,7 @@ func _on_escolha2_input(event: InputEvent) -> void:
 
 
 # RETORNA 1 OU 2 E MUDA A PRÓXIMA FALA
+
 func selecionar_escolha(indice: int) -> void:
 	if not escolhas_visiveis:
 		return
@@ -304,10 +323,18 @@ func selecionar_escolha(indice: int) -> void:
 	escolha2.hide()
 
 	resultado_escolha = indice + 1
+
+	# O NPC processa a escolha e atualiza o resultado global.
 	escolha_realizada.emit(resultado_escolha)
 
-	i_fala = int(opcao["proxima_fala"])
+	# A aposta bloqueada vai direto para a mensagem explicativa.
+	if idDialogo == "tigrinho" and resultado_escolha == 1:
+		i_fala = 2
+	else:
+		i_fala = int(opcao["proxima_fala"])
+
 	mostrar_texto()
+
 
 
 func encerrar_dialogo() -> void:

@@ -57,13 +57,17 @@ var capivaraVezesPreso = 0
 var veadoVezesPreso = 0
 
 #true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
-var dinheiroCapivara = false 
+var dinheiroCapivara = true
 var dinheiroPato = false
 var dinheiroVeado = false
 
 var bancoRoubado = false
 
 var manifestaçãoAtiva = false
+
+var statusApostaTigrinho: String = ""
+var resultadoTigrinhoTexto: String = ""
+var resultadoApostaTigrinho: bool = false
 
 var capivaraJaApostou = false
 var patoJaApostou = false

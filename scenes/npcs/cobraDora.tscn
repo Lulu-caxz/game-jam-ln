@@ -41,15 +41,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
-size = Vector2(8, 23)
+size = Vector2(9, 13.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shdkb"]
 size = Vector2(42, 25.5)
 
-[node name="CobraDora" type="RigidBody2D" unique_id=505782711 node_paths=PackedStringArray("botao")]
+[node name="CobraDora" type="RigidBody2D" unique_id=505782711]
 gravity_scale = 0.0
 script = ExtResource("1_n2ypx")
-botao = NodePath("Botao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1209352038]
 sprite_frames = SubResource("SpriteFrames_26022")
@@ -59,7 +58,7 @@ frame = 1
 frame_progress = 0.29505748
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=98830503]
-position = Vector2(0, 1.5)
+position = Vector2(-0.5, 8.75)
 shape = SubResource("RectangleShape2D_26022")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1603690040]

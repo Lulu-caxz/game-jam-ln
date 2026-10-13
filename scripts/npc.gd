@@ -4,7 +4,7 @@ extends RigidBody2D
 @onready var cena_dialogo: PackedScene = preload("res://scenes/caixa_dialogo.tscn")
 
 @onready var area: Area2D = $Area2D
-@export var botao: Sprite2D
+@onready var botao: Sprite2D = $Botao
 
 @export var id_dialogo: String = "teste"
 
@@ -14,12 +14,19 @@ var dialogo_ativo = false
 func _ready() -> void:
 	botao.visible = false
 
+	area.body_entered.connect(_on_area_2d_body_entered)
+	area.body_exited.connect(_on_area_2d_body_exited)
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
+	if !body.is_in_group("player"):
+		return
 	if not dialogo_ativo:
 		botao.visible = true
 	onArea = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if !body.is_in_group("player"):
+		return
 	botao.visible = false
 	onArea = false
 
@@ -36,6 +43,10 @@ func gerar_dialogo() -> void:
 		
 		var instancia = cena_dialogo.instantiate()
 		instancia.idDialogo = id_dialogo
+		
+		if instancia.has_signal("escolha_realizada"):
+			instancia.escolha_realizada.connect(_ao_realizar_escolha)
+		
 		camada_tela.add_child(instancia)
 		
 		instancia.tree_exited.connect(func(): camada_tela.queue_free())
@@ -44,6 +55,10 @@ func gerar_dialogo() -> void:
 		dialogo_ativo = false
 		if onArea:
 			botao.visible = true
+			
+
+func _ao_realizar_escolha(resultado: int) -> void:
+	pass
 
 func _ao_fechar_dialogo() -> void:
 	dialogo_ativo = false

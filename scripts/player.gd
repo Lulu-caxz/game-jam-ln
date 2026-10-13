@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var somPassoPiso: AudioStreamPlayer = $PassoPiso
 @onready var somQuack: AudioStreamPlayer = $Quack
 
+@onready var dinheiroHUD: Sprite2D = $Camera2D/HUD/Dinheiro
+
 const VELOCIDADE = 80.0
 const INTERVALO_PASSO = 0.35
 
@@ -47,8 +49,10 @@ func _enter_tree() -> void:
 		Global.definir_posicao = false
 
 func _ready() -> void:
-	player_atual = Global.sequencia_players[0]
+	player_atual = Global.sequencia_players[Global.atual]
 	ultima_direcao_nome = Global.ultimaDirecao
+	
+	dinheiroHUD.modulate.a = 0.2
 	mudarAnimacao()
 
 func _physics_process(delta: float) -> void:
@@ -87,4 +91,24 @@ func _physics_process(delta: float) -> void:
 		passo_timer = INTERVALO_PASSO 
 		somPassoPiso.stop()
 	
+	atualizar_HUD()
 	move_and_slide()
+
+
+func atualizar_HUD():
+	match player_atual:
+		"Capivara":
+			if Global.dinheiroCapivara:
+				dinheiroHUD.modulate.a = 1
+			else:
+					dinheiroHUD.modulate.a = 0.2
+		"Pato":
+			if Global.dinheiroPato:
+				dinheiroHUD.modulate.a = 1
+			else:
+					dinheiroHUD.modulate.a = 0.2
+		"Veado":
+			if Global.dinheiroVeado:
+				dinheiroHUD.modulate.a = 1
+			else:
+					dinheiroHUD.modulate.a = 0.2

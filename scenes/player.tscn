@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://gmp0jsw3nssa"]
 
 [ext_resource type="Script" uid="uid://cdidvfku40v22" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="2_fjrip"]
 [ext_resource type="Texture2D" uid="uid://7toup2bnmkm" path="res://sprites/sheet/CapiTalista.png" id="2_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://dfdf5mgmw6m26" path="res://sprites/sheet/PsicoPatoSheet.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://7x0krw6u1qal" path="res://sprites/sheet/Ad_Veado.png" id="4_dqkch"]
 [ext_resource type="AudioStream" uid="uid://cmuy5kaedacaw" path="res://sounds/SFX/Passo_Piso.mp3" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://dho13l4g7e0q5" path="res://sounds/SFX/Quack.mp3" id="6_tuyoq"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
-size = Vector2(18.661259, 23.529411)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qlg0r")
@@ -559,18 +557,25 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
+size = Vector2(13, 11.2271805)
+
 [node name="Player" type="CharacterBody2D" unique_id=1284986966]
 z_index = 1
 script = ExtResource("1_g2els")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356333279]
-position = Vector2(1.4508231e-07, 4.462475)
-shape = SubResource("RectangleShape2D_26022")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=300795729]
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 rotation_smoothing_enabled = true
+
+[node name="HUD" type="Node2D" parent="Camera2D" unique_id=105106313]
+position = Vector2(-0.49999988, 10.61359)
+
+[node name="Dinheiro" type="Sprite2D" parent="Camera2D/HUD" unique_id=1712663610]
+position = Vector2(-175.5, -102.61359)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("2_fjrip")
 
 [node name="AnimacaoCapivara" type="AnimatedSprite2D" parent="." unique_id=294652535]
 sprite_frames = SubResource("SpriteFrames_26022")
@@ -586,6 +591,10 @@ speed_scale = 1.5
 sprite_frames = SubResource("SpriteFrames_shdkb")
 animation = &"esquerda_move"
 speed_scale = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356333279]
+position = Vector2(-0.49999988, 10.61359)
+shape = SubResource("RectangleShape2D_26022")
 
 [node name="PassoPiso" type="AudioStreamPlayer" parent="." unique_id=1435570468]
 stream = ExtResource("5_qlg0r")
