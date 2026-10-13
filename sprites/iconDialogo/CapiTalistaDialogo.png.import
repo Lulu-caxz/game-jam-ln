@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bch72wbree8ao"
-path="res://.godot/imported/Capy_Talista.png-7a0593722d45d56edb0d7d353f6b714f.ctex"
+uid="uid://ctvaeaebsr1td"
+path="res://.godot/imported/CapiTalistaDialogo.png-f78941f21cdfb4b5e2b2ea2d3ae3691e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sheet/Capy_Talista.png"
-dest_files=["res://.godot/imported/Capy_Talista.png-7a0593722d45d56edb0d7d353f6b714f.ctex"]
+source_file="res://sprites/iconDialogo/CapiTalistaDialogo.png"
+dest_files=["res://.godot/imported/CapiTalistaDialogo.png-f78941f21cdfb4b5e2b2ea2d3ae3691e.ctex"]
 
 [params]
 

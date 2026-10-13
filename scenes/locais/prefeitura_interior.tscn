@@ -34,6 +34,7 @@ tile_set = SubResource("TileSet_shdkb")
 script = ExtResource("3_dip3u")
 cena_destino = "uid://b3f1vydebqnhb"
 posicaoSaida = Vector2(-72, -449)
+direcao = "baixo"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Sair" unique_id=1962800133]
 position = Vector2(0, 51)

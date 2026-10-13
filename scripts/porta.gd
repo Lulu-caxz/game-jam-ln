@@ -3,6 +3,8 @@ extends Area2D
 
 @export_file("*.tscn") var cena_destino: String
 @export var posicaoSaida: Vector2
+@export_enum("cima", "baixo", "direita", "esquerda") var direcao: String = "cima"
+
 
 @onready var botao: Sprite2D = $Sprite2D
 
@@ -39,7 +41,10 @@ func _input(event: InputEvent) -> void:
 			
 			Global.posicao_player = posicaoSaida
 			Global.definir_posicao = true
-			get_tree().change_scene_to_file(cena_destino)
+			
+			Global.ultimaDirecao = direcao
+			
+			Transicao.mudar_cena(cena_destino)
 			
 			body_entered.disconnect(_on_body_entered)
 			body_exited.disconnect(_on_body_exited)

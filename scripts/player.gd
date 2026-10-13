@@ -48,6 +48,7 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	player_atual = Global.sequencia_players[0]
+	ultima_direcao_nome = Global.ultimaDirecao
 	mudarAnimacao()
 
 func _physics_process(delta: float) -> void:
@@ -77,7 +78,7 @@ func _physics_process(delta: float) -> void:
 		velocity = input_dir * VELOCIDADE
 		
 		passo_timer += delta
-		if passo_timer >= INTERVALO_PASSO:
+		if passo_timer >= INTERVALO_PASSO and Global.dialogo_ativo == false:
 			somPassoPiso.play()
 			passo_timer = 0.0
 	else:

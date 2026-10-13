@@ -20,7 +20,7 @@ func _input(event: InputEvent) -> void:
 			Global.atual = 1
 		
 		select.play()
-		get_tree().change_scene_to_file("res://scenes/cidade.tscn")
+		Transicao.mudar_cena("res://scenes/cidade.tscn")
 		
 
 func _ready() -> void:
