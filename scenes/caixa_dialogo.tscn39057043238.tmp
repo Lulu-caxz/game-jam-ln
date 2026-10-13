@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://b07ah7vwnas0o"]
+
+[ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="1_gdc72"]
+[ext_resource type="Script" uid="uid://njqbp022fcc7" path="res://scripts/caixa_dialogo.gd" id="1_red54"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="4_red54"]
+[ext_resource type="AudioStream" uid="uid://ccwb6xgdgyc44" path="res://sounds/SFX/Typing.wav" id="4_rn1cx"]
+
+[node name="CaixaDialogo" type="Control" unique_id=1630927294]
+z_index = 10
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_red54")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1413159459]
+layout_mode = 0
+offset_left = -103.0
+offset_top = 36.0
+offset_right = 104.0
+offset_bottom = 95.0
+texture = ExtResource("1_gdc72")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Npc" type="Sprite2D" parent="NinePatchRect" unique_id=1244208906]
+position = Vector2(188, 56)
+offset = Vector2(0, -8)
+flip_h = true
+
+[node name="Player" type="Sprite2D" parent="NinePatchRect" unique_id=1262303699]
+position = Vector2(19, 56)
+
+[node name="Texto" type="RichTextLabel" parent="NinePatchRect" unique_id=105974477]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 5.0
+offset_right = 157.0
+offset_bottom = 45.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/bold_font_size = 5
+theme_override_font_sizes/bold_italics_font_size = 5
+theme_override_font_sizes/italics_font_size = 5
+theme_override_font_sizes/mono_font_size = 5
+text = "Texto "
+scroll_active = false
+
+[node name="BotaoPular" type="Sprite2D" parent="NinePatchRect" unique_id=507233563]
+position = Vector2(103, -10)
+texture = ExtResource("4_red54")
+
+[node name="CaixaPlayerName" type="NinePatchRect" parent="NinePatchRect" unique_id=1341218467]
+layout_mode = 0
+offset_top = -19.0
+offset_right = 59.0
+offset_bottom = -1.0
+texture = ExtResource("1_gdc72")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="PlayerName" type="Label" parent="NinePatchRect/CaixaPlayerName" unique_id=433188057]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 5
+text = "PLAYER"
+
+[node name="CaixaNpcName" type="NinePatchRect" parent="NinePatchRect" unique_id=1213519505]
+layout_mode = 0
+offset_left = 148.0
+offset_top = -19.0
+offset_right = 207.0
+offset_bottom = -1.0
+texture = ExtResource("1_gdc72")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="NpcName" type="Label" parent="NinePatchRect/CaixaNpcName" unique_id=931357326]
+layout_mode = 1
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 54.0
+offset_bottom = 13.0
+layout_direction = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 5
+text = "NPC"
+
+[node name="Escolha1" type="NinePatchRect" parent="NinePatchRect" unique_id=1600060397]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 21.0
+offset_right = 92.0
+offset_bottom = 39.0
+mouse_filter = 0
+texture = ExtResource("1_gdc72")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="texto" type="Label" parent="NinePatchRect/Escolha1" unique_id=946567193]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 63.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 5
+text = "escolha 1"
+
+[node name="Escolha2" type="NinePatchRect" parent="NinePatchRect" unique_id=1046879582]
+layout_mode = 0
+offset_left = 114.0
+offset_top = 21.0
+offset_right = 182.0
+offset_bottom = 39.0
+mouse_filter = 0
+texture = ExtResource("1_gdc72")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="texto" type="Label" parent="NinePatchRect/Escolha2" unique_id=870591476]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 5
+text = "escolha 2"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=748360917]
+
+[node name="Typing" type="AudioStreamPlayer" parent="." unique_id=1165727091]
+stream = ExtResource("4_rn1cx")
+volume_db = -10.0
+pitch_scale = 8.0

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ddcs11ilecq7w"]
 
-[ext_resource type="Texture2D" uid="uid://bonqyde8bbfxy" path="res://sprites/sheet/CobraDoraSheet.png" id="1_afmjy"]
+[ext_resource type="Texture2D" uid="uid://bonqyde8bbfxy" path="res://sprites/npcs/CobraDoraSheet.png" id="1_afmjy"]
 [ext_resource type="Script" uid="uid://ca5ck2t7sb6fq" path="res://scripts/cobra_dora.gd" id="1_n2ypx"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_k2a7r"]
 

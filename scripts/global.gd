@@ -35,3 +35,49 @@ func esta_bloqueado(id: String) -> bool:
 
 func desbloquear_personagem(id: String) -> void:
 	personagens_usados.erase(id.capitalize())
+
+
+
+
+#VARIAVEIS DA HISTORIA
+var presos = []
+var mortos = []
+
+var capivaraAcoes = 3
+var patoAcoes = 3
+var veadoAcoes = 3
+
+var capivaraForagida = false
+var patoForagido = false
+var veadoForagido = false
+
+#so pode chegar em 1, se for preso dnv acaba o turno
+var patoVezesPreso = 0
+var capivaraVezesPreso = 0
+var veadoVezesPreso = 0
+
+#true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
+var dinheiroCapivara = false 
+var dinheiroPato = false
+var dinheiroVeado = false
+
+var bancoRoubado = false
+
+var manifestaçãoAtiva = false
+
+var capivaraJaApostou = false
+var patoJaApostou = false
+var veadoJaApostou = false
+
+#tem q falar com o pombocorreio pra conseguir
+var capivaraTemEquipamentoPraFugir = false
+var patoTemEquipamentoPraFugir = false
+var veadoTemEquipamentoPraFugir = false
+
+#apenas true para saber quer esta sendo perseguido(sla se vai usar isso)
+var capivaraSendoPersiguido = false
+var patoSendoPersiguido = false
+var veadoSendoPerseguido = false
+
+#carros roubados
+var carrosRoubados = [] # 1 , 2 ,3 vai ser o id do carro fds

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dr0csejcymely"]
+
+[ext_resource type="Texture2D" uid="uid://cbais2hxjg74t" path="res://sprites/npcs/tigrinho.jpg" id="1_xtccj"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ey4oj"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsxmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xtccj")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkuky"]
+size = Vector2(8, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wd4"]
+size = Vector2(42, 25.5)
+
+[node name="tigrinho" type="RigidBody2D" unique_id=104609030]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329932903]
+position = Vector2(-1.1920929e-07, 1)
+scale = Vector2(0.021551725, 0.03134796)
+sprite_frames = SubResource("SpriteFrames_hsxmv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916662912]
+shape = SubResource("RectangleShape2D_bkuky")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=917400649]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=982039251]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_u6wd4")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=807548172]
+z_index = 4
+position = Vector2(0, -20)
+texture = ExtResource("2_ey4oj")
