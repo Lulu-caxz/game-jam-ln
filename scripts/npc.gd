@@ -4,7 +4,7 @@ extends RigidBody2D
 @onready var cena_dialogo: PackedScene = preload("res://scenes/caixa_dialogo.tscn")
 
 @onready var area: Area2D = $Area2D
-@onready var botao: Sprite2D = $Botao
+@export var botao: Sprite2D
 
 @export var id_dialogo: String = "teste"
 

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dr0csejcymely"]
 
+[ext_resource type="Script" uid="uid://bbmaokxwd2f0k" path="res://scripts/npc.gd" id="1_ey4oj"]
 [ext_resource type="Texture2D" uid="uid://cbais2hxjg74t" path="res://sprites/npcs/tigrinho.jpg" id="1_xtccj"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ey4oj"]
 
@@ -20,7 +21,10 @@ size = Vector2(8, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wd4"]
 size = Vector2(42, 25.5)
 
-[node name="tigrinho" type="RigidBody2D" unique_id=104609030]
+[node name="tigrinho" type="RigidBody2D" unique_id=104609030 node_paths=PackedStringArray("botao")]
+gravity_scale = 0.0
+script = ExtResource("1_ey4oj")
+botao = NodePath("Botao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329932903]
 position = Vector2(-1.1920929e-07, 1)

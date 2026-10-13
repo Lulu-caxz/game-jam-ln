@@ -46,9 +46,10 @@ size = Vector2(8, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_shdkb"]
 size = Vector2(42, 25.5)
 
-[node name="CobraDora" type="RigidBody2D" unique_id=505782711]
+[node name="CobraDora" type="RigidBody2D" unique_id=505782711 node_paths=PackedStringArray("botao")]
 gravity_scale = 0.0
 script = ExtResource("1_n2ypx")
+botao = NodePath("Botao")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1209352038]
 sprite_frames = SubResource("SpriteFrames_26022")
