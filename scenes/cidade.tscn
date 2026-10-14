@@ -4,8 +4,10 @@
 [ext_resource type="AudioStream" uid="uid://dcm35x4knjw7t" path="res://sounds/MusicaBaseJogo.mp3" id="2_vkox8"]
 [ext_resource type="PackedScene" uid="uid://ddcs11ilecq7w" path="res://scenes/npcs/cobraDora.tscn" id="3_3pc5y"]
 [ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="4_cp173"]
+[ext_resource type="Texture2D" uid="uid://birqia406c650" path="res://sprites/luz.png" id="5_3pc5y"]
 [ext_resource type="PackedScene" uid="uid://dr0csejcymely" path="res://scenes/npcs/tigrinho.tscn" id="5_7t1fb"]
 [ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="6_vkox8"]
+[ext_resource type="PackedScene" uid="uid://f1fs58wn85ku" path="res://scenes/poste.tscn" id="7_cp173"]
 
 [node name="Jogo" type="Node2D" unique_id=748497634]
 
@@ -23,12 +25,45 @@ y_sort_enabled = true
 [node name="tigrinho" parent="Personagens" unique_id=104609030 instance=ExtResource("5_7t1fb")]
 position = Vector2(-345, -410)
 
+[node name="PointLight2D" type="PointLight2D" parent="Personagens/tigrinho" unique_id=1470872394]
+position = Vector2(0, 9)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("5_3pc5y")
+texture_scale = 0.3
+
 [node name="Player" parent="Personagens" unique_id=1284986966 instance=ExtResource("4_cp173")]
 z_index = 0
-position = Vector2(-78, -214)
+position = Vector2(-102, -182)
+
+[node name="PointLight2D" type="PointLight2D" parent="Personagens/Player" unique_id=276600513]
+position = Vector2(0, 14)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("5_3pc5y")
+texture_scale = 0.3
 
 [node name="CobraDora" parent="Personagens" unique_id=505782711 instance=ExtResource("3_3pc5y")]
 position = Vector2(230, -307)
+
+[node name="PointLight2D" type="PointLight2D" parent="Personagens/CobraDora" unique_id=77954123]
+position = Vector2(0, 14)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("5_3pc5y")
+texture_scale = 0.3
+
+[node name="Postes" type="Node2D" parent="Personagens" unique_id=250653623]
+y_sort_enabled = true
+
+[node name="Poste" parent="Personagens/Postes" unique_id=920872958 instance=ExtResource("7_cp173")]
+position = Vector2(-137, -148)
+
+[node name="Poste2" parent="Personagens/Postes" unique_id=317467571 instance=ExtResource("7_cp173")]
+position = Vector2(-70, -148)
+
+[node name="Poste3" parent="Personagens/Postes" unique_id=753719744 instance=ExtResource("7_cp173")]
+position = Vector2(-70, -79)
+
+[node name="Poste4" parent="Personagens/Postes" unique_id=15550086 instance=ExtResource("7_cp173")]
+position = Vector2(-138, -79)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=232321833]
 
@@ -36,3 +71,6 @@ position = Vector2(230, -307)
 position = Vector2(-255, -303)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("6_vkox8")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=264033033]
+color = Color(0.5513527, 0.5934165, 0.72441214, 1)

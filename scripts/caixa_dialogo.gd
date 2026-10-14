@@ -8,6 +8,9 @@ signal escolha_realizada(resultado: int)
 @onready var caixa: NinePatchRect = $NinePatchRect
 @onready var PlayerName: Label = $NinePatchRect/CaixaPlayerName/PlayerName
 @onready var NpcName: Label = $NinePatchRect/CaixaNpcName/NpcName
+@onready var caixaNpcName: NinePatchRect = $NinePatchRect/CaixaNpcName
+@onready var caixaPlayerName: NinePatchRect = $NinePatchRect/CaixaPlayerName
+
 @onready var Texto: RichTextLabel = $NinePatchRect/Texto
 @onready var som: AudioStreamPlayer = $Typing
 
@@ -193,6 +196,8 @@ func atualizar_interface(quem: String, Nome: String) -> void:
 	if quem == "Player":
 		PlayerName.visible = true
 		NpcName.visible = false
+		caixaPlayerName.visible = true
+		caixaNpcName.visible = false
 
 		Player.modulate = Color(1, 1, 1)
 		Npc.modulate = Color(0.4, 0.4, 0.4)
@@ -201,7 +206,9 @@ func atualizar_interface(quem: String, Nome: String) -> void:
 	else:
 		PlayerName.visible = false
 		NpcName.visible = true
-
+		caixaPlayerName.visible = false
+		caixaNpcName.visible = true
+		
 		Player.modulate = Color(0.4, 0.4, 0.4)
 		Npc.modulate = Color(1, 1, 1)
 

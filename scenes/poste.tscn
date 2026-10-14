@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://f1fs58wn85ku"]
+
+[ext_resource type="Texture2D" uid="uid://dbhcnc24vvcdd" path="res://sprites/construcoes/poste.png" id="1_0anrp"]
+[ext_resource type="Texture2D" uid="uid://birqia406c650" path="res://sprites/luz.png" id="2_5wqr3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
+size = Vector2(6, 10)
+
+[node name="Poste" type="RigidBody2D" unique_id=317467571]
+gravity_scale = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=916146706]
+texture = ExtResource("1_0anrp")
+offset = Vector2(0, -15)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=150914653]
+position = Vector2(0, -29)
+color = Color(0.6453757, 0.6394852, 0, 1)
+texture = ExtResource("2_5wqr3")
+texture_scale = 0.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557494483]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_26022")
