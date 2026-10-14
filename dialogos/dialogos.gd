@@ -22,22 +22,22 @@ const DIALOGOS = {
 			]
 		},
 		{
-			"quem": ["Npc", "Veado"],
+			"quem": ["Npc", "Gado"],
 			"texto": "Você decidiu investigar o banco!",
 			"proxima_fala": 3
 		},
 		{
-			"quem": ["Npc", "Veado"],
+			"quem": ["Npc", "Gado"],
 			"texto": "Você encontrou pistas importantes!",
 			"fim": true
 		},
 		{
-			"quem": ["Npc", "Veado"],
+			"quem": ["Npc", "Gado"],
 			"texto": "Você decidiu arquivar o caso!",
 			"proxima_fala": 5
 		},
 		{
-			"quem": ["Npc", "Veado"],
+			"quem": ["Npc", "Gado"],
 			"texto": "O caso foi encerrado.",
 			"fim": true
 		}
@@ -133,6 +133,12 @@ const DIALOGOS = {
 			"quem": ["Npc", "Psico Pato"],
 			"texto": "QUAAAAAAAACKKKKKKKK!!!!!!"
 		},
+	],
+	"Gado-prisao": [
+		{
+			"quem": ["Npc", "Advo Gado"],
+			"texto": "Não é possivel que meu irmão me prendeu"
+		}
 	]
 }
 

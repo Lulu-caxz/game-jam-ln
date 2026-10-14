@@ -16,7 +16,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bkuky"]
-size = Vector2(8, 8)
+size = Vector2(16, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wd4"]
 size = Vector2(42, 25.5)
@@ -26,8 +26,8 @@ gravity_scale = 0.0
 script = ExtResource("1_ey4oj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329932903]
-position = Vector2(-1.1920929e-07, 1)
-scale = Vector2(0.021551725, 0.03134796)
+position = Vector2(9.536743e-07, -2.9999993)
+scale = Vector2(0.03448276, 0.043887146)
 sprite_frames = SubResource("SpriteFrames_hsxmv")
 animation = &"idle"
 autoplay = "idle"
@@ -44,5 +44,5 @@ shape = SubResource("RectangleShape2D_u6wd4")
 
 [node name="Botao" type="Sprite2D" parent="." unique_id=807548172]
 z_index = 4
-position = Vector2(0, -20)
+position = Vector2(0, -26)
 texture = ExtResource("2_ey4oj")

@@ -21,14 +21,14 @@ parameters/looping = true
 y_sort_enabled = true
 
 [node name="tigrinho" parent="Personagens" unique_id=104609030 instance=ExtResource("5_7t1fb")]
-position = Vector2(-265, -394)
+position = Vector2(-345, -410)
 
-[node name="Player" parent="Personagens" unique_id=1284986966 groups=["player"] instance=ExtResource("4_cp173")]
+[node name="Player" parent="Personagens" unique_id=1284986966 instance=ExtResource("4_cp173")]
 z_index = 0
 position = Vector2(-78, -214)
 
 [node name="CobraDora" parent="Personagens" unique_id=505782711 instance=ExtResource("3_3pc5y")]
-position = Vector2(-119, -269)
+position = Vector2(230, -307)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=232321833]
 

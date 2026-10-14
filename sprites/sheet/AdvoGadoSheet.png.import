@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctvaeaebsr1td"
-path="res://.godot/imported/CapiTalistaDialogo.png-f78941f21cdfb4b5e2b2ea2d3ae3691e.ctex"
+uid="uid://2014t1r18nai"
+path="res://.godot/imported/AdvoGadoSheet.png-6b4cce48fb9f0a4f58e8d4c67dc7e507.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/iconDialogo/CapiTalistaDialogo.png"
-dest_files=["res://.godot/imported/CapiTalistaDialogo.png-f78941f21cdfb4b5e2b2ea2d3ae3691e.ctex"]
+source_file="res://sprites/sheet/AdvoGadoSheet.png"
+dest_files=["res://.godot/imported/AdvoGadoSheet.png-6b4cce48fb9f0a4f58e8d4c67dc7e507.ctex"]
 
 [params]
 

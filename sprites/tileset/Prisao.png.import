@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djbxfq2sepp3m"
-path="res://.godot/imported/AdVeadoDialogo.png-5a7ee0d6528e87cffa1513f4b316e528.ctex"
+uid="uid://cjg5hfjni1dku"
+path="res://.godot/imported/Prisao.png-da6b4cdb04cda84d45774a459abd6b59.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/iconDialogo/AdVeadoDialogo.png"
-dest_files=["res://.godot/imported/AdVeadoDialogo.png-5a7ee0d6528e87cffa1513f4b316e528.ctex"]
+source_file="res://sprites/tileset/Prisao.png"
+dest_files=["res://.godot/imported/Prisao.png-da6b4cdb04cda84d45774a459abd6b59.ctex"]
 
 [params]
 

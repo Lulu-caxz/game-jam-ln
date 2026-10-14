@@ -109,8 +109,8 @@ func atualizar_HUD():
 				dinheiroHUD.modulate.a = 1
 			else:
 				dinheiroHUD.modulate.a = 0.2
-		"Veado":
-			if Global.dinheiroVeado:
+		"Gado":
+			if Global.dinheiroGado:
 				dinheiroHUD.modulate.a = 1
 			else:
 				dinheiroHUD.modulate.a = 0.2

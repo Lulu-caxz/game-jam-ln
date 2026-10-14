@@ -4,6 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://7toup2bnmkm" path="res://sprites/sheet/CapiTalista.png" id="1_xov0y"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_iny5u"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtt1o"]
+atlas = ExtResource("1_xov0y")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iny5u"]
+atlas = ExtResource("1_xov0y")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gv42"]
+atlas = ExtResource("1_xov0y")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_c6sly"]
 atlas = ExtResource("1_xov0y")
 region = Rect2(32, 32, 32, 32)
@@ -12,10 +24,34 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vtt1o")
+}],
+"loop": 1,
+"name": &"baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iny5u")
+}],
+"loop": 1,
+"name": &"cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gv42")
+}],
+"loop": 1,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_c6sly")
 }],
 "loop": 1,
-"name": &"idle",
+"name": &"esquerda",
 "speed": 5.0
 }]
 
@@ -23,7 +59,7 @@ animations = [{
 size = Vector2(17, 8.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7gv42"]
-size = Vector2(20, 25.5)
+size = Vector2(24, 25.5)
 
 [node name="CapivaraNPC" type="RigidBody2D" unique_id=816674935]
 gravity_scale = 0.0
@@ -31,7 +67,7 @@ script = ExtResource("1_vtt1o")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652983185]
 sprite_frames = SubResource("SpriteFrames_26022")
-animation = &"idle"
+animation = &"direita"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801904357]
 position = Vector2(-0.5, 11.25)
@@ -42,6 +78,7 @@ shape = SubResource("RectangleShape2D_shdkb")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1266161956]
 position = Vector2(-19, 10)
 shape = SubResource("RectangleShape2D_7gv42")
+debug_color = Color(5.7756904e-07, 0.5205529, 0.8032771, 0.41960785)
 
 [node name="Botao" type="Sprite2D" parent="." unique_id=871259215]
 z_index = 4

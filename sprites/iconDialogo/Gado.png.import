@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7x0krw6u1qal"
-path="res://.godot/imported/Ad_Veado.png-68bc8e9833d0ef7b937eebe955cab9e6.ctex"
+uid="uid://bd6q6fooswut4"
+path="res://.godot/imported/Gado.png-72f92580c40d055ceabe5f3a401792b3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/sheet/Ad_Veado.png"
-dest_files=["res://.godot/imported/Ad_Veado.png-68bc8e9833d0ef7b937eebe955cab9e6.ctex"]
+source_file="res://sprites/iconDialogo/Gado.png"
+dest_files=["res://.godot/imported/Gado.png-72f92580c40d055ceabe5f3a401792b3.ctex"]
 
 [params]
 

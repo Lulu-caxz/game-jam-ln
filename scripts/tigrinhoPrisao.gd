@@ -39,8 +39,8 @@ func tem_dinheiro(jogador: String) -> bool:
 			return Global.dinheiroCapivara
 		"Pato":
 			return Global.dinheiroPato
-		"Veado":
-			return Global.dinheiroVeado
+		"Gado":
+			return Global.dinheiroGado
 
 	return false
 
@@ -51,8 +51,8 @@ func ja_apostou(jogador: String) -> bool:
 			return Global.capivaraJaApostou
 		"Pato":
 			return Global.patoJaApostou
-		"Veado":
-			return Global.veadoJaApostou
+		"Gado":
+			return Global.gadoJaApostou
 
 	return false
 
@@ -63,8 +63,8 @@ func marcar_aposta(jogador: String) -> void:
 			Global.capivaraJaApostou = true
 		"Pato":
 			Global.patoJaApostou = true
-		"Veado":
-			Global.veadoJaApostou = true
+		"Gado":
+			Global.gadoJaApostou = true
 
 
 func apostar(jogador: String) -> bool:
@@ -76,8 +76,8 @@ func apostar(jogador: String) -> bool:
 				Global.dinheiroCapivara = true
 			"Pato":
 				Global.dinheiroPato = true
-			"Veado":
-				Global.dinheiroVeado = true
+			"Gado":
+				Global.dinheiroGadp = true
 
 		return true
 

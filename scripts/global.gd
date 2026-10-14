@@ -1,6 +1,6 @@
 extends Node
 
-var sequencia_players = ["Capivara", "Pato", "Veado"]
+var sequencia_players = ["Capivara", "Pato", "Gado"]
 var atual = 0
 
 var dialogo_ativo: bool = false
@@ -21,8 +21,8 @@ const Nomes = [
 const textures_dialogo = [
 	{"Capivara": "res://sprites/iconDialogo/Capivara.png"},
 	{"Capi Talista": "res://sprites/iconDialogo/Capivara.png"},
-	{"Gado": "res://sprites/iconDialogo/Veado.png"},
-	{"Advo Gado": "res://sprites/iconDialogo/Veado.png"},
+	{"Gado": "res://sprites/iconDialogo/Gado.png"},
+	{"Advo Gado": "res://sprites/iconDialogo/Gado.png"},
 	{"Pato": "res://sprites/iconDialogo/Pato.png"},
 	{"Psico Pato": "res://sprites/iconDialogo/Pato.png"},
 	{"Cobra Dora": "res://sprites/iconDialogo/Capivara.png"}
@@ -48,21 +48,21 @@ var mortos = []
 
 var capivaraAcoes = 3
 var patoAcoes = 3
-var veadoAcoes = 3
+var gadoAcoes = 3
 
 var capivaraForagida = false
 var patoForagido = false
-var veadoForagido = false
+var gadoForagido = false
 
 #so pode chegar em 1, se for preso dnv acaba o turno
 var patoVezesPreso = 0
 var capivaraVezesPreso = 0
-var veadoVezesPreso = 0
+var gadoVezesPreso = 0
 
 #true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
 var dinheiroCapivara = false
 var dinheiroPato = false
-var dinheiroVeado = false
+var dinheiroGado = false
 
 var bancoRoubado = false
 
@@ -74,17 +74,17 @@ var resultadoApostaTigrinho: bool = false
 
 var capivaraJaApostou = false
 var patoJaApostou = false
-var veadoJaApostou = false
+var gadoJaApostou = false
 
 #tem q falar com o pombocorreio pra conseguir
 var capivaraTemEquipamentoPraFugir = false
 var patoTemEquipamentoPraFugir = false
-var veadoTemEquipamentoPraFugir = false
+var gadoTemEquipamentoPraFugir = false
 
 #apenas true para saber quer esta sendo perseguido(sla se vai usar isso)
 var capivaraSendoPersiguido = false
 var patoSendoPersiguido = false
-var veadoSendoPerseguido = false
+var gadoSendoPerseguido = false
 
 #carros roubados
 var carrosRoubados = [] # 1 , 2 ,3 vai ser o id do carro fds
