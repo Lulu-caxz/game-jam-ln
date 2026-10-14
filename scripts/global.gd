@@ -15,13 +15,16 @@ var personagens_usados: Array[String] = []
 const Nomes = [
 	{"Capivara": "CapiTalista"},
 	{"Pato": "PsicoPato"},
-	{"Veado": "AdVeado"}
+	{"Gado": "Advo Gado"}
 ]
 
 const textures_dialogo = [
 	{"Capivara": "res://sprites/iconDialogo/Capivara.png"},
-	{"Veado": "res://sprites/iconDialogo/Veado.png"},
+	{"Capi Talista": "res://sprites/iconDialogo/Capivara.png"},
+	{"Gado": "res://sprites/iconDialogo/Veado.png"},
+	{"Advo Gado": "res://sprites/iconDialogo/Veado.png"},
 	{"Pato": "res://sprites/iconDialogo/Pato.png"},
+	{"Psico Pato": "res://sprites/iconDialogo/Pato.png"},
 	{"Cobra Dora": "res://sprites/iconDialogo/Capivara.png"}
 ]
 
@@ -40,7 +43,7 @@ func desbloquear_personagem(id: String) -> void:
 
 
 #VARIAVEIS DA HISTORIA
-var presos = []
+var presos = ["Pato", "Capivara"]
 var mortos = []
 
 var capivaraAcoes = 3
@@ -57,7 +60,7 @@ var capivaraVezesPreso = 0
 var veadoVezesPreso = 0
 
 #true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
-var dinheiroCapivara = true
+var dinheiroCapivara = false
 var dinheiroPato = false
 var dinheiroVeado = false
 

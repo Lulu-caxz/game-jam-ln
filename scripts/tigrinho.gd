@@ -12,19 +12,16 @@ func _ao_realizar_escolha(resultado: int) -> void:
 
 	var jogador: String = Global.sequencia_players[Global.atual]
 
-	# Primeiro verifica se o personagem já tem dinheiro.
 	if tem_dinheiro(jogador):
 		Global.statusApostaTigrinho = "bloqueado"
 		Global.resultadoTigrinhoTexto = "Cê ja ta cheio da grana ai, sai fora."
 		return
 
-	# Depois verifica se já tentou apostar.
 	if ja_apostou(jogador):
 		Global.statusApostaTigrinho = "bloqueado"
 		Global.resultadoTigrinhoTexto = "Tu já apostou! Não dá pra apostar de novo não."
 		return
 
-	# Registra a tentativa antes do sorteio.
 	marcar_aposta(jogador)
 	Global.statusApostaTigrinho = "apostou"
 
@@ -71,7 +68,6 @@ func marcar_aposta(jogador: String) -> void:
 
 
 func apostar(jogador: String) -> bool:
-	# 30% de chance de ganhar.
 	var chance = randf()
 
 	if chance < 0.3:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dr0csejcymely"]
 
-[ext_resource type="Script" uid="uid://c3gugfv0rxopm" path="res://scenes/npcs/tigrinho.gd" id="1_ey4oj"]
+[ext_resource type="Script" uid="uid://c3gugfv0rxopm" path="res://scripts/tigrinho.gd" id="1_ey4oj"]
 [ext_resource type="Texture2D" uid="uid://cbais2hxjg74t" path="res://sprites/npcs/tigrinho.jpg" id="1_xtccj"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ey4oj"]
 

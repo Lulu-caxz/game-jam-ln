@@ -1,0 +1,131 @@
+[gd_scene format=4 uid="uid://frraw5xikhqc"]
+
+[ext_resource type="Script" uid="uid://dw4v2lnk534wc" path="res://scenes/locais/prisao.gd" id="1_7ru1q"]
+[ext_resource type="Texture2D" uid="uid://bkpixctjotbcs" path="res://sprites/Tiles/Path_Middle.png" id="1_bvx6w"]
+[ext_resource type="Texture2D" uid="uid://bbv1o2giifk57" path="res://sprites/Tiles/Grass_Middle.png" id="2_gbldu"]
+[ext_resource type="Texture2D" uid="uid://1shw3butmssy" path="res://sprites/tileset/TileSheet.png" id="3_7kkf7"]
+[ext_resource type="Script" uid="uid://c778ejnrvnvii" path="res://scripts/porta.gd" id="4_7ru1q"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="5_862n7"]
+[ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="6_kltf1"]
+[ext_resource type="PackedScene" uid="uid://dn0imdfp2uugu" path="res://scenes/npcs/capivara_npc.tscn" id="7_7kkf7"]
+[ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="7_gbldu"]
+[ext_resource type="PackedScene" uid="uid://dxc3ru0i7rc4w" path="res://scenes/npcs/pato_npc.tscn" id="9_862n7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6cyg"]
+texture = ExtResource("1_bvx6w")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_inxe8"]
+texture = ExtResource("2_gbldu")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vu72p"]
+texture = ExtResource("3_7kkf7")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:1/0 = 0
+7:1/0 = 0
+8:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+8:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+8:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+8:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+8:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ue40q"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_w6cyg")
+sources/1 = SubResource("TileSetAtlasSource_inxe8")
+sources/2 = SubResource("TileSetAtlasSource_vu72p")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fti8x"]
+size = Vector2(46, 28)
+
+[node name="policia_interior" type="Node2D" unique_id=1870828833]
+script = ExtResource("1_7ru1q")
+
+[node name="Piso" type="TileMapLayer" parent="." unique_id=1686616908]
+tile_map_data = PackedByteArray("AAD//wQAAQAAAAAAAAAAAAQAAQAAAAAAAAD8/wEAAgAGAAMAAAD8/wIAAgAGAAQAAAD8/wMAAgAGAAUAAAD9/wEAAgAHAAMAAAD9/wIAAgAHAAQAAAD9/wMAAgAHAAUAAAD+/wEAAgAIAAMAAAD+/wIAAgAIAAQAAAD+/wMAAgAIAAUAAAD//wEAAgAGAAMAAAD//wIAAgAGAAQAAAD//wMAAgAGAAUAAAAAAAEAAgAHAAMAAAAAAAIAAgAHAAQAAAAAAAMAAgAHAAUAAAABAAEAAgAIAAMAAAABAAIAAgAIAAQAAAABAAMAAgAIAAUAAAACAAEAAgAGAAMAAAACAAIAAgAGAAQAAAACAAMAAgAGAAUAAAADAAEAAgAHAAMAAAADAAIAAgAHAAQAAAADAAMAAgAHAAUAAAAEAAEAAgAIAAMAAAAEAAIAAgAIAAQAAAAEAAMAAgAIAAUAAAD8//7/AgABAAEAAAD8////AgAGAAQAAAD8/wAAAgAGAAUAAAD9//7/AgABAAEAAAD9////AgAHAAQAAAD9/wAAAgAHAAUAAAD+//7/AgABAAEAAAD+////AgAIAAQAAAD+/wAAAgAIAAUAAAD/////AgAGAAQAAAD//wAAAgAGAAUAAAAAAP//AgAHAAQAAAAAAAAAAgAHAAUAAAABAP//AgAIAAQAAAABAAAAAgAIAAUAAAACAP7/AgABAAEAAAACAP//AgAGAAQAAAACAAAAAgAGAAUAAAADAP7/AgABAAEAAAADAP//AgAHAAQAAAADAAAAAgAHAAUAAAAEAP7/AgABAAEAAAAEAP//AgAIAAQAAAAEAAAAAgAIAAUAAAALAP7/AgABAAEAAAALAP//AgABAAEAAAALAAAAAgABAAEAAAALAAEAAgABAAEAAAALAAIAAgABAAEAAAALAAMAAgABAAEAAAAIAAEAAgAGAAMAAAAIAAIAAgAGAAQAAAAIAAMAAgAGAAUAAAAJAAEAAgAHAAMAAAAJAAIAAgAHAAQAAAAJAAMAAgAHAAUAAAAKAAEAAgAIAAMAAAAKAAIAAgAIAAQAAAAKAAMAAgAIAAUAAAAFAAEAAgAGAAMAAAAFAAIAAgAGAAQAAAAFAAMAAgAGAAUAAAAGAAEAAgAHAAMAAAAGAAIAAgAHAAQAAAAGAAMAAgAHAAUAAAAHAAEAAgAIAAMAAAAHAAIAAgAIAAQAAAAHAAMAAgAIAAUAAAAFAP7/AgABAAEAAAAFAP//AgAGAAQAAAAFAAAAAgAGAAUAAAAGAP7/AgABAAEAAAAGAP//AgAHAAQAAAAGAAAAAgAHAAUAAAAHAP7/AgABAAEAAAAHAP//AgAIAAQAAAAHAAAAAgAIAAUAAAAIAP7/AgABAAEAAAAIAP//AgAGAAQAAAAIAAAAAgAGAAUAAAAJAP7/AgABAAEAAAAJAP//AgAHAAQAAAAJAAAAAgAHAAUAAAAKAP7/AgABAAEAAAAKAP//AgAIAAQAAAAKAAAAAgAIAAUAAAAFAAQAAQAAAAAAAAAFAAUAAgAGAAEAAAAFAAYAAgAGAAIAAAAGAAQAAQAAAAAAAAAGAAUAAgAHAAEAAAAGAAYAAgAHAAIAAAAHAAQAAgABAAEAAAAHAAUAAgAIAAEAAAAHAAYAAgAIAAIAAAAIAAQAAgABAAEAAAAIAAUAAgAGAAEAAAAIAAYAAgAGAAIAAAAJAAQAAgABAAEAAAAJAAUAAgAHAAEAAAAJAAYAAgAHAAIAAAAKAAQAAgABAAEAAAAKAAUAAgAIAAEAAAAKAAYAAgAIAAIAAAALAAQAAgABAAEAAAALAAUAAgABAAEAAAALAAYAAgABAAEAAAALAAcAAgABAAEAAAALAAgAAgABAAEAAAALAAkAAgABAAEAAAALAAoAAgABAAEAAAAIAAoAAgAGAAEAAAAJAAoAAgAHAAEAAAAKAAoAAgAIAAEAAAAIAAcAAgAGAAAAAAAIAAgAAgAGAAEAAAAIAAkAAgAGAAAAAAAJAAcAAgAHAAAAAAAJAAgAAgAHAAEAAAAJAAkAAgAHAAAAAAAKAAcAAgAIAAAAAAAKAAgAAgAIAAEAAAAKAAkAAgAIAAAAAAAFAAcAAgAGAAAAAAAFAAgAAgAGAAEAAAAFAAkAAgAGAAAAAAAGAAcAAgAHAAAAAAAGAAgAAgAHAAEAAAAGAAkAAgAHAAAAAAAHAAcAAgAIAAAAAAAHAAgAAgAIAAEAAAAHAAkAAgAIAAAAAAAFAAoAAgAGAAEAAAAGAAoAAgAHAAEAAAAHAAoAAgAIAAEAAAABAAQAAgABAAEAAAACAAQAAgABAAEAAAADAAQAAgABAAEAAAAEAAQAAgABAAEAAAAEAAUAAgABAAEAAAAEAAYAAgABAAEAAAAEAAcAAgABAAEAAAAEAAgAAgABAAEAAAAEAAkAAgABAAEAAAAEAAoAAgABAAEAAAD7//7/AgABAAEAAAD7////AgABAAEAAAD7/wAAAgABAAEAAAD7/wEAAgABAAEAAAD7/wIAAgABAAEAAAD7/wMAAgABAAEAAAD7/wQAAgABAAEAAAD8/wQAAgABAAEAAAD9/wQAAgABAAEAAAD+/wQAAgABAAEAAAABAP7/AgABAAEAAAAAAP7/AgABAAEAAAD///7/AgABAAEAAAAFAAsAAgAGAAIAAAAGAAsAAgAHAAIAAAAHAAsAAgAIAAIAAAAIAAsAAgAGAAIAAAAJAAsAAgAHAAIAAAAKAAsAAgAIAAIAAAAEAAsAAgABAAEAAAAEAAwAAgABAAEAAAAFAAwAAgABAAEAAAAGAAwAAgABAAEAAAAHAAwAAgABAAEAAAAIAAwAAgABAAEAAAAJAAwAAgABAAEAAAAKAAwAAgABAAEAAAALAAwAAgABAAEAAAALAAsAAgABAAEAAAA=")
+tile_set = SubResource("TileSet_ue40q")
+
+[node name="Portas" type="Node2D" parent="." unique_id=300778286]
+
+[node name="Sair" type="Area2D" parent="Portas" unique_id=1173711083]
+script = ExtResource("4_7ru1q")
+cena_destino = "uid://b3f1vydebqnhb"
+posicaoSaida = Vector2(136, -395)
+direcao = "baixo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Sair" unique_id=1197906582]
+position = Vector2(2, 51)
+shape = SubResource("RectangleShape2D_fti8x")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portas/Sair" unique_id=306388211]
+position = Vector2(0, 74)
+texture = ExtResource("5_862n7")
+
+[node name="Personagens" type="Node2D" parent="." unique_id=602975016]
+y_sort_enabled = true
+
+[node name="Player" parent="Personagens" unique_id=1284986966 instance=ExtResource("6_kltf1")]
+z_index = 0
+position = Vector2(128, 125)
+
+[node name="CapivaraNPC" parent="Personagens" unique_id=816674935 instance=ExtResource("7_7kkf7")]
+position = Vector2(165, 83)
+
+[node name="PatoNPC" parent="Personagens" unique_id=1195881267 instance=ExtResource("9_862n7")]
+position = Vector2(165, 113)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1696820031]
+
+[node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=141633595]
+position = Vector2(-255, -303)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("7_gbldu")

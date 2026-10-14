@@ -46,7 +46,7 @@ const DIALOGOS = {
 	"tigrinho": [
 		{
 			"quem": ["Npc", "Tigrinho"],
-			"texto": "E aí, meu cria! Bora testar a sorte?"
+			"texto": "Opa, amigo! To pagando hoje, bora?"
 		},
 		{
 			"tipo": "escolha",
@@ -73,6 +73,66 @@ const DIALOGOS = {
 			"texto": "Suave então. Volta quando quiser!",
 			"fim": true
 		}
+	],
+	"tigrinho-prisao": [
+		{
+			"quem": ["Player", ""],
+			"texto": "Oxi, você não tava lá fora?"
+		},
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "Nãooo, aquele é meu irmão gêmeo"
+		},
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "Enfim... Bora tentar a sorte?"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Vai querer apostar? (Só pode uma vez por personagem)",
+			"opcoes": [
+				{
+					"texto": "Apostar",
+					"proxima_fala": 2
+				},
+				{
+					"texto": "Hoje não",
+					"proxima_fala": 3
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "",
+			"resultado_aposta": true,
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Tigrinho"],
+			"texto": "Suave então. Volta quando quiser!",
+			"fim": true
+		}
+	],
+	
+	"Capivara-prisao": [
+		{
+			"quem": ["Npc", "Capi Talista"],
+			"texto": "Sai pra lá imundo, me deixa!"
+		},
+	],
+	"Pato-prisao": [
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "quack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Que?"
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "QUAAAAAAAACKKKKKKKK!!!!!!"
+		},
 	]
 }
 

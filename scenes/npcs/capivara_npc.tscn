@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://dn0imdfp2uugu"]
+
+[ext_resource type="Script" uid="uid://bqm4csgg6hp04" path="res://scripts/capivara_npc.gd" id="1_vtt1o"]
+[ext_resource type="Texture2D" uid="uid://7toup2bnmkm" path="res://sprites/sheet/CapiTalista.png" id="1_xov0y"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_iny5u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6sly"]
+atlas = ExtResource("1_xov0y")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26022"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c6sly")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_shdkb"]
+size = Vector2(17, 8.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gv42"]
+size = Vector2(20, 25.5)
+
+[node name="CapivaraNPC" type="RigidBody2D" unique_id=816674935]
+gravity_scale = 0.0
+script = ExtResource("1_vtt1o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652983185]
+sprite_frames = SubResource("SpriteFrames_26022")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801904357]
+position = Vector2(-0.5, 11.25)
+shape = SubResource("RectangleShape2D_shdkb")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1324278492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1266161956]
+position = Vector2(-19, 10)
+shape = SubResource("RectangleShape2D_7gv42")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=871259215]
+z_index = 4
+position = Vector2(0, -19)
+texture = ExtResource("3_iny5u")

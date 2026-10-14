@@ -42,7 +42,7 @@ func _input(event: InputEvent) -> void:
 			Global.posicao_player = posicaoSaida
 			Global.definir_posicao = true
 			
-			Global.ultimaDirecao = direcao
+			Global.ultimaDirecao = direcao                                                                                                                                                        
 			
 			Transicao.mudar_cena(cena_destino)
 			

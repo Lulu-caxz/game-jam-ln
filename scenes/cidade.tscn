@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://ddcs11ilecq7w" path="res://scenes/npcs/cobraDora.tscn" id="3_3pc5y"]
 [ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="4_cp173"]
 [ext_resource type="PackedScene" uid="uid://dr0csejcymely" path="res://scenes/npcs/tigrinho.tscn" id="5_7t1fb"]
+[ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="6_vkox8"]
 
 [node name="Jogo" type="Node2D" unique_id=748497634]
 
@@ -28,3 +29,10 @@ position = Vector2(-78, -214)
 
 [node name="CobraDora" parent="Personagens" unique_id=505782711 instance=ExtResource("3_3pc5y")]
 position = Vector2(-119, -269)
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=232321833]
+
+[node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=1700386160]
+position = Vector2(-255, -303)
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("6_vkox8")

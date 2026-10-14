@@ -4,7 +4,7 @@ extends CharacterBody2D
 @onready var somPassoPiso: AudioStreamPlayer = $PassoPiso
 @onready var somQuack: AudioStreamPlayer = $Quack
 
-@onready var dinheiroHUD: Sprite2D = $Camera2D/HUD/Dinheiro
+@onready var dinheiroHUD: Sprite2D = get_tree().current_scene.get_node("HUD/Dinheiro")
 
 const VELOCIDADE = 80.0
 const INTERVALO_PASSO = 0.35
@@ -51,6 +51,8 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	player_atual = Global.sequencia_players[Global.atual]
 	ultima_direcao_nome = Global.ultimaDirecao
+	
+	dinheiroHUD.position = Vector2(15, 15)
 	
 	dinheiroHUD.modulate.a = 0.2
 	mudarAnimacao()
@@ -101,14 +103,14 @@ func atualizar_HUD():
 			if Global.dinheiroCapivara:
 				dinheiroHUD.modulate.a = 1
 			else:
-					dinheiroHUD.modulate.a = 0.2
+				dinheiroHUD.modulate.a = 0.2
 		"Pato":
 			if Global.dinheiroPato:
 				dinheiroHUD.modulate.a = 1
 			else:
-					dinheiroHUD.modulate.a = 0.2
+				dinheiroHUD.modulate.a = 0.2
 		"Veado":
 			if Global.dinheiroVeado:
 				dinheiroHUD.modulate.a = 1
 			else:
-					dinheiroHUD.modulate.a = 0.2
+				dinheiroHUD.modulate.a = 0.2
