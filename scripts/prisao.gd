@@ -1,8 +1,8 @@
 extends Node2D
 
-@onready var CapivaraNPC:RigidBody2D = $Personagens/CapivaraNPC
-@onready var PatoNPC:RigidBody2D = $Personagens/PatoNPC
-@onready var GadoNPC:RigidBody2D = $Personagens/GadoNPC
+@onready var CapivaraNPC:RigidBody2D = $YSort/CapivaraNPC
+@onready var PatoNPC:RigidBody2D = $YSort/PatoNPC
+@onready var GadoNPC:RigidBody2D = $YSort/GadoNPC
 
 # Called when the node enters the scene tree for the first time.
 

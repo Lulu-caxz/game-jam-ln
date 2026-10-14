@@ -4,10 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dfdf5mgmw6m26" path="res://sprites/sheet/PsicoPatoSheet.png" id="2_0te5m"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_w85pi"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oe4uc"]
-atlas = ExtResource("2_0te5m")
-region = Rect2(32, 0, 32, 32)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0te5m"]
 atlas = ExtResource("2_0te5m")
 region = Rect2(96, 32, 32, 32)
@@ -27,9 +23,6 @@ region = Rect2(32, 32, 32, 32)
 [sub_resource type="SpriteFrames" id="SpriteFrames_tuyoq"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oe4uc")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0te5m")
 }],
@@ -74,7 +67,7 @@ script = ExtResource("1_oe4uc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1652983185]
 sprite_frames = SubResource("SpriteFrames_tuyoq")
-animation = &"baixo"
+animation = &"esquerda"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801904357]
 position = Vector2(-0.5, 11.25)
