@@ -1,25 +1,26 @@
 [gd_scene format=4 uid="uid://cia84hmm71es1"]
 
-[ext_resource type="Texture2D" uid="uid://bkpixctjotbcs" path="res://sprites/Tiles/Path_Middle.png" id="1_q5f7e"]
-[ext_resource type="Texture2D" uid="uid://bbv1o2giifk57" path="res://sprites/Tiles/Grass_Middle.png" id="2_0eb2t"]
-[ext_resource type="Texture2D" uid="uid://1shw3butmssy" path="res://sprites/tileset/TileSheet.png" id="3_lrwqc"]
-[ext_resource type="Script" uid="uid://c778ejnrvnvii" path="res://scripts/porta.gd" id="4_q2nlu"]
-[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="5_tde5t"]
-[ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="6_kmnkw"]
-[ext_resource type="PackedScene" uid="uid://dn0imdfp2uugu" path="res://scenes/npcs/capivara_npc.tscn" id="7_0eb2t"]
-[ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="7_br5vd"]
+[ext_resource type="Texture2D" uid="uid://bkpixctjotbcs" path="res://sprites/Tiles/Path_Middle.png" id="1_1g705"]
+[ext_resource type="Script" uid="uid://qvdw81twagy6" path="res://scripts/tribunal_interior.gd" id="1_cwnkk"]
+[ext_resource type="Texture2D" uid="uid://bbv1o2giifk57" path="res://sprites/Tiles/Grass_Middle.png" id="2_cwnkk"]
+[ext_resource type="Texture2D" uid="uid://1shw3butmssy" path="res://sprites/tileset/TileSheet.png" id="3_eee10"]
+[ext_resource type="Script" uid="uid://c778ejnrvnvii" path="res://scripts/porta.gd" id="4_511kj"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="5_djwlx"]
+[ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="6_ti67u"]
+[ext_resource type="PackedScene" uid="uid://dmy8n8vph7go6" path="res://scenes/npcs/gado_npc.tscn" id="7_1g705"]
+[ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="8_i84qd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jqix8"]
-texture = ExtResource("1_q5f7e")
+texture = ExtResource("1_1g705")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jadtc"]
-texture = ExtResource("2_0eb2t")
+texture = ExtResource("2_cwnkk")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wkp5a"]
-texture = ExtResource("3_lrwqc")
+texture = ExtResource("3_eee10")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -85,7 +86,8 @@ sources/2 = SubResource("TileSetAtlasSource_wkp5a")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26022"]
 size = Vector2(212, 19)
 
-[node name="Prefeitura_interior" type="Node2D" unique_id=204192345]
+[node name="Tribunal_interior" type="Node2D" unique_id=204192345]
+script = ExtResource("1_cwnkk")
 
 [node name="Piso" type="TileMapLayer" parent="." unique_id=1456062857]
 tile_map_data = PackedByteArray("AAABAAQAAQAAAAAAAAACAAQAAQAAAAAAAAD+/wQAAQAAAAAAAAD9/wQAAQAAAAAAAAD6/wQAAQAAAAAAAAD7/wQAAQAAAAAAAAAEAAQAAQAAAAAAAAAFAAQAAQAAAAAAAAD4//7/AgABAAQAAAD4////AgABAAQAAAD4/wAAAgABAAQAAAD4/wEAAgABAAQAAAD4/wIAAgABAAQAAAD4/wMAAgABAAQAAAD5//7/AgABAAQAAAD5////AgABAAQAAAD5/wAAAgABAAQAAAD5/wEAAgABAAQAAAD5/wIAAgABAAQAAAD5/wMAAgABAAQAAAD6//7/AgABAAQAAAD6////AgABAAQAAAD6/wAAAgABAAQAAAD6/wEAAgABAAQAAAD6/wIAAgABAAQAAAD6/wMAAgABAAQAAAD7//7/AgABAAQAAAD7////AgABAAQAAAD7/wAAAgABAAQAAAD7/wEAAgABAAQAAAD7/wIAAgABAAQAAAD7/wMAAgABAAQAAAD8//7/AgABAAQAAAD8////AgABAAQAAAD8/wAAAgABAAQAAAD8/wEAAgABAAQAAAD8/wIAAgABAAQAAAD8/wMAAgABAAQAAAD9//7/AgABAAQAAAD9////AgABAAQAAAD9/wAAAgABAAQAAAD9/wEAAgABAAQAAAD9/wIAAgABAAQAAAD9/wMAAgABAAQAAAD+//7/AgABAAQAAAD+////AgABAAQAAAD+/wAAAgABAAQAAAD+/wEAAgABAAQAAAD+/wIAAgABAAQAAAD+/wMAAgABAAQAAAD///7/AgABAAQAAAD/////AgABAAQAAAD//wAAAgABAAQAAAD//wEAAgABAAQAAAD//wIAAgABAAQAAAD//wMAAgABAAQAAAAAAP7/AgABAAQAAAAAAP//AgABAAQAAAAAAAAAAgABAAQAAAAAAAEAAgABAAQAAAAAAAIAAgABAAQAAAAAAAMAAgABAAQAAAABAP7/AgABAAQAAAABAP//AgABAAQAAAABAAAAAgABAAQAAAABAAEAAgABAAQAAAABAAIAAgABAAQAAAABAAMAAgABAAQAAAACAP7/AgABAAQAAAACAP//AgABAAQAAAACAAAAAgABAAQAAAACAAEAAgABAAQAAAACAAIAAgABAAQAAAACAAMAAgABAAQAAAADAP7/AgABAAQAAAADAP//AgABAAQAAAADAAAAAgABAAQAAAADAAEAAgABAAQAAAADAAIAAgABAAQAAAADAAMAAgABAAQAAAAEAP7/AgABAAQAAAAEAP//AgABAAQAAAAEAAAAAgABAAQAAAAEAAEAAgABAAQAAAAEAAIAAgABAAQAAAAEAAMAAgABAAQAAAAFAP7/AgABAAQAAAAFAP//AgABAAQAAAAFAAAAAgABAAQAAAAFAAEAAgABAAQAAAAFAAIAAgABAAQAAAAFAAMAAgABAAQAAAAGAP7/AgABAAQAAAAGAP//AgABAAQAAAAGAAAAAgABAAQAAAAGAAEAAgABAAQAAAAGAAIAAgABAAQAAAAGAAMAAgABAAQAAAAHAP7/AgABAAQAAAAHAP//AgABAAQAAAAHAAAAAgABAAQAAAAHAAEAAgABAAQAAAAHAAIAAgABAAQAAAAHAAMAAgABAAQAAADy//7/AgABAAQAAADz//7/AgABAAQAAAD0//7/AgABAAQAAAD1//7/AgABAAQAAAD2//7/AgABAAQAAAD3//7/AgABAAQAAADy//z/AgABAAQAAADy//3/AgABAAQAAADy////AgABAAQAAADy/wAAAgABAAQAAADz//z/AgABAAQAAADz//3/AgABAAQAAADz////AgABAAQAAADz/wAAAgABAAQAAAD0//z/AgABAAQAAAD0//3/AgABAAQAAAD0////AgABAAQAAAD0/wAAAgABAAQAAAD1//z/AgABAAQAAAD1//3/AgABAAQAAAD1////AgABAAQAAAD1/wAAAgABAAQAAAD2//z/AgABAAQAAAD2//3/AgABAAQAAAD2////AgABAAQAAAD2/wAAAgABAAQAAAD3//z/AgABAAQAAAD3//3/AgABAAQAAAD3////AgABAAQAAAD3/wAAAgABAAQAAAD4//z/AgABAAQAAAD4//3/AgABAAQAAAD5//z/AgABAAQAAAD5//3/AgABAAQAAAD6//z/AgABAAQAAAD6//3/AgABAAQAAAD7//z/AgABAAQAAAD7//3/AgABAAQAAAD8//z/AgABAAQAAAD8//3/AgABAAQAAAD9//z/AgABAAQAAAD9//3/AgABAAQAAAD+//z/AgABAAQAAAD+//3/AgABAAQAAAD///z/AgABAAQAAAD///3/AgABAAQAAAAAAPz/AgABAAQAAAAAAP3/AgABAAQAAAABAPz/AgABAAQAAAABAP3/AgABAAQAAAACAPz/AgABAAQAAAACAP3/AgABAAQAAAADAPz/AgABAAQAAAADAP3/AgABAAQAAAAEAPz/AgABAAQAAAAEAP3/AgABAAQAAAAFAPz/AgABAAQAAAAFAP3/AgABAAQAAAAGAPz/AgABAAQAAAAGAP3/AgABAAQAAAAHAPz/AgABAAQAAAAHAP3/AgABAAQAAAAIAPz/AgABAAQAAAAIAP3/AgABAAQAAAAIAP7/AgABAAQAAAAIAP//AgABAAQAAAAIAAAAAgABAAQAAAAJAPz/AgABAAQAAAAJAP3/AgABAAQAAAAJAP7/AgABAAQAAAAJAP//AgABAAQAAAAJAAAAAgABAAQAAAAKAPz/AgABAAQAAAAKAP3/AgABAAQAAAAKAP7/AgABAAQAAAAKAP//AgABAAQAAAAKAAAAAgABAAQAAAALAPz/AgABAAQAAAALAP3/AgABAAQAAAALAP7/AgABAAQAAAALAP//AgABAAQAAAALAAAAAgABAAQAAAAMAPz/AgABAAQAAAAMAP3/AgABAAQAAAAMAP7/AgABAAQAAAAMAP//AgABAAQAAAAMAAAAAgABAAQAAAANAPz/AgABAAQAAAANAP3/AgABAAQAAAANAP7/AgABAAQAAAANAP//AgABAAQAAAANAAAAAgABAAQAAAD//wQAAgABAAEAAAAAAAQAAgABAAEAAAADAAQAAgABAAEAAAAGAAQAAgABAAEAAAAHAAQAAgABAAEAAAAIAAQAAgABAAEAAAAIAAMAAgABAAEAAAAIAAIAAgABAAEAAAAIAAEAAgABAAEAAAAJAAEAAgABAAEAAAAKAAEAAgABAAEAAAALAAEAAgABAAEAAAAMAAEAAgABAAEAAAANAAEAAgABAAEAAAAOAAEAAgABAAEAAAAOAAAAAgABAAEAAAAOAP//AgABAAEAAAAOAP7/AgABAAEAAAAOAP3/AgABAAEAAAAOAPz/AgABAAEAAAAOAPv/AgABAAEAAAANAPv/AgABAAEAAAAMAPv/AgABAAEAAAALAPv/AgABAAEAAAAKAPv/AgABAAEAAAAJAPv/AgABAAEAAAAIAPv/AgABAAEAAAAHAPv/AgABAAEAAAAGAPv/AgABAAEAAAAFAPv/AgABAAEAAAAEAPv/AgABAAEAAAADAPv/AgABAAEAAAACAPv/AgABAAEAAAABAPv/AgABAAEAAAAAAPv/AgABAAEAAAD///v/AgABAAEAAAD+//v/AgABAAEAAAD9//v/AgABAAEAAAD8//v/AgABAAEAAAD7//v/AgABAAEAAAD6//v/AgABAAEAAAD5//v/AgABAAEAAAD4//v/AgABAAEAAAD3//v/AgABAAEAAAD2//v/AgABAAEAAAD1//v/AgABAAEAAAD0//v/AgABAAEAAADz//v/AgABAAEAAADy//v/AgABAAEAAADx//v/AgABAAEAAADx//z/AgABAAEAAADx//3/AgABAAEAAADx//7/AgABAAEAAADx////AgABAAEAAADx/wAAAgABAAEAAADx/wEAAgABAAEAAADy/wEAAgABAAEAAADz/wEAAgABAAEAAAD0/wEAAgABAAEAAAD1/wEAAgABAAEAAAD2/wEAAgABAAEAAAD3/wEAAgABAAEAAAD3/wIAAgABAAEAAAD3/wMAAgABAAEAAAD3/wQAAgABAAEAAAD4/wQAAgABAAEAAAD5/wQAAgABAAEAAAD8/wQAAgABAAEAAAA=")
@@ -94,7 +96,7 @@ tile_set = SubResource("TileSet_shdkb")
 [node name="Portas" type="Node2D" parent="." unique_id=354121929]
 
 [node name="Sair" type="Area2D" parent="Portas" unique_id=1441457998]
-script = ExtResource("4_q2nlu")
+script = ExtResource("4_511kj")
 cena_destino = "uid://b3f1vydebqnhb"
 posicaoSaida = Vector2(-184, -449)
 direcao = "baixo"
@@ -105,16 +107,16 @@ shape = SubResource("RectangleShape2D_26022")
 
 [node name="Sprite2D" type="Sprite2D" parent="Portas/Sair" unique_id=1471232468]
 position = Vector2(0, 74)
-texture = ExtResource("5_tde5t")
+texture = ExtResource("5_djwlx")
 
 [node name="Personagens" type="Node2D" parent="." unique_id=1154291211]
 y_sort_enabled = true
 
-[node name="Player" parent="Personagens" unique_id=1284986966 instance=ExtResource("6_kmnkw")]
+[node name="Player" parent="Personagens" unique_id=1284986966 instance=ExtResource("6_ti67u")]
 z_index = 0
 position = Vector2(0, -35)
 
-[node name="CapivaraNPC" parent="Personagens" unique_id=816674935 instance=ExtResource("7_0eb2t")]
+[node name="GadoNPC" parent="Personagens" unique_id=816674935 instance=ExtResource("7_1g705")]
 position = Vector2(0, -48)
 direcao = "baixo"
 
@@ -123,4 +125,4 @@ direcao = "baixo"
 [node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=743356019]
 position = Vector2(-255, -303)
 scale = Vector2(0.02, 0.02)
-texture = ExtResource("7_br5vd")
+texture = ExtResource("8_i84qd")

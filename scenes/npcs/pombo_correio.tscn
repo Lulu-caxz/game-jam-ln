@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cg2xqlu850644"]
+
+[ext_resource type="Texture2D" uid="uid://beg40ixpsadbx" path="res://sprites/npcs/PomboCorreio.png" id="1_cxrqb"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ccxe0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qcvg8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cxrqb")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c00vd"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4civj"]
+size = Vector2(42, 25.5)
+
+[node name="pombo_correio" type="RigidBody2D" unique_id=1415550215]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=724554583]
+position = Vector2(9.536743e-07, -4.999999)
+sprite_frames = SubResource("SpriteFrames_qcvg8")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801365878]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_c00vd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1985593958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1248124064]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_4civj")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=1670944691]
+z_index = 4
+position = Vector2(0, -20)
+texture = ExtResource("2_ccxe0")

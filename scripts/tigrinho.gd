@@ -70,7 +70,7 @@ func marcar_aposta(jogador: String) -> void:
 func apostar(jogador: String) -> bool:
 	var chance = randf()
 
-	if chance < 0.3:
+	if chance < 0.5:
 		match jogador:
 			"Capivara":
 				Global.dinheiroCapivara = true

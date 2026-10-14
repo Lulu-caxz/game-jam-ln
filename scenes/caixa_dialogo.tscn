@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="1_gdc72"]
 [ext_resource type="Script" uid="uid://njqbp022fcc7" path="res://scripts/caixa_dialogo.gd" id="1_red54"]
-[ext_resource type="Texture2D" uid="uid://b342kcb4u5ijj" path="res://sprites/Sair.png" id="3_rn1cx"]
+[ext_resource type="Texture2D" uid="uid://eg74c1rl751d" path="res://sprites/Sair.png" id="3_rn1cx"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="4_a6elf"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="4_red54"]
 [ext_resource type="AudioStream" uid="uid://ccwb6xgdgyc44" path="res://sounds/SFX/Typing.wav" id="4_rn1cx"]
@@ -34,7 +34,7 @@ patch_margin_bottom = 4
 
 [node name="Sair" type="Sprite2D" parent="NinePatchRect" unique_id=272568452]
 z_index = -1
-position = Vector2(207, 14)
+position = Vector2(208, 14)
 texture = ExtResource("3_rn1cx")
 
 [node name="Npc" type="Sprite2D" parent="NinePatchRect" unique_id=1244208906]

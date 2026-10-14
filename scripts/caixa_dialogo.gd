@@ -334,11 +334,8 @@ func selecionar_escolha(indice: int) -> void:
 	# O NPC processa a escolha e atualiza o resultado global.
 	escolha_realizada.emit(resultado_escolha)
 
-	# A aposta bloqueada vai direto para a mensagem explicativa.
-	if idDialogo == "tigrinho" and resultado_escolha == 1:
-		i_fala = 2
-	else:
-		i_fala = int(opcao["proxima_fala"])
+	# Vai para a próxima fala definida na opção.
+	i_fala = int(opcao["proxima_fala"])
 
 	mostrar_texto()
 

@@ -210,7 +210,6 @@ tile_set = SubResource("TileSet_1jtul")
 
 [node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=1700386160]
 position = Vector2(-255, -303)
-scale = Vector2(0.02, 0.02)
 texture = ExtResource("6_vkox8")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=264033033]

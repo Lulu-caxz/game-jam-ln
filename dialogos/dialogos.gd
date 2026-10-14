@@ -93,11 +93,11 @@ const DIALOGOS = {
 			"opcoes": [
 				{
 					"texto": "Apostar",
-					"proxima_fala": 2
+					"proxima_fala": 4
 				},
 				{
 					"texto": "Hoje não",
-					"proxima_fala": 3
+					"proxima_fala": 5
 				}
 			]
 		},

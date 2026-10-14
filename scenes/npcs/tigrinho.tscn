@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://dr0csejcymely"]
 
 [ext_resource type="Script" uid="uid://c3gugfv0rxopm" path="res://scripts/tigrinho.gd" id="1_ey4oj"]
-[ext_resource type="Texture2D" uid="uid://cbais2hxjg74t" path="res://sprites/npcs/tigrinho.jpg" id="1_xtccj"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ey4oj"]
+[ext_resource type="Texture2D" uid="uid://bcr55kv5fwpc3" path="res://sprites/npcs/Tigrinho.png" id="2_hsxmv"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hsxmv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_xtccj")
+"texture": ExtResource("2_hsxmv")
 }],
 "loop": 1,
 "name": &"idle",
@@ -26,8 +26,7 @@ gravity_scale = 0.0
 script = ExtResource("1_ey4oj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329932903]
-position = Vector2(9.536743e-07, -2.9999993)
-scale = Vector2(0.03448276, 0.043887146)
+position = Vector2(9.536743e-07, -4.999999)
 sprite_frames = SubResource("SpriteFrames_hsxmv")
 animation = &"idle"
 autoplay = "idle"

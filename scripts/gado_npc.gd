@@ -6,7 +6,12 @@ extends NPCBase
 
 func _ready() -> void:
 	super._ready()
-	id_dialogo = "Gado-prisao"
+	if get_tree().current_scene.name == "policia_interior":
+		id_dialogo = "Gado-prisao"
+	elif get_tree().current_scene.name == "tribunal_interior":
+		id_dialogo = "Gado-tribunal"
+		
+	
 	
 	match direcao:
 		"cima":

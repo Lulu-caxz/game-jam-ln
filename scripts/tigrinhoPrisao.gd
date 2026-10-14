@@ -28,9 +28,9 @@ func _ao_realizar_escolha(resultado: int) -> void:
 	Global.resultadoApostaTigrinho = apostar(jogador)
 
 	if Global.resultadoApostaTigrinho:
-		Global.resultadoTigrinhoTexto = "É o Tigrinho! Te falei que eu pagava, você ganhou!"
+		Global.resultadoTigrinhoTexto = "É o Tigrão! Você ganhou a bolada!"
 	else:
-		Global.resultadoTigrinhoTexto = "Ixi, fiote... dessa vez não foi! Você perdeu!"
+		Global.resultadoTigrinhoTexto = "Eita... dessa vez não foi! Você perdeu!"
 
 
 func tem_dinheiro(jogador: String) -> bool:
@@ -70,14 +70,14 @@ func marcar_aposta(jogador: String) -> void:
 func apostar(jogador: String) -> bool:
 	var chance = randf()
 
-	if chance < 0.3:
+	if chance < 0.5:
 		match jogador:
 			"Capivara":
 				Global.dinheiroCapivara = true
 			"Pato":
 				Global.dinheiroPato = true
 			"Gado":
-				Global.dinheiroGadp = true
+				Global.dinheiroGado = true
 
 		return true
 

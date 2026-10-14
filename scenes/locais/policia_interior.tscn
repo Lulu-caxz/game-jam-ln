@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="7_gbldu"]
 [ext_resource type="PackedScene" uid="uid://dxc3ru0i7rc4w" path="res://scenes/npcs/pato_npc.tscn" id="9_862n7"]
 [ext_resource type="Texture2D" uid="uid://birqia406c650" path="res://sprites/luz.png" id="10_862n7"]
+[ext_resource type="PackedScene" uid="uid://dioqh3ruv3s0k" path="res://scenes/npcs/tigrinho_prisao.tscn" id="10_kltf1"]
 [ext_resource type="PackedScene" uid="uid://dmy8n8vph7go6" path="res://scenes/npcs/gado_npc.tscn" id="11_w6cyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6cyg"]
@@ -923,7 +924,7 @@ texture = ExtResource("10_862n7")
 texture_scale = 0.3
 
 [node name="PatoNPC" parent="YSort" unique_id=1195881267 instance=ExtResource("9_862n7")]
-position = Vector2(349, 525)
+position = Vector2(301, 525)
 direcao = "cima"
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/PatoNPC" unique_id=850231467]
@@ -933,11 +934,20 @@ texture = ExtResource("10_862n7")
 texture_scale = 0.3
 
 [node name="GadoNPC" parent="YSort" unique_id=1491776471 instance=ExtResource("11_w6cyg")]
-position = Vector2(260, 527)
+position = Vector2(249, 526)
 direcao = "cima"
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/GadoNPC" unique_id=1677524577]
 position = Vector2(0, 14)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("10_862n7")
+texture_scale = 0.3
+
+[node name="tigrinho-prisao" parent="YSort" unique_id=104609030 instance=ExtResource("10_kltf1")]
+position = Vector2(168, 454)
+
+[node name="PointLight2D" type="PointLight2D" parent="YSort/tigrinho-prisao" unique_id=2124274677]
+position = Vector2(0, 10)
 color = Color(1, 1, 0.41568628, 1)
 texture = ExtResource("10_862n7")
 texture_scale = 0.3

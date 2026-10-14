@@ -23,10 +23,11 @@ func _input(event: InputEvent) -> void:
 		if Global.sequencia_players[Global.atual] in Global.presos:
 			Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
 		elif Global.sequencia_players[Global.atual] == "Capivara":
-			Transicao.mudar_cena("res://scenes/locais/banco_interior.tscn")
-			
+			Transicao.mudar_cena("res://scenes/cidade.tscn")
 		elif  Global.sequencia_players[Global.atual] == "Pato":
 			Transicao.mudar_cena("res://scenes/cidade.tscn")
+		elif  Global.sequencia_players[Global.atual] == "Gado":
+			Transicao.mudar_cena("res://scenes/locais/tribunal_interior.tscn")
 		else:
 			Transicao.mudar_cena("res://scenes/cidade.tscn")
 		

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dioqh3ruv3s0k"]
+
+[ext_resource type="Script" uid="uid://ukw8oxqrk0t0" path="res://scripts/tigrinhoPrisao.gd" id="1_sfqcq"]
+[ext_resource type="Texture2D" uid="uid://bcr55kv5fwpc3" path="res://sprites/npcs/Tigrinho.png" id="2_sfqcq"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_ht1ma"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hsxmv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sfqcq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bkuky"]
+size = Vector2(16, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u6wd4"]
+size = Vector2(42, 25.5)
+
+[node name="tigrinho-prisao" type="RigidBody2D" unique_id=104609030]
+gravity_scale = 0.0
+script = ExtResource("1_sfqcq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=329932903]
+position = Vector2(9.536743e-07, -5.5)
+sprite_frames = SubResource("SpriteFrames_hsxmv")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=916662912]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_bkuky")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=917400649]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=982039251]
+position = Vector2(0, 25)
+shape = SubResource("RectangleShape2D_u6wd4")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=807548172]
+z_index = 4
+position = Vector2(0, -26)
+texture = ExtResource("3_ht1ma")
