@@ -584,13 +584,14 @@ z_index = 1
 script = ExtResource("1_g2els")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=300795729]
+position = Vector2(0, -10)
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 rotation_smoothing_enabled = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1317025680]
 modulate = Color(0.18717614, 0.18717614, 0.18717614, 1)
-position = Vector2(0, 16)
+position = Vector2(0, 6)
 amount = 24
 lifetime = 0.8
 process_material = SubResource("ParticleProcessMaterial_26022")
@@ -599,19 +600,22 @@ process_material = SubResource("ParticleProcessMaterial_26022")
 sprite_frames = SubResource("SpriteFrames_26022")
 animation = &"baixo_idle"
 speed_scale = 1.5
+offset = Vector2(0, -10)
 
 [node name="AnimacaoPato" type="AnimatedSprite2D" parent="." unique_id=334788191]
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"esquerda_move"
 speed_scale = 1.5
+offset = Vector2(0, -10)
 
 [node name="AnimacaoGado" type="AnimatedSprite2D" parent="." unique_id=381203521]
 sprite_frames = SubResource("SpriteFrames_shdkb")
 animation = &"direita_idle"
 speed_scale = 1.5
+offset = Vector2(0, -10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1356333279]
-position = Vector2(-0.49999988, 10.61359)
+position = Vector2(-0.5, 0.61359024)
 shape = SubResource("RectangleShape2D_26022")
 
 [node name="PassoPiso" type="AudioStreamPlayer" parent="." unique_id=1435570468]
