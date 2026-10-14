@@ -6,6 +6,7 @@ extends CharacterBody2D
 
 @onready var dinheiroHUD: Sprite2D = get_tree().current_scene.get_node("HUD/Dinheiro")
 
+
 const VELOCIDADE = 80.0
 const INTERVALO_PASSO = 0.35
 
@@ -38,7 +39,6 @@ func mudarAnimacao() -> void:
 	animacao = get_node("Animacao" + Global.sequencia_players[Global.atual])
 	animacao.show()
 	
-	# Quando muda de personagem para o Pato, gera o primeiro tempo aleatório
 	if Global.sequencia_players[Global.atual] == "Pato":
 		quack_timer = 0.0
 		tempo_proximo_quack = randf_range(10.0, 30.0)

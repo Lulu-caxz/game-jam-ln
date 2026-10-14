@@ -1,7 +1,7 @@
 extends Control
 
 @onready var capivara = $Capivara
-@onready var veado = $Veado
+@onready var gado = $Gado
 @onready var pato = $Pato
 
 @onready var hover: AudioStreamPlayer = $Hover
@@ -14,17 +14,25 @@ func _input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		if personagem_atual == capivara:
 			Global.atual = 0
-		if personagem_atual == veado:
+		if personagem_atual == gado:
 			Global.atual = 2
 		if personagem_atual == pato:
 			Global.atual = 1
 		
 		select.play()
-		Transicao.mudar_cena("res://scenes/cidade.tscn")
+		if Global.sequencia_players[Global.atual] in Global.presos:
+			Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
+		elif Global.sequencia_players[Global.atual] == "Capivara":
+			Transicao.mudar_cena("res://scenes/locais/banco_interior.tscn")
+			
+		elif  Global.sequencia_players[Global.atual] == "Pato":
+			Transicao.mudar_cena("res://scenes/cidade.tscn")
+		else:
+			Transicao.mudar_cena("res://scenes/cidade.tscn")
 		
 
 func _ready() -> void:
-	for personagem in [capivara, veado, pato]:
+	for personagem in [capivara, gado, pato]:
 		personagem.mouse_entered.connect(
 			_on_personagem_mouse_entered.bind(personagem)
 		)
@@ -49,7 +57,7 @@ func _on_personagem_mouse_exited(personagem: Control) -> void:
 		atualizar_selecao()
 
 func atualizar_selecao() -> void:
-	for personagem in [capivara, veado, pato]:
+	for personagem in [capivara, gado, pato]:
 		personagem.definir_selecionado(
 			personagem == personagem_atual
 		)
@@ -57,7 +65,7 @@ func atualizar_selecao() -> void:
 func aplicar_bloqueios() -> void:
 	var personagens = {
 		"Capivara": capivara,
-		"Veado": veado,
+		"Gado": gado,
 		"Pato": pato
 	}
 

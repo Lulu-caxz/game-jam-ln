@@ -4,6 +4,18 @@
 [ext_resource type="Texture2D" uid="uid://2014t1r18nai" path="res://sprites/sheet/AdvoGadoSheet.png" id="2_0kb1s"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_r5bub"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_jnd7l"]
+atlas = ExtResource("2_0kb1s")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kb1s"]
+atlas = ExtResource("2_0kb1s")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5bub"]
+atlas = ExtResource("2_0kb1s")
+region = Rect2(0, 32, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ckxc"]
 atlas = ExtResource("2_0kb1s")
 region = Rect2(32, 32, 32, 32)
@@ -12,10 +24,34 @@ region = Rect2(32, 32, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_jnd7l")
+}],
+"loop": 1,
+"name": &"baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kb1s")
+}],
+"loop": 1,
+"name": &"cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5bub")
+}],
+"loop": 1,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_7ckxc")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"esquerda",
 "speed": 5.0
 }]
 
@@ -31,6 +67,7 @@ script = ExtResource("1_jnd7l")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194065067]
 sprite_frames = SubResource("SpriteFrames_26022")
+animation = &"direita"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801904357]
 position = Vector2(0.5, 11.25)
