@@ -4,6 +4,8 @@ extends CharacterBody2D
 @onready var somPassoPiso: AudioStreamPlayer = $PassoPiso
 @onready var somQuack: AudioStreamPlayer = $Quack
 
+@onready var poeira: GPUParticles2D = $GPUParticles2D
+
 @onready var dinheiroHUD: Sprite2D = get_tree().current_scene.get_node("HUD/Dinheiro")
 
 
@@ -54,6 +56,8 @@ func _ready() -> void:
 	
 	dinheiroHUD.position = Vector2(15, 15)
 	
+	poeira.emitting = false
+	
 	dinheiroHUD.modulate.a = 0.2
 	mudarAnimacao()
 
@@ -70,31 +74,48 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 		animacao.play(ultima_direcao_nome + "_idle")
 		passo_timer = 0.0
-		return 
+		poeira.emitting = false
+		somPassoPiso.stop()
+		return
 	
 	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if input_dir != Vector2.ZERO:
 		var dir_chave := input_dir.round()
-		
+
 		if dir_chave in ANIMACOES_DIRECAO:
 			ultima_direcao_nome = ANIMACOES_DIRECAO[dir_chave]
-		
-		animacao.play(ultima_direcao_nome + "_move")
+
 		velocity = input_dir * VELOCIDADE
-		
-		passo_timer += delta
-		if passo_timer >= INTERVALO_PASSO and Global.dialogo_ativo == false:
-			somPassoPiso.play()
+		move_and_slide()
+
+		var velocidade_real = get_real_velocity()
+		var movimento_na_direcao = velocidade_real.dot(input_dir.normalized())
+
+		if movimento_na_direcao > 5.0:
+			animacao.play(ultima_direcao_nome + "_move")
+			poeira.emitting = true
+
+			passo_timer += delta
+
+			if passo_timer >= INTERVALO_PASSO:
+				if not somPassoPiso.playing:
+					somPassoPiso.play()
+				passo_timer = 0.0
+		else:
+			animacao.play(ultima_direcao_nome + "_idle")
+			poeira.emitting = false
 			passo_timer = 0.0
+			somPassoPiso.stop()
 	else:
-		animacao.play(ultima_direcao_nome + "_idle")
 		velocity = Vector2.ZERO
-		passo_timer = INTERVALO_PASSO 
+		animacao.play(ultima_direcao_nome + "_idle")
+		passo_timer = INTERVALO_PASSO
 		somPassoPiso.stop()
+		poeira.emitting = false
+		move_and_slide()
 	
 	atualizar_HUD()
-	move_and_slide()
 
 
 func atualizar_HUD():

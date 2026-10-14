@@ -7,6 +7,26 @@
 [ext_resource type="AudioStream" uid="uid://cmuy5kaedacaw" path="res://sounds/SFX/Passo_Piso.mp3" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://dho13l4g7e0q5" path="res://sounds/SFX/Quack.mp3" id="6_tuyoq"]
 
+[sub_resource type="Gradient" id="Gradient_tuyoq"]
+offsets = PackedFloat32Array(0, 0.27868852, 0.46721312, 1)
+colors = PackedColorArray(0.1882353, 0.1882353, 0.1882353, 0, 0.1882353, 0.1882353, 0.1882353, 1, 0.1882353, 0.1882353, 0.1882353, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_tuyoq"]
+gradient = SubResource("Gradient_tuyoq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_26022"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+spread = 180.0
+initial_velocity_min = 3.0
+initial_velocity_max = 10.0
+gravity = Vector3(0, 0, 0)
+damping_min = 5.0
+damping_max = 10.0
+scale_min = 0.29999998
+scale_max = 0.7
+color_ramp = SubResource("GradientTexture1D_tuyoq")
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuyoq"]
 atlas = ExtResource("2_qlg0r")
 region = Rect2(64, 32, 32, 32)
@@ -568,6 +588,13 @@ position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 rotation_smoothing_enabled = true
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1317025680]
+modulate = Color(0.18717614, 0.18717614, 0.18717614, 1)
+position = Vector2(0, 16)
+amount = 24
+lifetime = 0.8
+process_material = SubResource("ParticleProcessMaterial_26022")
+
 [node name="AnimacaoCapivara" type="AnimatedSprite2D" parent="." unique_id=294652535]
 sprite_frames = SubResource("SpriteFrames_26022")
 animation = &"baixo_idle"
@@ -589,7 +616,7 @@ shape = SubResource("RectangleShape2D_26022")
 
 [node name="PassoPiso" type="AudioStreamPlayer" parent="." unique_id=1435570468]
 stream = ExtResource("5_qlg0r")
-volume_db = 10.0
+volume_db = 5.0
 
 [node name="Quack" type="AudioStreamPlayer" parent="." unique_id=72698709]
 stream = ExtResource("6_tuyoq")
