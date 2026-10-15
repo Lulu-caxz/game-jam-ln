@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://6awqydhuvcyr"]
+
+[ext_resource type="Script" uid="uid://d0jyh4uii72x5" path="res://scripts/zebrava.gd" id="1_xqfl2"]
+[ext_resource type="Texture2D" uid="uid://bfru721ybsb8y" path="res://sprites/npcs/Zebrava.png" id="2_rqrt3"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_ddsbq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rsrqx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_rqrt3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4civj"]
+size = Vector2(42, 25.5)
+
+[node name="Zebrava" type="RigidBody2D" unique_id=1415550215]
+gravity_scale = 0.0
+script = ExtResource("1_xqfl2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=724554583]
+position = Vector2(9.536743e-07, -4.999999)
+sprite_frames = SubResource("SpriteFrames_rsrqx")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1985593958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1248124064]
+position = Vector2(48, 89)
+shape = SubResource("RectangleShape2D_4civj")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=1670944691]
+z_index = 4
+position = Vector2(48, 47)
+texture = ExtResource("3_ddsbq")

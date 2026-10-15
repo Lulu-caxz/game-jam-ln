@@ -1,0 +1,286 @@
+[gd_scene format=4 uid="uid://v8beke027a5u"]
+
+[ext_resource type="Texture2D" uid="uid://cd5crfip4ly47" path="res://sprites/tileset/BancoSheet.png" id="1_2258q"]
+[ext_resource type="Texture2D" uid="uid://d307yt2ovxil8" path="res://sprites/tileset/BancoInterior.png" id="2_a4548"]
+[ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="3_q5f7e"]
+[ext_resource type="Script" uid="uid://c778ejnrvnvii" path="res://scripts/porta.gd" id="4_0eb2t"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="5_lrwqc"]
+[ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="6_0eb2t"]
+[ext_resource type="PackedScene" uid="uid://doyhx2gsiumrs" path="res://scenes/caixa_eletronico.tscn" id="6_lrwqc"]
+[ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="7_lrwqc"]
+[ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="8_q2nlu"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q2nlu"]
+texture = ExtResource("1_2258q")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_26022"]
+sources/0 = SubResource("TileSetAtlasSource_q2nlu")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tde5t"]
+texture = ExtResource("1_2258q")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4, -8, -4)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4, -8, -4)
+
+[sub_resource type="TileSet" id="TileSet_0n522"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_tde5t")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2258q"]
+texture = ExtResource("1_2258q")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+3:7/0 = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4, -8, -4, -8, 8)
+4:7/0 = 0
+4:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4, -8, -4, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_wkp5a"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_2258q")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kmnkw"]
+texture = ExtResource("1_2258q")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+4:6/0 = 0
+3:7/0 = 0
+4:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_shdkb"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_kmnkw")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_br5vd"]
+size = Vector2(50, 19)
+
+[node name="Banco_interior" type="Node2D" unique_id=1549650120]
+
+[node name="Piso" type="TileMapLayer" parent="." unique_id=229397699]
+tile_map_data = PackedByteArray("AAD1////AAAAAAQAAAD1/wAAAAAAAAUAAAD1/wEAAAAAAAYAAAD2////AAABAAQAAAD2/wAAAAABAAUAAAD2/wEAAAABAAYAAAD3////AAACAAQAAAD3/wAAAAACAAUAAAD3/wEAAAACAAYAAAD1/wIAAAAAAAQAAAD1/wMAAAAAAAUAAAD2/wIAAAABAAQAAAD2/wMAAAABAAUAAAD3/wIAAAACAAQAAAD3/wMAAAACAAUAAAD4/wIAAAAAAAQAAAD4/wMAAAAAAAUAAAD5/wIAAAABAAQAAAD5/wMAAAABAAUAAAD6/wIAAAACAAQAAAD6/wMAAAACAAUAAAD7/wIAAAAAAAQAAAD7/wMAAAAAAAUAAAD8/wIAAAABAAQAAAD8/wMAAAABAAUAAAD9/wIAAAACAAQAAAD9/wMAAAACAAUAAAD+/wIAAAAAAAQAAAD+/wMAAAAAAAUAAAD//wIAAAABAAQAAAD//wMAAAABAAUAAAAAAAIAAAACAAQAAAAAAAMAAAACAAUAAAABAAIAAAAAAAQAAAABAAMAAAAAAAUAAAACAAIAAAABAAQAAAACAAMAAAABAAUAAAADAAIAAAACAAQAAAADAAMAAAACAAUAAAAEAAIAAAAAAAQAAAAEAAMAAAAAAAUAAAAFAAIAAAABAAQAAAAFAAMAAAABAAUAAAAGAAIAAAACAAQAAAAGAAMAAAACAAUAAAAHAAIAAAAAAAQAAAAHAAMAAAAAAAUAAAAIAAIAAAABAAQAAAAIAAMAAAABAAUAAAAJAAIAAAACAAQAAAAJAAMAAAACAAUAAAAKAAIAAAAAAAQAAAAKAAMAAAAAAAUAAAAKAP//AAAAAAQAAAAKAAAAAAAAAAUAAAAKAAEAAAAAAAYAAAAHAP//AAAAAAQAAAAHAAAAAAAAAAUAAAAHAAEAAAAAAAYAAAAIAP//AAABAAQAAAAIAAAAAAABAAUAAAAIAAEAAAABAAYAAAAJAP//AAACAAQAAAAJAAAAAAACAAUAAAAJAAEAAAACAAYAAAAEAP//AAAAAAQAAAAEAAAAAAAAAAUAAAAEAAEAAAAAAAYAAAAFAP//AAABAAQAAAAFAAAAAAABAAUAAAAFAAEAAAABAAYAAAAGAP//AAACAAQAAAAGAAAAAAACAAUAAAAGAAEAAAACAAYAAAABAP//AAAAAAQAAAABAAAAAAAAAAUAAAABAAEAAAAAAAYAAAACAP//AAABAAQAAAACAAAAAAABAAUAAAACAAEAAAABAAYAAAADAP//AAACAAQAAAADAAAAAAACAAUAAAADAAEAAAACAAYAAAD+////AAAAAAQAAAD+/wAAAAAAAAUAAAD+/wEAAAAAAAYAAAD/////AAABAAQAAAD//wAAAAABAAUAAAD//wEAAAABAAYAAAAAAP//AAACAAQAAAAAAAAAAAACAAUAAAAAAAEAAAACAAYAAAD7////AAAAAAQAAAD7/wAAAAAAAAUAAAD7/wEAAAAAAAYAAAD8////AAABAAQAAAD8/wAAAAABAAUAAAD8/wEAAAABAAYAAAD9////AAACAAQAAAD9/wAAAAACAAUAAAD9/wEAAAACAAYAAAD4////AAAAAAQAAAD4/wAAAAAAAAUAAAD4/wEAAAAAAAYAAAD5////AAABAAQAAAD5/wAAAAABAAUAAAD5/wEAAAABAAYAAAD6////AAACAAQAAAD6/wAAAAACAAUAAAD6/wEAAAACAAYAAAA=")
+tile_set = SubResource("TileSet_26022")
+
+[node name="Paredes" type="TileMapLayer" parent="." unique_id=1850814277]
+tile_map_data = PackedByteArray("AAD1//z/AAABAAMAAAD1//3/AAABAAMAAAD1//7/AAABAAMAAAD2//z/AAABAAMAAAD2//3/AAABAAMAAAD2//7/AAABAAMAAAD3//z/AAABAAMAAAD3//3/AAABAAMAAAD3//7/AAABAAMAAAD4//z/AAABAAMAAAD4//3/AAABAAMAAAD4//7/AAABAAMAAAD5//z/AAABAAMAAAD5//3/AAABAAMAAAD5//7/AAABAAMAAAD6//z/AAABAAMAAAD6//3/AAABAAMAAAD6//7/AAABAAMAAAD7//z/AAABAAMAAAD7//3/AAABAAMAAAD7//7/AAABAAMAAAD8//z/AAABAAMAAAD8//3/AAABAAMAAAD8//7/AAABAAMAAAD9//z/AAABAAMAAAD9//3/AAABAAMAAAD9//7/AAABAAMAAAD+//z/AAABAAMAAAD+//3/AAABAAMAAAD+//7/AAABAAMAAAD///z/AAABAAMAAAD///3/AAABAAMAAAD///7/AAABAAMAAAAAAPz/AAABAAMAAAAAAP3/AAABAAMAAAAAAP7/AAABAAMAAAABAPz/AAABAAMAAAABAP3/AAABAAMAAAABAP7/AAABAAMAAAACAPz/AAABAAMAAAACAP3/AAABAAMAAAACAP7/AAABAAMAAAADAPz/AAABAAMAAAADAP3/AAABAAMAAAADAP7/AAABAAMAAAAEAPz/AAABAAMAAAAEAP3/AAABAAMAAAAEAP7/AAABAAMAAAAFAPz/AAABAAMAAAAFAP3/AAABAAMAAAAFAP7/AAABAAMAAAAGAPz/AAABAAMAAAAGAP3/AAABAAMAAAAGAP7/AAABAAMAAAAHAPz/AAABAAMAAAAHAP3/AAABAAMAAAAHAP7/AAABAAMAAAAIAPz/AAABAAMAAAAIAP3/AAABAAMAAAAIAP7/AAABAAMAAAAJAPz/AAABAAMAAAAJAP3/AAABAAMAAAAJAP7/AAABAAMAAAAKAPz/AAABAAMAAAAKAP3/AAABAAMAAAAKAP7/AAABAAMAAAD7/wMAAAACAAMAAAD8/wMAAAADAAMAAAADAAMAAAACAAMAAAAEAAMAAAADAAMAAAA=")
+tile_set = SubResource("TileSet_0n522")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1196239863]
+modulate = Color(1, 1, 1, 0.24705882)
+texture = ExtResource("2_a4548")
+
+[node name="Caixas" type="Node2D" parent="." unique_id=2057644452]
+
+[node name="Caixa_eletronico" parent="Caixas" unique_id=1415550215 instance=ExtResource("6_lrwqc")]
+position = Vector2(-148, -24)
+
+[node name="Caixa_eletronico2" parent="Caixas" unique_id=1491661744 instance=ExtResource("6_lrwqc")]
+position = Vector2(-108, -24)
+
+[node name="Caixa_eletronico3" parent="Caixas" unique_id=1884485923 instance=ExtResource("6_lrwqc")]
+position = Vector2(-20, -24)
+
+[node name="Caixa_eletronico4" parent="Caixas" unique_id=2125196513 instance=ExtResource("6_lrwqc")]
+position = Vector2(20, -24)
+
+[node name="Caixa_eletronico5" parent="Caixas" unique_id=131859809 instance=ExtResource("6_lrwqc")]
+position = Vector2(108, -24)
+
+[node name="Caixa_eletronico6" parent="Caixas" unique_id=2060521278 instance=ExtResource("6_lrwqc")]
+position = Vector2(148, -24)
+
+[node name="YSort" type="Node2D" parent="." unique_id=1756504322]
+y_sort_enabled = true
+
+[node name="Moveis" type="TileMapLayer" parent="YSort" unique_id=262325208]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD7//z/AAADAAQAAAD7//3/AAADAAUAAAD7//7/AAADAAYAAAD7////AAADAAcAAAD8//z/AAAEAAQAAAD8//3/AAAEAAUAAAD8//7/AAAEAAYAAAD8////AAAEAAcAAAADAPz/AAADAAQAAAADAP3/AAADAAUAAAADAP7/AAADAAYAAAADAP//AAADAAcAAAAEAPz/AAAEAAQAAAAEAP3/AAAEAAUAAAAEAP7/AAAEAAYAAAAEAP//AAAEAAcAAAA=")
+tile_set = SubResource("TileSet_wkp5a")
+
+[node name="Teto" type="TileMapLayer" parent="YSort" unique_id=303460072]
+z_index = 1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD+/wQAAAAAAAMAAAD9/wQAAAAAAAMAAAD8/wQAAAAAAAMAAAD7/wQAAAAAAAMAAAD6/wQAAAAAAAMAAAD5/wQAAAAAAAMAAAD4/wQAAAAAAAMAAAD3/wQAAAAAAAMAAAD2/wQAAAAAAAMAAAD1/wQAAAAAAAMAAAD0/wQAAAAAAAMAAAABAAQAAAAAAAMAAAACAAQAAAAAAAMAAAADAAQAAAAAAAMAAAAEAAQAAAAAAAMAAAAFAAQAAAAAAAMAAAAGAAQAAAAAAAMAAAAHAAQAAAAAAAMAAAAIAAQAAAAAAAMAAAAJAAQAAAAAAAMAAAAKAAQAAAAAAAMAAAALAAQAAAAAAAMAAAD//wQAAAABAAYAAAAAAAQAAAACAAYAAAD0/wMAAAAAAAMAAAD0/wIAAAAAAAMAAAD0/wEAAAAAAAMAAAD0/wAAAAAAAAMAAAD0////AAAAAAMAAAD0//7/AAAAAAMAAAD0//3/AAAAAAMAAAD0//z/AAAAAAMAAAD0//v/AAAAAAMAAAD1//v/AAAAAAMAAAD2//v/AAAAAAMAAAD3//v/AAAAAAMAAAD4//v/AAAAAAMAAAD5//v/AAAAAAMAAAD6//v/AAAAAAMAAAD7//v/AAAAAAMAAAD8//v/AAAAAAMAAAD9//v/AAAAAAMAAAD+//v/AAAAAAMAAAD///v/AAAAAAMAAAAAAPv/AAAAAAMAAAABAPv/AAAAAAMAAAACAPv/AAAAAAMAAAADAPv/AAAAAAMAAAAEAPv/AAAAAAMAAAAFAPv/AAAAAAMAAAAGAPv/AAAAAAMAAAAHAPv/AAAAAAMAAAAIAPv/AAAAAAMAAAAJAPv/AAAAAAMAAAAKAPv/AAAAAAMAAAALAPv/AAAAAAMAAAALAPz/AAAAAAMAAAALAP3/AAAAAAMAAAALAP7/AAAAAAMAAAALAP//AAAAAAMAAAALAAAAAAAAAAMAAAALAAEAAAAAAAMAAAALAAIAAAAAAAMAAAALAAMAAAAAAAMAAAA=")
+tile_set = SubResource("TileSet_shdkb")
+
+[node name="Player" parent="YSort" unique_id=1284986966 instance=ExtResource("3_q5f7e")]
+z_index = 0
+position = Vector2(0, 13)
+
+[node name="Portas" type="Node2D" parent="." unique_id=1104130556]
+
+[node name="Sair" type="Area2D" parent="Portas" unique_id=1668366089]
+script = ExtResource("4_0eb2t")
+cena_destino = "uid://b3f1vydebqnhb"
+posicaoSaida = Vector2(352, 80)
+direcao = "baixo"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Portas/Sair" unique_id=586836212]
+position = Vector2(1, 55.5)
+shape = SubResource("RectangleShape2D_br5vd")
+
+[node name="Sprite2D" type="Sprite2D" parent="Portas/Sair" unique_id=231136139]
+z_index = 1
+position = Vector2(0, 82)
+texture = ExtResource("5_lrwqc")
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1973297092]
+
+[node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=1169394568]
+texture = ExtResource("6_0eb2t")
+
+[node name="Acoes" type="NinePatchRect" parent="HUD" unique_id=1996112046]
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 9.0
+texture = ExtResource("7_lrwqc")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="HUD/Acoes" unique_id=1386644275]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("8_q2nlu")
+theme_override_font_sizes/font_size = 10
+text = "Ações: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

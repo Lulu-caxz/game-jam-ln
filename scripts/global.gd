@@ -13,8 +13,8 @@ var definir_posicao: bool = false
 var personagens_usados: Array[String] = []
 
 const Nomes = [
-	{"Capivara": "CapiTalista"},
-	{"Pato": "PsicoPato"},
+	{"Capivara": "Capi Talista"},
+	{"Pato": "Psico Pato"},
 	{"Gado": "Advo Gado"}
 ]
 
@@ -43,8 +43,11 @@ func desbloquear_personagem(id: String) -> void:
 
 
 #VARIAVEIS DA HISTORIA
-var presos = ["Pato"]
+var presos = []
 var mortos = []
+var fugiu = []
+
+var resultadoCobraDoraTexto: String = ""
 
 var capivaraAcoes = 3
 var patoAcoes = 3
@@ -63,6 +66,10 @@ var gadoVezesPreso = 0
 var dinheiroCapivara = false
 var dinheiroPato = true 
 var dinheiroGado = false
+
+var capivaraJaPegouDinheiroNoBanco = false
+
+var resultadoBancoTexto: String = ""
 
 var bancoRoubado = false
 
@@ -90,3 +97,56 @@ var gadoSendoPerseguido = false
 
 #carros roubados
 var carrosRoubados = [] # 1 , 2 ,3 vai ser o id do carro fds
+
+
+
+func tem_dinheiro(jogador: String) -> bool:
+	match jogador:
+		"Capivara":
+			return Global.dinheiroCapivara
+		"Pato":
+			return Global.dinheiroPato
+		"Gado":
+			return Global.dinheiroGado
+
+	return false
+
+
+func gastar_dinheiro(jogador: String) -> void:
+	match jogador:
+		"Capivara":
+			Global.dinheiroCapivara = false
+		"Pato":
+			Global.dinheiroPato = false
+		"Gado":
+			Global.dinheiroGado = false
+
+func gastar_acao(jogador: String) -> void:
+	match jogador:
+		"Capivara":
+			Global.capivaraAcoes -= 1
+		"Pato":
+			Global.patoAcoes -= 1
+		"Gado":
+			Global.gadoAcoes -= 1
+
+func tem_equipamento(jogador: String) -> bool:
+	match jogador:
+		"Capivara":
+			return Global.capivaraTemEquipamentoPraFugir
+		"Pato":
+			return Global.patoTemEquipamentoPraFugir
+		"Gado":
+			return Global.gadoTemEquipamentoPraFugir
+
+	return false
+
+
+func entregar_equipamento(jogador: String) -> void:
+	match jogador:
+		"Capivara":
+			Global.capivaraTemEquipamentoPraFugir = true
+		"Pato":
+			Global.patoTemEquipamentoPraFugir = true
+		"Gado":
+			Global.gadoTemEquipamentoPraFugir = true

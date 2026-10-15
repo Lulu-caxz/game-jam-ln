@@ -1,6 +1,5 @@
 extends NPCBase
 
-# Trava para evitar chamadas duplicadas durante o clique rápido
 var viajando: bool = false
 
 
@@ -49,16 +48,16 @@ func viajar_para_cidade() -> void:
 	Global.definir_posicao = true
 	Global.ultimaDirecao = "baixo"
 	
-	var jogador: String = Global.sequencia_players[Global.atual].to_lower()
+	var jogador: String = Global.sequencia_players[Global.atual]
 	
 	match jogador:
-		"capivara":
+		"Capivara":
 			Global.capivaraVezesPreso += 1
 			Global.capivaraForagido = true
-		"pato":
+		"Pato":
 			Global.patoVezesPreso += 1
 			Global.patoForagido = true
-		"gado":
+		"Gado":
 			Global.gadoVezesPreso += 1
 			Global.gadoForagido = true
 	

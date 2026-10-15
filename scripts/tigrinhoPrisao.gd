@@ -26,6 +26,8 @@ func _ao_realizar_escolha(resultado: int) -> void:
 	Global.statusApostaTigrinho = "apostou"
 
 	Global.resultadoApostaTigrinho = apostar(jogador)
+	
+	Global.gastar_acao(jogador)
 
 	if Global.resultadoApostaTigrinho:
 		Global.resultadoTigrinhoTexto = "É o Tigrão! Você ganhou a bolada!"

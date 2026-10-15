@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://doyhx2gsiumrs"]
+
+[ext_resource type="Script" uid="uid://cq551b8nbhasp" path="res://scripts/caixa_eletronico.gd" id="1_my2gh"]
+[ext_resource type="Texture2D" uid="uid://cd5crfip4ly47" path="res://sprites/tileset/BancoSheet.png" id="2_8v4xy"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_kq8o5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_imvpy"]
+atlas = ExtResource("2_8v4xy")
+region = Rect2(0, 0, 24, 38)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r1yqy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imvpy")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vocn4"]
+size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pbwlk"]
+size = Vector2(28, 15.75)
+
+[node name="Caixa_eletronico" type="RigidBody2D" unique_id=1415550215]
+gravity_scale = 0.0
+script = ExtResource("1_my2gh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=724554583]
+position = Vector2(9.536743e-07, -4.999999)
+sprite_frames = SubResource("SpriteFrames_r1yqy")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801365878]
+position = Vector2(0, 11)
+shape = SubResource("RectangleShape2D_vocn4")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1985593958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1248124064]
+position = Vector2(0, 21.125)
+shape = SubResource("RectangleShape2D_pbwlk")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=1670944691]
+z_index = 4
+position = Vector2(0, -20)
+texture = ExtResource("3_kq8o5")

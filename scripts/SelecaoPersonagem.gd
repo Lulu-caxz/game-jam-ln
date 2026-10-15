@@ -23,7 +23,7 @@ func _input(event: InputEvent) -> void:
 		if Global.sequencia_players[Global.atual] in Global.presos:
 			Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
 		elif Global.sequencia_players[Global.atual] == "Capivara":
-			Transicao.mudar_cena("res://scenes/cidade.tscn")
+			Transicao.mudar_cena("res://scenes/locais/banco_interior.tscn")
 		elif  Global.sequencia_players[Global.atual] == "Pato":
 			Transicao.mudar_cena("res://scenes/cidade.tscn")
 		elif  Global.sequencia_players[Global.atual] == "Gado":
@@ -46,31 +46,73 @@ func _ready() -> void:
 
 func _on_personagem_mouse_entered(personagem: Control) -> void:
 	if personagem.bloqueado:
+		personagem.mouse_sobre = true
+		personagem.atualizar_visual()
 		return
 
 	personagem_atual = personagem
 	hover.play()
 	atualizar_selecao()
 
+
 func _on_personagem_mouse_exited(personagem: Control) -> void:
+	if personagem.bloqueado:
+		personagem.mouse_sobre = false
+		personagem.atualizar_visual()
+		return
+
 	if personagem_atual == personagem:
 		personagem_atual = null
 		atualizar_selecao()
 
 func atualizar_selecao() -> void:
 	for personagem in [capivara, gado, pato]:
-		personagem.definir_selecionado(
-			personagem == personagem_atual
-		)
+		if personagem.bloqueado:
+			personagem.selecionado = false
+			personagem.atualizar_visual()
+		else:
+			personagem.definir_selecionado(
+				personagem == personagem_atual
+			)
 
 func aplicar_bloqueios() -> void:
 	var personagens = {
 		"Capivara": capivara,
-		"Gado": gado,
-		"Pato": pato
+		"Pato": pato,
+		"Gado": gado
 	}
 
 	for id in personagens:
 		var personagem = personagens[id]
-		if Global.esta_bloqueado(id):
+
+		personagem.morreu = id in Global.mortos
+		personagem.fugiu = id in Global.fugiu
+
+		if deve_bloquear(id):
 			personagem.bloquear()
+		else:
+			personagem.desbloquear()
+
+
+func deve_bloquear(id: String) -> bool:
+	if Global.esta_bloqueado(id):
+		return true
+
+	match id:
+		"Capivara":
+			if Global.capivaraAcoes <= 0:
+				return true
+		"Pato":
+			if Global.patoAcoes <= 0:
+				return true
+		"Gado":
+			if Global.gadoAcoes <= 0:
+				return true
+
+	if id in Global.mortos:
+		return true
+
+	if id in Global.fugiu:
+		return true
+
+	return false

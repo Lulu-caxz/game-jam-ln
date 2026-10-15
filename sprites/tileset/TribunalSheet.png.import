@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjg5hfjni1dku"
-path="res://.godot/imported/Prisao.png-da6b4cdb04cda84d45774a459abd6b59.ctex"
+uid="uid://2jivau2610nh"
+path="res://.godot/imported/TribunalSheet.png-3b3f30bba899d5032572eb67f81b15dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/tileset/Prisao.png"
-dest_files=["res://.godot/imported/Prisao.png-da6b4cdb04cda84d45774a459abd6b59.ctex"]
+source_file="res://sprites/tileset/TribunalSheet.png"
+dest_files=["res://.godot/imported/TribunalSheet.png-3b3f30bba899d5032572eb67f81b15dd.ctex"]
 
 [params]
 

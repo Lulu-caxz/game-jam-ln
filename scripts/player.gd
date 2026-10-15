@@ -8,6 +8,8 @@ extends CharacterBody2D
 
 @onready var dinheiroHUD: Sprite2D = get_tree().current_scene.get_node("HUD/Dinheiro")
 @onready var paHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Pa")
+@onready var acoesHUD: Label = get_tree().current_scene.get_node_or_null("HUD/Acoes/Label")
+@onready var caixaAcoesHUD: NinePatchRect = get_tree().current_scene.get_node_or_null("HUD/Acoes")
 
 
 const VELOCIDADE = 80.0
@@ -56,9 +58,11 @@ func _ready() -> void:
 	ultima_direcao_nome = Global.ultimaDirecao
 	
 	dinheiroHUD.position = Vector2(15, 15)
+	caixaAcoesHUD.position = Vector2(325, 10)
 	if paHUD != null:
 		paHUD.position = Vector2(46, 15)
 		paHUD.modulate.a = 0.2
+	
 	
 	poeira.emitting = false
 	
@@ -120,6 +124,7 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 	
 	atualizar_HUD()
+	verificarNumeroAcoes()
 
 
 func atualizar_HUD():
@@ -127,20 +132,41 @@ func atualizar_HUD():
 	
 	var tem_pa: bool = false
 	var tem_dinheiro: bool = false
+	var acoes: String
 	
 	match player_atual:
 		"Capivara":
 			tem_pa = Global.capivaraTemEquipamentoPraFugir
 			tem_dinheiro = Global.dinheiroCapivara
+			acoes = str(Global.capivaraAcoes)
 		"Pato":
 			tem_pa = Global.patoTemEquipamentoPraFugir
 			tem_dinheiro = Global.dinheiroPato
+			acoes = str(Global.patoAcoes)
 		"Gado":
 			tem_pa = Global.gadoTemEquipamentoPraFugir
 			tem_dinheiro = Global.dinheiroGado
+			acoes = str(Global.gadoAcoes)
 
 	if paHUD != null:
 		paHUD.modulate.a = 1.0 if tem_pa else 0.2
 		
 	if dinheiroHUD != null:
 		dinheiroHUD.modulate.a = 1.0 if tem_dinheiro else 0.2
+	
+	acoesHUD.text = "Ações: " + acoes
+
+
+func verificarNumeroAcoes():
+	var jogador = Global.sequencia_players[Global.atual]
+	
+	match jogador:
+		"Capivara":
+			if Global.capivaraAcoes == 0:
+				Transicao.mudar_cena("res://scenes/selecao_personagem.tscn")
+		"Pato":
+			if Global.patoAcoes == 0:
+				Transicao.mudar_cena("res://scenes/selecao_personagem.tscn")
+		"Gado":
+			if Global.gadoAcoes == 0:
+				Transicao.mudar_cena("res://scenes/selecao_personagem.tscn")

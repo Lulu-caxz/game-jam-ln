@@ -134,6 +134,12 @@ func mostrar_texto() -> void:
 	if dialogo_data.get("resultado_compra_pombo", false):
 		texto_dialogo = Global.resultadoPomboTexto
 
+	if dialogo_data.get("resultado_cobra_dora", false):
+		texto_dialogo = Global.resultadoCobraDoraTexto
+	
+	if dialogo_data.get("resultado_banco", false):
+		texto_dialogo = Global.resultadoBancoTexto
+
 	Texto.text = texto_dialogo
 	Texto.visible_characters = 0
 

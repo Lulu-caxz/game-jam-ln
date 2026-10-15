@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://f1fs58wn85ku" path="res://scenes/poste.tscn" id="7_cp173"]
 [ext_resource type="Texture2D" uid="uid://bunkk7kjhc8jf" path="res://sprites/construcoes/banco.png" id="8_7t1fb"]
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
+[ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
+[ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v2a"]
 texture = ExtResource("8_7t1fb")
@@ -179,6 +181,33 @@ position = Vector2(72, 65)
 [node name="Poste8" parent="YSort/Postes" unique_id=154092979 instance=ExtResource("7_cp173")]
 position = Vector2(-279, 65)
 
+[node name="Poste9" parent="YSort/Postes" unique_id=333634520 instance=ExtResource("7_cp173")]
+position = Vector2(-375, 158)
+
+[node name="Poste10" parent="YSort/Postes" unique_id=298278762 instance=ExtResource("7_cp173")]
+position = Vector2(137, 158)
+
+[node name="Poste11" parent="YSort/Postes" unique_id=553267469 instance=ExtResource("7_cp173")]
+position = Vector2(473, 158)
+
+[node name="Poste12" parent="YSort/Postes" unique_id=1876033965 instance=ExtResource("7_cp173")]
+position = Vector2(473, 94)
+
+[node name="Poste13" parent="YSort/Postes" unique_id=1751706985 instance=ExtResource("7_cp173")]
+position = Vector2(185, 78)
+
+[node name="Poste14" parent="YSort/Postes" unique_id=1874863243 instance=ExtResource("7_cp173")]
+position = Vector2(169, -383)
+
+[node name="Poste15" parent="YSort/Postes" unique_id=2021456754 instance=ExtResource("7_cp173")]
+position = Vector2(-376, -385)
+
+[node name="Poste16" parent="YSort/Postes" unique_id=1377158594 instance=ExtResource("7_cp173")]
+position = Vector2(-377, -114)
+
+[node name="Poste17" parent="YSort/Postes" unique_id=161859483 instance=ExtResource("7_cp173")]
+position = Vector2(169, -114)
+
 [node name="TribunalLuz" type="PointLight2D" parent="YSort/Postes" unique_id=35655417]
 position = Vector2(-40.000004, -488.5)
 scale = Vector2(0.31249997, 0.5273441)
@@ -209,8 +238,35 @@ tile_set = SubResource("TileSet_1jtul")
 [node name="HUD" type="CanvasLayer" parent="." unique_id=232321833]
 
 [node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=1700386160]
-position = Vector2(-255, -303)
 texture = ExtResource("6_vkox8")
+
+[node name="Acoes" type="NinePatchRect" parent="HUD" unique_id=4277136]
+offset_top = -10.0
+offset_right = 48.0
+offset_bottom = 9.0
+texture = ExtResource("11_hd66b")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="Label" type="Label" parent="HUD/Acoes" unique_id=2140346382]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/outline_size = 0
+theme_override_constants/shadow_outline_size = 1
+theme_override_fonts/font = ExtResource("12_e6m3j")
+theme_override_font_sizes/font_size = 10
+text = "Ações: "
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=264033033]
 color = Color(0.5513527, 0.5934165, 0.72441214, 1)

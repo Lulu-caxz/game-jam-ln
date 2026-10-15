@@ -50,7 +50,7 @@ const DIALOGOS = {
 		},
 		{
 			"tipo": "escolha",
-			"texto": "Vai querer apostar? (Só pode uma vez por personagem)",
+			"texto": "Vai querer apostar? (Só pode uma vez por personagem, custa ação)",
 			"opcoes": [
 				{
 					"texto": "Apostar",
@@ -89,7 +89,7 @@ const DIALOGOS = {
 		},
 		{
 			"tipo": "escolha",
-			"texto": "Vai querer apostar? (Só pode uma vez por personagem)",
+			"texto": "Vai querer apostar? (Só pode uma vez por personagem, custa ação)",
 			"opcoes": [
 				{
 					"texto": "Apostar",
@@ -128,7 +128,7 @@ const DIALOGOS = {
 		},
 		{
 			"tipo": "escolha",
-			"texto": "Tenho um equipamento pra te ajudar a fugir daqui. Custa todo o seu dinheiro!",
+			"texto": "Tenho um equipamento pra te ajudar a fugir daqui. (Custa dinheiro e ação)",
 			"opcoes": [
 				{
 					"texto": "Comprar",
@@ -187,39 +187,110 @@ const DIALOGOS = {
 			"texto": "Ô sua trambiqueira, que é que você tem a me oferecer?"
 		},
 		{
-			"quem": ["Npc", "Tigrinho"],
-			"texto": "Nãooo, aquele é meu irmão gêmeo"
-		},
-		{
-			"quem": ["Npc", "Tigrinho"],
-			"texto": "Enfim... Bora tentar a sorte?"
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Ta querendo ferrar com alguem é?"
 		},
 		{
 			"tipo": "escolha",
-			"texto": "Vai querer apostar? (Só pode uma vez por personagem)",
+			"texto": "Vai querer que eu incrimine quem? (Custa dinheiro e ação)",
 			"opcoes": [
 				{
-					"texto": "Apostar",
-					"proxima_fala": 2
+					"texto": "Psico Pato",
+					"proxima_fala": 3
 				},
 				{
-					"texto": "Hoje não",
-					"proxima_fala": 3
+					"texto": "Advo Gado",
+					"proxima_fala": 4
 				}
 			]
 		},
 		{
-			"quem": ["Npc", "Tigrinho"],
-			"texto": "",
-			"resultado_aposta": true,
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Vou botar o Psico Pato na prisão pra você",
+			"resultado_cobra_dora": true,
 			"fim": true
 		},
 		{
-			"quem": ["Npc", "Tigrinho"],
-			"texto": "Suave então. Volta quando quiser!",
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Entao beleza, esse Advo Gado vai ser preso",
+			"resultado_cobra_dora": true,
 			"fim": true
 		}
 	],
+	"CobraDora-pato": [
+		{
+			"quem": ["Player", "Pato"],
+			"texto": "Quack quack"
+		},
+		{
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Ta querendo ferrar com alguem é?"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Vai querer que eu incrimine quem? (Custa dinheiro e ação)",
+			"opcoes": [
+				{
+					"texto": "Capi Talista",
+					"proxima_fala": 3
+				},
+				{
+					"texto": "Advo Gado",
+					"proxima_fala": 4
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Vou botar o Capi Talista na prisão pra você",
+			"resultado_cobra_dora": true,
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Entao beleza, esse Advo Gado vai ser preso",
+			"resultado_cobra_dora": true,
+			"fim": true
+		}
+	],
+	"CobraDora-gado": [
+		{
+			"quem": ["Player", "Gado"],
+			"texto": "Consegue prender alguem pra mim por favor?"
+		},
+		{
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Ta querendo ferrar com alguem é?"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Vai querer que eu incrimine quem? (Custa dinheiro e ação)",
+			"opcoes": [
+				{
+					"texto": "Psico Pato",
+					"proxima_fala": 3
+				},
+				{
+					"texto": "Capi Talista",
+					"proxima_fala": 4
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Vou botar o Psico Pato na prisão pra você",
+			"resultado_cobra_dora": true,
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Cobra Dora"],
+			"texto": "Entao beleza, esse Capi Talista vai ser preso",
+			"resultado_cobra_dora": true,
+			"fim": true
+		}
+	],
+	
+	
 	"Buraco-bloqueado" : [
 		{
 			"texto": "A passagem precisa terminar de ser cavada. É necessário uma ferramenta.",
@@ -229,6 +300,54 @@ const DIALOGOS = {
 	"Buraco-desbloqueado" : [
 		{
 			"texto": "Você cavou para fora e fugiu.",
+			"fim": true
+		}
+	],
+	
+	"banco-capivara": [
+		{
+			"tipo": "escolha",
+			"texto": "Deseja sacar dinheiro? (Custa 1 ação)",
+			"opcoes": [
+				{
+					"texto": "Sim",
+					"proxima_fala": 1
+				},
+				{
+					"texto": "Não",
+					"proxima_fala": 2
+				}
+			]
+		},
+		{
+			"texto": "",
+			"resultado_banco": true,
+			"fim": true
+		},
+		{
+			"texto": "",
+			"resultado_banco": true,
+			"fim": true
+		}
+	],
+
+	"banco-roubado": [
+		{
+			"texto": "O banco foi roubado e não possui mais dinheiro.",
+			"fim": true
+		}
+	],
+
+	"banco-sem-dinheiro-capivara": [
+		{
+			"texto": "Você já sacou e não possui mais dinheiro guardado.",
+			"fim": true
+		}
+	],
+
+	"banco-sem-dinheiro" : [
+		{
+			"texto": "Você é pobre e não possui dinheiro guardado",
 			"fim": true
 		}
 	],
