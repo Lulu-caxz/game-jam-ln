@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var poeira: GPUParticles2D = $GPUParticles2D
 
 @onready var dinheiroHUD: Sprite2D = get_tree().current_scene.get_node("HUD/Dinheiro")
+@onready var paHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Pa")
 
 
 const VELOCIDADE = 80.0
@@ -55,6 +56,9 @@ func _ready() -> void:
 	ultima_direcao_nome = Global.ultimaDirecao
 	
 	dinheiroHUD.position = Vector2(15, 15)
+	if paHUD != null:
+		paHUD.position = Vector2(46, 15)
+		paHUD.modulate.a = 0.2
 	
 	poeira.emitting = false
 	
@@ -119,19 +123,24 @@ func _physics_process(delta: float) -> void:
 
 
 func atualizar_HUD():
+	player_atual = Global.sequencia_players[Global.atual]
+	
+	var tem_pa: bool = false
+	var tem_dinheiro: bool = false
+	
 	match player_atual:
 		"Capivara":
-			if Global.dinheiroCapivara:
-				dinheiroHUD.modulate.a = 1
-			else:
-				dinheiroHUD.modulate.a = 0.2
+			tem_pa = Global.capivaraTemEquipamentoPraFugir
+			tem_dinheiro = Global.dinheiroCapivara
 		"Pato":
-			if Global.dinheiroPato:
-				dinheiroHUD.modulate.a = 1
-			else:
-				dinheiroHUD.modulate.a = 0.2
+			tem_pa = Global.patoTemEquipamentoPraFugir
+			tem_dinheiro = Global.dinheiroPato
 		"Gado":
-			if Global.dinheiroGado:
-				dinheiroHUD.modulate.a = 1
-			else:
-				dinheiroHUD.modulate.a = 0.2
+			tem_pa = Global.gadoTemEquipamentoPraFugir
+			tem_dinheiro = Global.dinheiroGado
+
+	if paHUD != null:
+		paHUD.modulate.a = 1.0 if tem_pa else 0.2
+		
+	if dinheiroHUD != null:
+		dinheiroHUD.modulate.a = 1.0 if tem_dinheiro else 0.2

@@ -1,0 +1,68 @@
+extends NPCBase
+
+# Trava para evitar chamadas duplicadas durante o clique rápido
+var viajando: bool = false
+
+
+func _ready() -> void:
+	super._ready()
+	atualizar_id_dialogo()
+
+
+func atualizar_id_dialogo() -> void:
+	if jogador_tem_equipamento():
+		id_dialogo = "Buraco-desbloqueado"
+	else:
+		id_dialogo = "Buraco-bloqueado"
+
+
+func gerar_dialogo() -> void:
+	# Se já está no processo de transição/viagem, bloqueia qualquer nova interação
+	if viajando:
+		return
+
+	atualizar_id_dialogo()
+	super.gerar_dialogo()
+	
+	if jogador_tem_equipamento():
+		viajando = true
+		agendar_viagem_apos_dialogo()
+
+
+func jogador_tem_equipamento() -> bool:
+	var jogador: String = Global.sequencia_players[Global.atual].to_lower()
+	var nome_propriedade: String = jogador + "TemEquipamentoPraFugir"
+	
+	return Global.get(nome_propriedade) == true
+
+
+func agendar_viagem_apos_dialogo() -> void:
+	# Espera pelo menos 1 frame para o Global.dialogo_ativo ser definido como true
+	await get_tree().process_frame
+	
+	# Aguarda até o diálogo fechar completamente
+	while Global.dialogo_ativo:
+		await get_tree().process_frame
+	
+	viajar_para_cidade()
+
+
+func viajar_para_cidade() -> void:
+	Global.posicao_player = Vector2(340, -330)
+	Global.definir_posicao = true
+	Global.ultimaDirecao = "baixo"
+	
+	var jogador: String = Global.sequencia_players[Global.atual].to_lower()
+	
+	match jogador:
+		"capivara":
+			Global.capivaraVezesPreso += 1
+			Global.capivaraForagido = true
+		"pato":
+			Global.patoVezesPreso += 1
+			Global.patoForagido = true
+		"gado":
+			Global.gadoVezesPreso += 1
+			Global.gadoForagido = true
+	
+	Transicao.mudar_cena("res://scenes/cidade.tscn")

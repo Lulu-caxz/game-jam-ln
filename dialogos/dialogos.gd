@@ -220,6 +220,18 @@ const DIALOGOS = {
 			"fim": true
 		}
 	],
+	"Buraco-bloqueado" : [
+		{
+			"texto": "A passagem precisa terminar de ser cavada. É necessário uma ferramenta.",
+			"fim": true
+		}
+	],
+	"Buraco-desbloqueado" : [
+		{
+			"texto": "Você cavou para fora e fugiu.",
+			"fim": true
+		}
+	],
 }
 
 static func pegar_dialogo(nome_dialogo: String) -> Array:

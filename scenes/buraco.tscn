@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dmplk2e6eurd"]
+
+[ext_resource type="Script" uid="uid://bkd6ll7n07rm1" path="res://scripts/buraco.gd" id="1_hlxp6"]
+[ext_resource type="Texture2D" uid="uid://cowehycsarqko" path="res://sprites/Buraco.png" id="2_irfqt"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="3_s2t81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0b4w"]
+size = Vector2(50, 38)
+
+[node name="Buraco" type="RigidBody2D" unique_id=260201095]
+gravity_scale = 0.0
+script = ExtResource("1_hlxp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1366522593]
+texture = ExtResource("2_irfqt")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=599997116]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1944229748]
+shape = SubResource("RectangleShape2D_k0b4w")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=2026393145]
+z_index = 4
+position = Vector2(0, -29)
+texture = ExtResource("3_s2t81")
