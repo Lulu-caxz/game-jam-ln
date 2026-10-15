@@ -1,12 +1,15 @@
 [gd_scene format=4 uid="uid://v8beke027a5u"]
 
 [ext_resource type="Texture2D" uid="uid://cd5crfip4ly47" path="res://sprites/tileset/BancoSheet.png" id="1_2258q"]
+[ext_resource type="Script" uid="uid://brj78f134ed2" path="res://scripts/banco_interior.gd" id="1_tde5t"]
 [ext_resource type="Texture2D" uid="uid://d307yt2ovxil8" path="res://sprites/tileset/BancoInterior.png" id="2_a4548"]
 [ext_resource type="PackedScene" uid="uid://gmp0jsw3nssa" path="res://scenes/player.tscn" id="3_q5f7e"]
 [ext_resource type="Script" uid="uid://c778ejnrvnvii" path="res://scripts/porta.gd" id="4_0eb2t"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="5_lrwqc"]
+[ext_resource type="PackedScene" uid="uid://dn0imdfp2uugu" path="res://scenes/npcs/capivara_npc.tscn" id="5_q2nlu"]
 [ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="6_0eb2t"]
 [ext_resource type="PackedScene" uid="uid://doyhx2gsiumrs" path="res://scenes/caixa_eletronico.tscn" id="6_lrwqc"]
+[ext_resource type="Texture2D" uid="uid://birqia406c650" path="res://sprites/luz.png" id="7_kmnkw"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="7_lrwqc"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="8_q2nlu"]
 
@@ -182,6 +185,7 @@ sources/0 = SubResource("TileSetAtlasSource_kmnkw")
 size = Vector2(50, 19)
 
 [node name="Banco_interior" type="Node2D" unique_id=1549650120]
+script = ExtResource("1_tde5t")
 
 [node name="Piso" type="TileMapLayer" parent="." unique_id=229397699]
 tile_map_data = PackedByteArray("AAD1////AAAAAAQAAAD1/wAAAAAAAAUAAAD1/wEAAAAAAAYAAAD2////AAABAAQAAAD2/wAAAAABAAUAAAD2/wEAAAABAAYAAAD3////AAACAAQAAAD3/wAAAAACAAUAAAD3/wEAAAACAAYAAAD1/wIAAAAAAAQAAAD1/wMAAAAAAAUAAAD2/wIAAAABAAQAAAD2/wMAAAABAAUAAAD3/wIAAAACAAQAAAD3/wMAAAACAAUAAAD4/wIAAAAAAAQAAAD4/wMAAAAAAAUAAAD5/wIAAAABAAQAAAD5/wMAAAABAAUAAAD6/wIAAAACAAQAAAD6/wMAAAACAAUAAAD7/wIAAAAAAAQAAAD7/wMAAAAAAAUAAAD8/wIAAAABAAQAAAD8/wMAAAABAAUAAAD9/wIAAAACAAQAAAD9/wMAAAACAAUAAAD+/wIAAAAAAAQAAAD+/wMAAAAAAAUAAAD//wIAAAABAAQAAAD//wMAAAABAAUAAAAAAAIAAAACAAQAAAAAAAMAAAACAAUAAAABAAIAAAAAAAQAAAABAAMAAAAAAAUAAAACAAIAAAABAAQAAAACAAMAAAABAAUAAAADAAIAAAACAAQAAAADAAMAAAACAAUAAAAEAAIAAAAAAAQAAAAEAAMAAAAAAAUAAAAFAAIAAAABAAQAAAAFAAMAAAABAAUAAAAGAAIAAAACAAQAAAAGAAMAAAACAAUAAAAHAAIAAAAAAAQAAAAHAAMAAAAAAAUAAAAIAAIAAAABAAQAAAAIAAMAAAABAAUAAAAJAAIAAAACAAQAAAAJAAMAAAACAAUAAAAKAAIAAAAAAAQAAAAKAAMAAAAAAAUAAAAKAP//AAAAAAQAAAAKAAAAAAAAAAUAAAAKAAEAAAAAAAYAAAAHAP//AAAAAAQAAAAHAAAAAAAAAAUAAAAHAAEAAAAAAAYAAAAIAP//AAABAAQAAAAIAAAAAAABAAUAAAAIAAEAAAABAAYAAAAJAP//AAACAAQAAAAJAAAAAAACAAUAAAAJAAEAAAACAAYAAAAEAP//AAAAAAQAAAAEAAAAAAAAAAUAAAAEAAEAAAAAAAYAAAAFAP//AAABAAQAAAAFAAAAAAABAAUAAAAFAAEAAAABAAYAAAAGAP//AAACAAQAAAAGAAAAAAACAAUAAAAGAAEAAAACAAYAAAABAP//AAAAAAQAAAABAAAAAAAAAAUAAAABAAEAAAAAAAYAAAACAP//AAABAAQAAAACAAAAAAABAAUAAAACAAEAAAABAAYAAAADAP//AAACAAQAAAADAAAAAAACAAUAAAADAAEAAAACAAYAAAD+////AAAAAAQAAAD+/wAAAAAAAAUAAAD+/wEAAAAAAAYAAAD/////AAABAAQAAAD//wAAAAABAAUAAAD//wEAAAABAAYAAAAAAP//AAACAAQAAAAAAAAAAAACAAUAAAAAAAEAAAACAAYAAAD7////AAAAAAQAAAD7/wAAAAAAAAUAAAD7/wEAAAAAAAYAAAD8////AAABAAQAAAD8/wAAAAABAAUAAAD8/wEAAAABAAYAAAD9////AAACAAQAAAD9/wAAAAACAAUAAAD9/wEAAAACAAYAAAD4////AAAAAAQAAAD4/wAAAAAAAAUAAAD4/wEAAAAAAAYAAAD5////AAABAAQAAAD5/wAAAAABAAUAAAD5/wEAAAABAAYAAAD6////AAACAAQAAAD6/wAAAAACAAUAAAD6/wEAAAACAAYAAAA=")
@@ -232,6 +236,16 @@ tile_set = SubResource("TileSet_shdkb")
 [node name="Player" parent="YSort" unique_id=1284986966 instance=ExtResource("3_q5f7e")]
 z_index = 0
 position = Vector2(0, 13)
+
+[node name="CapivaraNPC" parent="YSort" unique_id=816674935 instance=ExtResource("5_q2nlu")]
+position = Vector2(-63, -8)
+direcao = "baixo"
+
+[node name="PointLight2D" type="PointLight2D" parent="YSort/CapivaraNPC" unique_id=586331806]
+position = Vector2(0, 14)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("7_kmnkw")
+texture_scale = 0.3
 
 [node name="Portas" type="Node2D" parent="." unique_id=1104130556]
 
@@ -284,3 +298,6 @@ text = "Ações: "
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=449175685]
+color = Color(0.74558026, 0.7455802, 0.74558014, 1)

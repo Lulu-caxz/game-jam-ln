@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://b3f1vydebqnhb"]
 
+[ext_resource type="Script" uid="uid://cujpfl1jb8f28" path="res://scripts/cidade.gd" id="1_1jtul"]
 [ext_resource type="PackedScene" uid="uid://c8tfog1w6sb3i" path="res://scenes/mapa.tscn" id="1_iqefc"]
 [ext_resource type="AudioStream" uid="uid://dcm35x4knjw7t" path="res://sounds/MusicaBaseJogo.mp3" id="2_vkox8"]
 [ext_resource type="PackedScene" uid="uid://ddcs11ilecq7w" path="res://scenes/npcs/cobraDora.tscn" id="3_3pc5y"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://omuavi0wt034" path="res://sprites/Dinheiro.png" id="6_vkox8"]
 [ext_resource type="PackedScene" uid="uid://f1fs58wn85ku" path="res://scenes/poste.tscn" id="7_cp173"]
 [ext_resource type="Texture2D" uid="uid://bunkk7kjhc8jf" path="res://sprites/construcoes/banco.png" id="8_7t1fb"]
+[ext_resource type="PackedScene" uid="uid://dxc3ru0i7rc4w" path="res://scenes/npcs/pato_npc.tscn" id="8_a6xj1"]
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
@@ -114,6 +116,7 @@ texture = ExtResource("9_j7v2a")
 sources/0 = SubResource("TileSetAtlasSource_e6m3j")
 
 [node name="Jogo" type="Node2D" unique_id=748497634]
+script = ExtResource("1_1jtul")
 
 [node name="Mapa" parent="." unique_id=1891813993 instance=ExtResource("1_iqefc")]
 
@@ -149,6 +152,16 @@ texture_scale = 0.3
 position = Vector2(246, -307)
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/CobraDora" unique_id=77954123]
+position = Vector2(0, 14)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("5_3pc5y")
+texture_scale = 0.3
+
+[node name="PatoNPC" parent="YSort" unique_id=816674935 instance=ExtResource("8_a6xj1")]
+position = Vector2(-192, -216)
+direcao = "direita"
+
+[node name="PointLight2D" type="PointLight2D" parent="YSort/PatoNPC" unique_id=1573826061]
 position = Vector2(0, 14)
 color = Color(1, 1, 0.41568628, 1)
 texture = ExtResource("5_3pc5y")
@@ -249,6 +262,7 @@ patch_margin_left = 4
 patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="HUD/Acoes" unique_id=2140346382]
 layout_mode = 0
@@ -267,6 +281,7 @@ theme_override_font_sizes/font_size = 10
 text = "Ações: "
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=264033033]
 color = Color(0.5513527, 0.5934165, 0.72441214, 1)

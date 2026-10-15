@@ -21,11 +21,19 @@ const Nomes = [
 const textures_dialogo = [
 	{"Capivara": "res://sprites/iconDialogo/Capivara.png"},
 	{"Capi Talista": "res://sprites/iconDialogo/Capivara.png"},
+	
 	{"Gado": "res://sprites/iconDialogo/Gado.png"},
 	{"Advo Gado": "res://sprites/iconDialogo/Gado.png"},
+	
 	{"Pato": "res://sprites/iconDialogo/Pato.png"},
 	{"Psico Pato": "res://sprites/iconDialogo/Pato.png"},
-	{"Cobra Dora": "res://sprites/iconDialogo/Capivara.png"}
+	
+	{"Cobra Dora": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
+	{"Pombo Correio": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
+	{"Tigrinho": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
+	{"Tigrão": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
+	{"Dele Gado": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
+	{"Zebra Va": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
 ]
 
 func bloquear_personagem(id: String) -> void:
