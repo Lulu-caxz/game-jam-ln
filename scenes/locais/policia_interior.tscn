@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dxc3ru0i7rc4w" path="res://scenes/npcs/pato_npc.tscn" id="9_862n7"]
 [ext_resource type="Texture2D" uid="uid://birqia406c650" path="res://sprites/luz.png" id="10_862n7"]
 [ext_resource type="PackedScene" uid="uid://dioqh3ruv3s0k" path="res://scenes/npcs/tigrinho_prisao.tscn" id="10_kltf1"]
+[ext_resource type="PackedScene" uid="uid://cg2xqlu850644" path="res://scenes/npcs/pombo_correio.tscn" id="11_inxe8"]
 [ext_resource type="PackedScene" uid="uid://dmy8n8vph7go6" path="res://scenes/npcs/gado_npc.tscn" id="11_w6cyg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6cyg"]
@@ -914,8 +915,8 @@ z_index = 0
 position = Vector2(103, 340)
 
 [node name="CapivaraNPC" parent="YSort" unique_id=816674935 instance=ExtResource("7_7kkf7")]
-position = Vector2(244, 446)
-direcao = "baixo"
+position = Vector2(196, 526)
+direcao = "cima"
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/CapivaraNPC" unique_id=1471327184]
 position = Vector2(0, 14)
@@ -944,9 +945,19 @@ texture = ExtResource("10_862n7")
 texture_scale = 0.3
 
 [node name="tigrinho-prisao" parent="YSort" unique_id=104609030 instance=ExtResource("10_kltf1")]
-position = Vector2(168, 454)
+position = Vector2(160, 450)
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/tigrinho-prisao" unique_id=2124274677]
+position = Vector2(0, 10)
+color = Color(1, 1, 0.41568628, 1)
+texture = ExtResource("10_862n7")
+texture_scale = 0.3
+
+[node name="pombo_correio" parent="YSort" unique_id=1415550215 instance=ExtResource("11_inxe8")]
+position = Vector2(244, 446)
+gravity_scale = 0.0
+
+[node name="PointLight2D" type="PointLight2D" parent="YSort/pombo_correio" unique_id=1705031301]
 position = Vector2(0, 10)
 color = Color(1, 1, 0.41568628, 1)
 texture = ExtResource("10_862n7")
@@ -971,7 +982,6 @@ tile_set = SubResource("TileSet_027ic")
 
 [node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=141633595]
 position = Vector2(-255, -303)
-scale = Vector2(0.02, 0.02)
 texture = ExtResource("7_gbldu")
 
 [node name="Luz" type="Node2D" parent="." unique_id=1644303968]

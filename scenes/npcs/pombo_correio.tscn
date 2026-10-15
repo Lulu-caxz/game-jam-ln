@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cg2xqlu850644"]
 
+[ext_resource type="Script" uid="uid://cm5p5em8kiuqg" path="res://scripts/pombo_correio.gd" id="1_ccxe0"]
 [ext_resource type="Texture2D" uid="uid://beg40ixpsadbx" path="res://sprites/npcs/PomboCorreio.png" id="1_cxrqb"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_ccxe0"]
 
@@ -21,6 +22,7 @@ size = Vector2(16, 8)
 size = Vector2(42, 25.5)
 
 [node name="pombo_correio" type="RigidBody2D" unique_id=1415550215]
+script = ExtResource("1_ccxe0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=724554583]
 position = Vector2(9.536743e-07, -4.999999)

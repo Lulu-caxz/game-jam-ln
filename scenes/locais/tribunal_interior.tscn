@@ -124,5 +124,4 @@ direcao = "baixo"
 
 [node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=743356019]
 position = Vector2(-255, -303)
-scale = Vector2(0.02, 0.02)
 texture = ExtResource("8_i84qd")

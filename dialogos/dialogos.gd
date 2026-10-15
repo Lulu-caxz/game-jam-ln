@@ -113,6 +113,46 @@ const DIALOGOS = {
 			"fim": true
 		}
 	],
+	"pombo-correio": [
+		{
+			"quem": ["Player", ""],
+			"texto": "Quem é você?"
+		},
+		{
+			"quem": ["Npc", "Pombo Correio"],
+			"texto": "Oi meu chapa, sou o pombo-correio, trago umas parada maneira aqui pra dentro. PRRUUU"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "O que você tem de bom aí?"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Tenho um equipamento pra te ajudar a fugir daqui. Custa todo o seu dinheiro!",
+			"opcoes": [
+				{
+					"texto": "Comprar",
+					"proxima_fala": 4
+				},
+				{
+					"texto": "Hoje não",
+					"proxima_fala": 5
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Pombo Correio"],
+			"texto": "",
+			"resultado_compra_pombo": true,
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Pombo Correio"],
+			"texto": "Tranquilo, tô sempre por aqui. PRRUUU",
+			"fim": true
+		}
+	],
+	
 	
 	"Capivara-prisao": [
 		{
@@ -181,8 +221,6 @@ const DIALOGOS = {
 		}
 	],
 }
-
-
 
 static func pegar_dialogo(nome_dialogo: String) -> Array:
 	var falas = DIALOGOS[nome_dialogo].duplicate(true)

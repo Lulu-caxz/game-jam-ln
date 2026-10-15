@@ -125,6 +125,9 @@ func mostrar_texto() -> void:
 	if dialogo_data.get("resultado_aposta", false):
 		texto_dialogo = Global.resultadoTigrinhoTexto
 
+	if dialogo_data.get("resultado_compra_pombo", false):
+		texto_dialogo = Global.resultadoPomboTexto
+
 	Texto.text = texto_dialogo
 	Texto.visible_characters = 0
 

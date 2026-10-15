@@ -43,7 +43,7 @@ func desbloquear_personagem(id: String) -> void:
 
 
 #VARIAVEIS DA HISTORIA
-var presos = ["Pato", "Gado"]
+var presos = ["Pato", "Gado", "Capivara"]
 var mortos = []
 
 var capivaraAcoes = 3
@@ -61,7 +61,7 @@ var gadoVezesPreso = 0
 
 #true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
 var dinheiroCapivara = false
-var dinheiroPato = false
+var dinheiroPato = true
 var dinheiroGado = false
 
 var bancoRoubado = false
@@ -77,6 +77,8 @@ var patoJaApostou = false
 var gadoJaApostou = false
 
 #tem q falar com o pombocorreio pra conseguir
+var resultadoPomboTexto: String = ""
+
 var capivaraTemEquipamentoPraFugir = false
 var patoTemEquipamentoPraFugir = false
 var gadoTemEquipamentoPraFugir = false
