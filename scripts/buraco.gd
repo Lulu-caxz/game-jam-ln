@@ -17,7 +17,6 @@ func atualizar_id_dialogo() -> void:
 
 
 func gerar_dialogo() -> void:
-	# Se já está no processo de transição/viagem, bloqueia qualquer nova interação
 	if viajando:
 		return
 
@@ -37,10 +36,8 @@ func jogador_tem_equipamento() -> bool:
 
 
 func agendar_viagem_apos_dialogo() -> void:
-	# Espera pelo menos 1 frame para o Global.dialogo_ativo ser definido como true
 	await get_tree().process_frame
 	
-	# Aguarda até o diálogo fechar completamente
 	while Global.dialogo_ativo:
 		await get_tree().process_frame
 	
