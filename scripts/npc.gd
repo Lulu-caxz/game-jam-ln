@@ -6,7 +6,8 @@ extends RigidBody2D
 @onready var area: Area2D = $Area2D
 @onready var botao: Sprite2D = $Botao
 
-@export var id_dialogo: String = "teste"
+@export var id_dialogo: Array = ["teste"]
+@export var dialogo_index: int = 0
 
 var onArea = false
 var dialogo_ativo = false
@@ -42,7 +43,10 @@ func gerar_dialogo() -> void:
 		get_tree().current_scene.add_child(camada_tela)
 		
 		var instancia = cena_dialogo.instantiate()
-		instancia.idDialogo = id_dialogo
+		instancia.idDialogo = id_dialogo[dialogo_index]
+		
+		if id_dialogo.size() > dialogo_index + 1:
+			dialogo_index += 1
 		
 		if instancia.has_signal("escolha_realizada"):
 			instancia.escolha_realizada.connect(_ao_realizar_escolha)

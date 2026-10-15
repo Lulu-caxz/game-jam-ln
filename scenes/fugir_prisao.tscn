@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b4p52e4lqal2x"]
+
+[ext_resource type="Script" uid="uid://d0jyh4uii72x5" path="res://scripts/zebrava_npc.gd" id="1_7f8hc"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_6oc2l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4civj"]
+size = Vector2(42, 25.5)
+
+[node name="fugir_prisao" type="RigidBody2D" unique_id=1415550215]
+gravity_scale = 0.0
+script = ExtResource("1_7f8hc")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1985593958]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1248124064]
+position = Vector2(0, 22)
+shape = SubResource("RectangleShape2D_4civj")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=1670944691]
+z_index = 4
+position = Vector2(0, -20)
+texture = ExtResource("2_6oc2l")

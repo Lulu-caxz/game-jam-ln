@@ -6,10 +6,19 @@ extends NPCBase
 
 func _ready() -> void:
 	super._ready()
+	
+	var jogador: String = Global.sequencia_players[Global.atual]
+	
 	if get_tree().current_scene.name == "policia_interior":
-		id_dialogo = "Pato-prisao"
-	elif get_tree().current_scene.name == "cidade":
-		id_dialogo = "pato-praca"
+		id_dialogo = ["Pato-prisao"]
+	elif get_tree().current_scene.name == "Jogo":
+		
+		id_dialogo = ["Pato-prisao"]
+		match jogador:
+			"Capivara":
+				id_dialogo = ["pato-praca-capivara", "pato-praca-capivara1"]
+			"Gado":
+				id_dialogo = ["pato-praca-gado", "pato-praca-gado1"]
 	
 	match direcao:
 		"cima":

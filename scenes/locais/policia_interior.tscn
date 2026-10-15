@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bxsvngd6208f8" path="res://sprites/pa.png" id="13_inxe8"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="15_fti8x"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="16_k5d64"]
+[ext_resource type="PackedScene" uid="uid://b4p52e4lqal2x" path="res://scenes/fugir_prisao.tscn" id="17_k5d64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6cyg"]
 texture = ExtResource("2_kltf1")
@@ -1054,3 +1055,6 @@ texture_scale = 1.35
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=569535624]
 color = Color(0.5330367, 0.5330367, 0.5330367, 1)
+
+[node name="fugir_prisao" parent="." unique_id=594090926 instance=ExtResource("17_k5d64")]
+position = Vector2(367, 444)

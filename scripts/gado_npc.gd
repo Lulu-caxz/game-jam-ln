@@ -7,9 +7,9 @@ extends NPCBase
 func _ready() -> void:
 	super._ready()
 	if get_tree().current_scene.name == "policia_interior":
-		id_dialogo = "Gado-prisao"
+		id_dialogo = ["Gado-prisao"]
 	elif get_tree().current_scene.name == "tribunal_interior":
-		id_dialogo = "Gado-tribunal"
+		id_dialogo = ["Gado-tribunal"]
 		
 	
 	

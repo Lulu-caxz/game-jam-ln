@@ -10,9 +10,9 @@ func _ready() -> void:
 
 func atualizar_id_dialogo() -> void:
 	if jogador_tem_equipamento():
-		id_dialogo = "Buraco-desbloqueado"
+		id_dialogo = ["Buraco-desbloqueado"]
 	else:
-		id_dialogo = "Buraco-bloqueado"
+		id_dialogo = ["Buraco-bloqueado"]
 
 
 func gerar_dialogo() -> void:

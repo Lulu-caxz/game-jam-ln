@@ -3,7 +3,7 @@ extends NPCBase
 
 func _ready() -> void:
 	super._ready()
-	id_dialogo = "tigrinho"
+	id_dialogo = ["tigrinho"]
 
 
 func _ao_realizar_escolha(resultado: int) -> void:

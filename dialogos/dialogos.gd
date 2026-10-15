@@ -153,6 +153,147 @@ const DIALOGOS = {
 		}
 	],
 	
+	"pato-praca-gado": [
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quaack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Que? Como assim?"
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quack Quack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "De fato estamos vivendo em um mundo muito complexo."
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Mas que solução extrema!!!!"
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quack..."
+		}
+	],
+	"pato-praca-gado1": [
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Não sei se é assim que resolveremos as coisas"
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quack Quack"
+		}
+	],
+	"pato-praca-capivara": [
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quaaaaaaaaack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Saia de perto de mim, você é um perigo!!"
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quack Quack quaaaack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Você deveria éra estar preso!"
+		},
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quacckk"
+		}
+	],
+	"pato-praca-capivara1": [
+		{
+			"quem": ["Npc", "Psico Pato"],
+			"texto": "Quaaaack"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Não conversarei mais com você!!"
+		}
+	],
+	
+	"fugir-prisao": [
+		{
+			"quem": ["Player", ""],
+			"texto": "Acho que da para fugir por aqui, mas provavelmete vão me perseguir"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Fugir pela grade?",
+			"opcoes": [
+				{
+					"texto": "Fugir",
+					"proxima_fala": 3
+				},
+				{
+					"texto": "Melhor não",
+					"proxima_fala": 4
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Pombo Correio"],
+			"texto": "",
+			"resultado_compra_pombo": true,
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Pombo Correio"],
+			"texto": "Melhor evitar uma perseguição",
+			"fim": true
+		}
+	],
+	
+	"Capivara-banco": [
+		{
+			"quem": ["Npc", "Capi Talista"],
+			"texto": "Ola, como você está?"
+		},
+		{
+			"quem": ["Npc", "Capi Talista"],
+			"texto": "Um lindo dia para roub.. digo lucrar não é??"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "!?.."
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Estou bem sim, é um dia lindo mesmo.."
+		}
+	],
+	"Capivara-banco1": [
+		{
+			"quem": ["Npc", "Capi Talista"],
+			"texto": "Já nos falamos hoje, termine o que tem para fazer"
+		},
+		{
+			"quem": ["Npc", "Capi Talista"],
+			"texto": "Meu tempo é dinheiro"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "😡😡"
+		}
+	],
 	
 	"Capivara-prisao": [
 		{
@@ -183,7 +324,7 @@ const DIALOGOS = {
 	
 	"CobraDora-capivara": [
 		{
-			"quem": ["Player", "Capivara"],
+			"quem": ["Player", "Capi Talista"],
 			"texto": "Ô sua trambiqueira, que é que você tem a me oferecer?"
 		},
 		{

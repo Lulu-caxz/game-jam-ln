@@ -7,21 +7,21 @@ func _ready() -> void:
 	match Global.sequencia_players[Global.atual]:
 		"Capivara":
 			if Global.capivaraJaPegouDinheiroNoBanco:
-				id_dialogo = "banco-sem-dinheiro-capivara"
+				id_dialogo = ["banco-sem-dinheiro-capivara"]
 			elif Global.bancoRoubado:
-				id_dialogo = "banco-roubado"
+				id_dialogo = ["banco-roubado"]
 			else:
-				id_dialogo = "banco-capivara"
+				id_dialogo = ["banco-capivara"]
 
 		"Pato", "Gado":
 			if Global.bancoRoubado:
-				id_dialogo = "banco-roubado"
+				id_dialogo = ["banco-roubado"]
 			else:
-				id_dialogo = "banco-sem-dinheiro"
+				id_dialogo = ["banco-sem-dinheiro"]
 
 
 func _ao_realizar_escolha(resultado: int) -> void:
-	if id_dialogo != "banco-capivara":
+	if id_dialogo != ["banco-capivara"]:
 		return
 
 	# Opção 2: desistir do saque.

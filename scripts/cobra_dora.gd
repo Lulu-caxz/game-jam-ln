@@ -7,11 +7,11 @@ func _ready() -> void:
 
 	match jogador:
 		"Capivara":
-			id_dialogo = "CobraDora-capivara"
+			id_dialogo = ["CobraDora-capivara"]
 		"Pato":
-			id_dialogo = "CobraDora-pato"
+			id_dialogo = ["CobraDora-pato"]
 		"Gado":
-			id_dialogo = "CobraDora-gado"
+			id_dialogo = ["CobraDora-gado"]
 
 
 func _ao_realizar_escolha(resultado: int) -> void:
