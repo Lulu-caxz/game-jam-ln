@@ -128,7 +128,7 @@ const DIALOGOS = {
 		},
 		{
 			"tipo": "escolha",
-			"texto": "Tenho um equipamento pra te ajudar a fugir daqui. (Custa dinheiro e ação)",
+			"texto": "Tenho um equipamento pra te ajudar a fugir daqui. (Custa dinheiro)",
 			"opcoes": [
 				{
 					"texto": "Comprar",

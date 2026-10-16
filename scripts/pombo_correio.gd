@@ -24,7 +24,6 @@ func _ao_realizar_escolha(resultado: int) -> void:
 		return
 
 	# Cobra o dinheiro e entrega o equipamento.
-	Global.gastar_acao(jogador)
 	Global.gastar_dinheiro(jogador)
 	Global.entregar_equipamento(jogador)
 

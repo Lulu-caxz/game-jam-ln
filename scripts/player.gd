@@ -10,7 +10,11 @@ extends CharacterBody2D
 @onready var paHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Pa")
 @onready var acoesHUD: Label = get_tree().current_scene.get_node_or_null("HUD/Acoes/Label")
 @onready var caixaAcoesHUD: NinePatchRect = get_tree().current_scene.get_node_or_null("HUD/Acoes")
+<<<<<<< HEAD
 @onready var botaoE: Sprite2D = $Botao
+=======
+@onready var foragidoHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Foragido")
+>>>>>>> a5a1e225e0a56df0ccc4573f8fff12727abab937
 
 
 const VELOCIDADE = 80.0
@@ -63,8 +67,12 @@ func _ready() -> void:
 	dinheiroHUD.position = Vector2(15, 15)
 	caixaAcoesHUD.position = Vector2(325, 10)
 	if paHUD != null:
-		paHUD.position = Vector2(46, 15)
+		paHUD.position = Vector2(45, 15)
 		paHUD.modulate.a = 0.2
+	
+	if foragidoHUD != null:
+		foragidoHUD.position = Vector2(15, 45)
+		foragidoHUD.modulate.a = 0.2
 	
 	
 	poeira.emitting = false
@@ -176,20 +184,24 @@ func atualizar_HUD():
 	
 	var tem_pa: bool = false
 	var tem_dinheiro: bool = false
+	var esta_foragido: bool = false
 	var acoes: String
 	
 	match player_atual:
 		"Capivara":
 			tem_pa = Global.capivaraTemEquipamentoPraFugir
 			tem_dinheiro = Global.dinheiroCapivara
+			esta_foragido = Global.capivaraForagido
 			acoes = str(Global.capivaraAcoes)
 		"Pato":
 			tem_pa = Global.patoTemEquipamentoPraFugir
 			tem_dinheiro = Global.dinheiroPato
+			esta_foragido = Global.patoForagido
 			acoes = str(Global.patoAcoes)
 		"Gado":
 			tem_pa = Global.gadoTemEquipamentoPraFugir
 			tem_dinheiro = Global.dinheiroGado
+			esta_foragido = Global.gadoForagido
 			acoes = str(Global.gadoAcoes)
 
 	if paHUD != null:
@@ -197,6 +209,9 @@ func atualizar_HUD():
 		
 	if dinheiroHUD != null:
 		dinheiroHUD.modulate.a = 1.0 if tem_dinheiro else 0.2
+	
+	if foragidoHUD != null:
+		foragidoHUD.modulate.a = 1.0 if esta_foragido else 0.2
 	
 	acoesHUD.text = "Ações: " + acoes
 
