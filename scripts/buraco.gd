@@ -52,13 +52,10 @@ func viajar_para_cidade() -> void:
 	
 	match jogador:
 		"Capivara":
-			Global.capivaraVezesPreso += 1
 			Global.capivaraForagida = true
 		"Pato":
-			Global.patoVezesPreso += 1
 			Global.patoForagido = true
 		"Gado":
-			Global.gadoVezesPreso += 1
 			Global.gadoForagido = true
 	
 	Transicao.mudar_cena("res://scenes/cidade.tscn")

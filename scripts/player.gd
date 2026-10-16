@@ -112,7 +112,7 @@ func _physics_process(delta: float) -> void:
 		botaoE.visible = true
 	if !Global.sendoPersiguido:
 		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	elif (Input.is_action_just_pressed("e") and podeClicar) or taAndando:
+	elif (Input.is_action_just_pressed("e") and podeClicar and get_tree().current_scene.name == "Jogo") or taAndando:
 		input_dir = Vector2(0, 1)
 		taAndando = true
 		podeClicar = false
@@ -123,9 +123,7 @@ func _physics_process(delta: float) -> void:
 	elif Input.is_action_just_pressed("e") and !podeClicar:
 		timer.start() # Reinicia o timer
 	
-	if taAndando and position.y > 125:
-		Global.posicao_player = Vector2(-138, -79)
-		Global.definir_posicao = true
+	if taAndando and get_tree().current_scene.name == "Jogo" and position.y > 125 and Global.sendoPersiguido:
 		Global.ultimaDirecao = "baixo"
 		Global.sendoPersiguido = false
 		

@@ -51,7 +51,7 @@ func desbloquear_personagem(id: String) -> void:
 
 
 #VARIAVEIS DA HISTORIA
-var presos = ["Pato"]
+var presos = []
 var mortos = []
 var fugiu = []
 

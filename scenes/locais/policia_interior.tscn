@@ -1058,5 +1058,3 @@ color = Color(0.5330367, 0.5330367, 0.5330367, 1)
 
 [node name="fugir_prisao" parent="." unique_id=594090926 instance=ExtResource("17_k5d64")]
 position = Vector2(367, 444)
-id_dialogo = null
-dialogo_index = null
