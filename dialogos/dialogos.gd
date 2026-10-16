@@ -568,7 +568,7 @@ const DIALOGOS = {
 			"texto": "O Pato está perdendo a paciência. (Custa uma ação)",
 			"opcoes": [
 				{
-					"texto": "Matar o Capi Talista",
+					"texto": "Matar-lo",
 					"proxima_fala": 2
 				},
 				{
@@ -600,7 +600,7 @@ const DIALOGOS = {
 			"texto": "O Pato está perdendo a paciência. (Custa uma ação)",
 			"opcoes": [
 				{
-					"texto": "Matar o Advo Gado",
+					"texto": "Matar-lo",
 					"proxima_fala": 2
 				},
 				{
