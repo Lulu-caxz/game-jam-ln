@@ -1,1 +1,4 @@
 # game-jam-ln
+
+
+PARA EXECUTAR APERTE F5
