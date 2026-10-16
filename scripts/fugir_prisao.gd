@@ -46,7 +46,11 @@ func viajar_para_cidade() -> void:
 	
 	match jogador:
 		"Capivara":
+<<<<<<< Updated upstream
 			Global.presos.erase(jogador)
+=======
+			Global.capivaraVezesPreso += 1
+>>>>>>> Stashed changes
 			Global.capivaraForagido = true
 		"Pato":
 			Global.presos.erase(jogador)
