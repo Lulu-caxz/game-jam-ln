@@ -34,6 +34,7 @@ const textures_dialogo = [
 	{"Tigrão": "res://sprites/iconDialogo/TigrinhoDialogo.png"},
 	{"Dele Gado": "res://sprites/iconDialogo/DeleGadoDialogo.png"},
 	{"Ze Brava": "res://sprites/iconDialogo/ZeBravaDialogo.png"},
+	{"Manifestante": "res://sprites/iconDialogo/LiderManifestacaoDialogo.png"},
 ]
 
 func bloquear_personagem(id: String) -> void:
@@ -82,6 +83,8 @@ var resultadoBancoTexto: String = ""
 var bancoRoubado = false
 
 var manifestaçãoAtiva = false
+var manifestacaoRealizada: bool = false
+var resultadoManifestacaoTexto: String = ""
 
 var statusApostaTigrinho: String = ""
 var resultadoTigrinhoTexto: String = ""

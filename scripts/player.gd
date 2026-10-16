@@ -90,6 +90,8 @@ var podeClicar = true
 
 func _physics_process(delta: float) -> void:
 	
+	print(Global.manifestacaoRealizada)
+	
 	if not Global.dialogo_ativo and Global.sequencia_players[Global.atual] == "Pato":
 		quack_timer += delta
 		if quack_timer >= tempo_proximo_quack:
