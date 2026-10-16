@@ -46,21 +46,32 @@ func _ao_realizar_escolha(resultado: int) -> void:
 		"Gado":
 			acoes = Global.gadoAcoes
 
+	var nome_alvo: String = alvo
+
+	for nome in Global.Nomes:
+		if nome.has(alvo):
+			nome_alvo = nome[alvo]
+			break
+		
 	if acoes <= 0:
 		Global.resultadoCobraDoraTexto = "Você não tem ações suficientes!"
 		return
 
 	if Global.presos.has(alvo):
-		Global.resultadoCobraDoraTexto = alvo + " já está preso!"
+		Global.resultadoCobraDoraTexto = nome_alvo + " já está preso!"
 		return
-
+		
+	if Global.mortos.has(alvo):
+		Global.resultadoCobraDoraTexto = nome_alvo + " está morto!"
+		return
+	
 	Global.gastar_dinheiro(jogador)
 	Global.gastar_acao(jogador)
 	Global.presos.append(alvo)
 
 	match alvo:
 		"Capivara":
-			Global.capivaraForagida = false
+			Global.capivaraForagido = false
 			Global.capivaraVezesPreso += 1
 		"Pato":
 			Global.patoForagido = false
@@ -69,11 +80,6 @@ func _ao_realizar_escolha(resultado: int) -> void:
 			Global.gadoForagido = false
 			Global.gadoVezesPreso += 1
 
-	var nome_alvo: String = alvo
-
-	for nome in Global.Nomes:
-		if nome.has(alvo):
-			nome_alvo = nome[alvo]
-			break
+	
 
 	Global.resultadoCobraDoraTexto = "Vou botar o " + nome_alvo + " na prisão!"
