@@ -288,50 +288,62 @@ const DIALOGOS = {
 		},
 		{
 			"quem": ["Player", ""],
-			"texto": "😡😡"
+			"texto": ">:("
 		}
 	],
 	"delegado": [
 		{
 			"quem": ["Npc", "Dele Gado"],
-			"texto": "Já nos falamos hoje, termine o que tem para fazer"
-		},
-		{
-			"quem": ["Npc", "Dele Gado"],
-			"texto": "Meu tempo é dinheiro"
+			"texto": "Bom dia!!"
 		},
 		{
 			"quem": ["Player", ""],
-			"texto": "😡😡"
-		}
+			"texto": "Bom dia!"
+		},
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "Olha bem, aqui não tem para niguem."
+		},
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "quando vejo um ladrão, coloco direto na prisão."
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "?!!"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Bem, com você aqui na cidade, estamos seguros em."
+		},
 	],
 	"delegado1": [
 		{
 			"quem": ["Npc", "Dele Gado"],
-			"texto": "Já nos falamos hoje, termine o que tem para fazer"
+			"texto": "Vira e meche alguem rouba o banco."
 		},
 		{
 			"quem": ["Npc", "Dele Gado"],
-			"texto": "Meu tempo é dinheiro"
+			"texto": "sempre que um espertinho pisa aqui é GRADE!!"
 		},
 		{
 			"quem": ["Player", ""],
-			"texto": "😡😡"
+			"texto": "Nossa que medo!"
 		}
 	],
 	"delegado2": [
 		{
 			"quem": ["Npc", "Dele Gado"],
-			"texto": "Já nos falamos hoje, termine o que tem para fazer"
-		},
-		{
-			"quem": ["Npc", "Dele Gado"],
-			"texto": "Meu tempo é dinheiro"
+			"texto": "Se cuida e anda sempre na linha em!"
 		},
 		{
 			"quem": ["Player", ""],
-			"texto": "😡😡"
-		}
+			"texto": "Com você aqui é claro"
+		},
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "MUUUU!!!"
+		},
 	],
 	
 	"Capivara-prisao": [

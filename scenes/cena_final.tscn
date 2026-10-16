@@ -1,0 +1,166 @@
+[gd_scene format=3 uid="uid://bcbu3vmeugvc8"]
+
+[ext_resource type="Script" uid="uid://bamkhg5riudal" path="res://scripts/cana_final.gd" id="1_0ppku"]
+[ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="2_2vuui"]
+[ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="3_xat1p"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0ppku"]
+load_path = "res://.godot/imported/CaixaDialogoSheet.png-5db63fe84c537352ba454414210e1f3a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rlkg5"]
+load_path = "res://.godot/imported/CaixaDialogoSheet.png-5db63fe84c537352ba454414210e1f3a.ctex"
+
+[node name="CenaFinal" type="Node2D" unique_id=1578463486]
+script = ExtResource("1_0ppku")
+
+[node name="Pato2" type="NinePatchRect" parent="." unique_id=332651743]
+offset_left = 130.0
+offset_top = 8.0
+offset_right = 257.0
+offset_bottom = 26.0
+texture = SubResource("CompressedTexture2D_0ppku")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="PlayerName" type="Label" parent="Pato2" unique_id=411746865]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xat1p")
+theme_override_font_sizes/font_size = 9
+text = "Aperte Enter para ver os creditos"
+
+[node name="Capi" type="NinePatchRect" parent="." unique_id=1163256700]
+offset_left = 46.0
+offset_top = 30.0
+offset_right = 105.0
+offset_bottom = 48.0
+texture = ExtResource("2_2vuui")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="PlayerName" type="Label" parent="Capi" unique_id=254297909]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xat1p")
+theme_override_font_sizes/font_size = 9
+text = "Capi Talista"
+
+[node name="Pato" type="NinePatchRect" parent="." unique_id=510377145]
+offset_left = 163.0
+offset_top = 28.0
+offset_right = 222.0
+offset_bottom = 46.0
+texture = ExtResource("2_2vuui")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="PlayerName" type="Label" parent="Pato" unique_id=1033297369]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xat1p")
+theme_override_font_sizes/font_size = 9
+text = "Psico Pato"
+
+[node name="Gado" type="NinePatchRect" parent="." unique_id=1715737133]
+offset_left = 280.0
+offset_top = 29.0
+offset_right = 339.0
+offset_bottom = 47.0
+texture = ExtResource("2_2vuui")
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="PlayerName" type="Label" parent="Gado" unique_id=450288679]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 52.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_xat1p")
+theme_override_font_sizes/font_size = 9
+text = "Adivo Gado"
+
+[node name="CapiAcoes" type="NinePatchRect" parent="." unique_id=1029824965]
+offset_left = 39.0
+offset_top = 50.0
+offset_right = 113.0
+offset_bottom = 203.0
+texture = SubResource("CompressedTexture2D_rlkg5")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="texto" type="RichTextLabel" parent="CapiAcoes" unique_id=244079924]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 67.0
+offset_bottom = 147.0
+theme_override_colors/default_color = Color(0.12941177, 0.0627451, 0.03529412, 1)
+theme_override_fonts/normal_font = ExtResource("3_xat1p")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
+
+[node name="PatoAcoes" type="NinePatchRect" parent="." unique_id=1505919949]
+offset_left = 156.0
+offset_top = 51.0
+offset_right = 230.0
+offset_bottom = 202.0
+texture = SubResource("CompressedTexture2D_rlkg5")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="texto" type="RichTextLabel" parent="PatoAcoes" unique_id=916556867]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 68.0
+offset_bottom = 145.0
+
+[node name="GadoAcoes" type="NinePatchRect" parent="." unique_id=1719133940]
+offset_left = 272.0
+offset_top = 50.0
+offset_right = 346.0
+offset_bottom = 201.0
+texture = SubResource("CompressedTexture2D_rlkg5")
+region_rect = Rect2(0, 0, 48, 48)
+patch_margin_left = 4
+patch_margin_top = 4
+patch_margin_right = 4
+patch_margin_bottom = 4
+
+[node name="texto" type="RichTextLabel" parent="GadoAcoes" unique_id=1663793193]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 5.0
+offset_right = 68.0
+offset_bottom = 145.0
