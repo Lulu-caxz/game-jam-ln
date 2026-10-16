@@ -14,12 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://xtklhprj3y3q" path="res://scripts/fugindo.gd" id="13_0sjix"]
-=======
 [ext_resource type="Texture2D" uid="uid://c7qu1ykh2t3ml" path="res://sprites/Procurado.png" id="13_a6xj1"]
 [ext_resource type="PackedScene" uid="uid://chfd08abq0gxp" path="res://scenes/npcs/dele_gado_corredor.tscn" id="13_0sjix"]
->>>>>>> a5a1e225e0a56df0ccc4573f8fff12727abab937
 [ext_resource type="PackedScene" uid="uid://t6eyyuei4sf2" path="res://scenes/carro.tscn" id="15_a6xj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v2a"]

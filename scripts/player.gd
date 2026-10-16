@@ -10,12 +10,9 @@ extends CharacterBody2D
 @onready var paHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Pa")
 @onready var acoesHUD: Label = get_tree().current_scene.get_node_or_null("HUD/Acoes/Label")
 @onready var caixaAcoesHUD: NinePatchRect = get_tree().current_scene.get_node_or_null("HUD/Acoes")
-<<<<<<< HEAD
-@onready var botaoE: Sprite2D = $Botao
-=======
-@onready var foragidoHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Foragido")
->>>>>>> a5a1e225e0a56df0ccc4573f8fff12727abab937
 
+@onready var botaoE: Sprite2D = $Botao
+@onready var foragidoHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Foragido")
 
 const VELOCIDADE = 80.0
 const INTERVALO_PASSO = 0.35
