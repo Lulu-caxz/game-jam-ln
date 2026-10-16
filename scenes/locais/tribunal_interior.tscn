@@ -488,6 +488,8 @@ position = Vector2(0, -35)
 [node name="GadoNPC" parent="YSort" unique_id=816674935 instance=ExtResource("7_1g705")]
 position = Vector2(-32, -88)
 direcao = "baixo"
+id_dialogo = null
+dialogo_index = null
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/GadoNPC" unique_id=2141044561]
 position = Vector2(0, 10)

@@ -11,6 +11,7 @@ extends RigidBody2D
 
 var onArea = false
 var dialogo_ativo = false
+var id_dialogo_atual: String = ""
 
 func _ready() -> void:
 	botao.visible = false
@@ -44,6 +45,9 @@ func gerar_dialogo() -> void:
 		
 		var instancia = cena_dialogo.instantiate()
 		instancia.idDialogo = id_dialogo[dialogo_index]
+		
+		id_dialogo_atual = id_dialogo[dialogo_index]
+		instancia.idDialogo = id_dialogo_atual
 		
 		if id_dialogo.size() > dialogo_index + 1:
 			dialogo_index += 1

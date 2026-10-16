@@ -557,6 +557,70 @@ const DIALOGOS = {
 			"fim": true
 		}
 	],
+	
+		"pato-matar-capivara": [
+		{
+			"quem": ["Player", "Psico Pato"],
+			"texto": "Quack quack."
+		},
+		{
+			"tipo": "escolha",
+			"texto": "O Pato está perdendo a paciência. (Custa uma ação)",
+			"opcoes": [
+				{
+					"texto": "Matar o Capi Talista",
+					"proxima_fala": 2
+				},
+				{
+					"texto": "Deixar para lá",
+					"proxima_fala": 3
+				}
+			]
+		},
+		{
+			"quem": ["Player", "Psico Pato"],
+			"texto": "QUAAAAACK!!!",
+			"matar_personagem": "Capivara",
+			"fim": true
+		},
+		{
+			"quem": ["Player", "Psico Pato"],
+			"texto": "Quack quack...",
+			"fim": true
+		}
+	],
+
+	"pato-matar-gado": [
+		{
+			"quem": ["Player", "Psico Pato"],
+			"texto": "Quack quack."
+		},
+		{
+			"tipo": "escolha",
+			"texto": "O Pato está perdendo a paciência. (Custa uma ação)",
+			"opcoes": [
+				{
+					"texto": "Matar o Advo Gado",
+					"proxima_fala": 2
+				},
+				{
+					"texto": "Deixar para lá",
+					"proxima_fala": 3
+				}
+			]
+		},
+		{
+			"quem": ["Player", "Psico Pato"],
+			"texto": "QUAAAAACK!!!",
+			"matar_personagem": "Gado",
+			"fim": true
+		},
+		{
+			"quem": ["Player", "Psico Pato"],
+			"texto": "Quack quack...",
+			"fim": true
+		}
+	],
 }
 
 static func pegar_dialogo(nome_dialogo: String) -> Array:

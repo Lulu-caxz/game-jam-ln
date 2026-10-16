@@ -101,6 +101,13 @@ func mostrar_texto() -> void:
 		return
 
 	var dialogo_data = dialogo[i_fala]
+	
+	if dialogo_data.has("matar_personagem"):
+		var personagem: String = dialogo_data["matar_personagem"]
+
+		if Global.sequencia_players[Global.atual] == "Pato":
+			if Global.patoAcoes > 0:
+				Global.matar_personagem(personagem)
 
 	escolha1.hide()
 	escolha2.hide()
