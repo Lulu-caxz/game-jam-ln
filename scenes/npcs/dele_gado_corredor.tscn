@@ -93,6 +93,7 @@ animations = [{
 size = Vector2(9, 11.5)
 
 [node name="DeleGadoCorredor" type="RigidBody2D" unique_id=816674935]
+y_sort_enabled = true
 gravity_scale = 0.0
 script = ExtResource("1_mk1xv")
 

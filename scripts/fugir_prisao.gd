@@ -44,14 +44,16 @@ func viajar_para_cidade() -> void:
 		"Capivara":
 			Global.capivaraVezesPreso += 1
 			Global.capivaraForagida = true
-			Global.sendoPersiguido = true
+			
 		"Pato":
 			Global.patoVezesPreso += 1
 			Global.patoForagido = true
-			Global.sendoPersiguido = true
+			
 		"Gado":
 			Global.gadoVezesPreso += 1
 			Global.gadoForagido = true
-			Global.sendoPersiguido = true
+			
 	
+	Global.sendoPersiguido = true
 	Transicao.mudar_cena("res://scenes/cidade.tscn")
+	

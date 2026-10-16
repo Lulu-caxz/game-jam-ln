@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var paHUD: Sprite2D = get_tree().current_scene.get_node_or_null("HUD/Pa")
 @onready var acoesHUD: Label = get_tree().current_scene.get_node_or_null("HUD/Acoes/Label")
 @onready var caixaAcoesHUD: NinePatchRect = get_tree().current_scene.get_node_or_null("HUD/Acoes")
+@onready var botaoE: Sprite2D = $Botao
 
 
 const VELOCIDADE = 80.0
@@ -76,6 +77,8 @@ func _ready() -> void:
 	timer.one_shot = true 
 	add_child(timer) 
 	timer.timeout.connect(pode_clicar)
+	
+	botaoE.visible = false
 
 var taAndando = false
 var podeClicar = true
@@ -99,16 +102,29 @@ func _physics_process(delta: float) -> void:
 	
 	var input_dir = Vector2.ZERO
 	if !Global.sendoPersiguido:
+		botaoE.visible = false
+	elif Global.sendoPersiguido and podeClicar and get_tree().current_scene.name == "Jogo":
+		botaoE.visible = true
+	if !Global.sendoPersiguido:
 		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	elif (Input.is_action_just_pressed("e") and podeClicar) or taAndando:
 		input_dir = Vector2(0, 1)
 		taAndando = true
 		podeClicar = false
+		botaoE.visible = false
 		parar_andar()
 		
 		timer.start() # Inicia o timer
 	elif Input.is_action_just_pressed("e") and !podeClicar:
 		timer.start() # Reinicia o timer
+	
+	if taAndando and position.y > 125:
+		Global.posicao_player = Vector2(-138, -79)
+		Global.definir_posicao = true
+		Global.ultimaDirecao = "baixo"
+		Global.sendoPersiguido = false
+		
+		await Transicao.mudar_cena("res://scenes/cidade.tscn")
 	
 	if input_dir != Vector2.ZERO:
 		var dir_chave := input_dir.round()
@@ -153,6 +169,7 @@ func parar_andar():
 	taAndando = false
 func pode_clicar():
 	podeClicar = true
+	botaoE.visible = true
 
 func atualizar_HUD():
 	player_atual = Global.sequencia_players[Global.atual]

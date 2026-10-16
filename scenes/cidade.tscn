@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
-[ext_resource type="PackedScene" uid="uid://chfd08abq0gxp" path="res://scenes/npcs/dele_gado_corredor.tscn" id="13_0sjix"]
+[ext_resource type="Script" uid="uid://xtklhprj3y3q" path="res://scripts/fugindo.gd" id="13_0sjix"]
 [ext_resource type="PackedScene" uid="uid://t6eyyuei4sf2" path="res://scenes/carro.tscn" id="15_a6xj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v2a"]
@@ -73,6 +73,7 @@ texture_region_size = Vector2i(48, 32)
 1:6/0 = 0
 2:6/0 = 0
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-20, -4, 22, -4, 22, 8, -20, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6xj1"]
 texture = ExtResource("9_j7v2a")
@@ -114,12 +115,16 @@ texture_region_size = Vector2i(32, 48)
 5:6/0 = 0
 6:6/0 = 0
 0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12, -12, 12, -12, 12, 20, -12, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0sjix"]
 texture = ExtResource("9_j7v2a")
 2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7wb4"]
 texture = ExtResource("9_j7v2a")
@@ -131,7 +136,9 @@ texture_region_size = Vector2i(64, 32)
 3:0/0 = 0
 4:0/0 = 0
 0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, 0, 12, 0, 12, 12, -24, 12)
 1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 4, 4, 4, 8, 12, -24, 12)
 2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
@@ -171,6 +178,7 @@ texture_region_size = Vector2i(64, 32)
 0:0/0/z_index = 4
 
 [sub_resource type="TileSet" id="TileSet_hd66b"]
+physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_o27u3")
 sources/1 = SubResource("TileSetAtlasSource_a6xj1")
 sources/2 = SubResource("TileSetAtlasSource_0sjix")
@@ -303,7 +311,7 @@ tile_set = SubResource("TileSet_o27u3")
 
 [node name="Decorações" type="TileMapLayer" parent="YSort" unique_id=1350839006]
 y_sort_enabled = true
-tile_map_data = PackedByteArray("AAD9/wMAAAAAAAAAAAD1/wMAAAAAAAAAAAABAO//AAAAAAAAAAAEAPH/AQAAAAAAAAAEAPX/AQAAAAAAAADu//H/AQAAAAAAAADu//X/AQAAAAAAAADu//3/AQAAAAAAAADu/wEAAQAAAAAAAAAEAP3/AQAAAAAAAAAEAAEAAQAAAAAAAADw/wMAAgAAAAIAAADx/wMAAgABAAIAAAACAAMAAgAAAAIAAAADAAMAAgABAAIAAAAAAAMAAgACAAIAAADz/wMAAgACAAIAAAD3/wMAAgACAAIAAAD//wEAAgACAAIAAAAEAPv/AgACAAIAAAD8/+//AgAAAAIAAAD9/+//AgABAAIAAAD//+7/AgACAAIAAAAEAO//AgACAAIAAADu//P/AgACAAIAAADu//v/AgACAAIAAADx////AwAAAAAAAAACAPD/AwAAAAAAAADx//D/AwABAAAAAAACAAAAAwABAAAAAAD0/+7/AgACAAIAAAD2/+7/AgACAAIAAADx/+7/AAAAAAAAAADx/wEAAwAAAAEAAAACAPL/AwAAAAEAAAACAAIAAwABAAEAAADx//L/AwABAAEAAAA=")
+tile_map_data = PackedByteArray("AAAEAPH/AQAAAAAAAAAEAPX/AQAAAAAAAADu//3/AQAAAAAAAADu/wEAAQAAAAAAAAAEAP3/AQAAAAAAAAAEAAEAAQAAAAAAAAAEAPv/AgACAAIAAAD//+7/AgACAAIAAAAEAO//AgACAAIAAADu//v/AgACAAIAAADx////AwAAAAAAAAACAPD/AwAAAAAAAAACAAAAAwABAAAAAAD0/+7/AgACAAIAAAD2/+7/AgACAAIAAADx/+7/AAAAAAAAAADx/wEAAwAAAAEAAAACAPL/AwAAAAEAAAACAAIAAwABAAEAAADx/+//AwABAAAAAADx//H/AwABAAEAAADu//H/AQAAAAAAAADu//P/AgACAAIAAADu//X/AQAAAAAAAAD8/+7/AgAAAAIAAAD9/+7/AgABAAIAAAACAO7/AAAAAAAAAAD9/wQAAAAAAAAAAAAAAAQAAgACAAIAAAACAAQAAgAAAAIAAAADAAQAAgABAAIAAADw/wQAAgAAAAIAAADx/wQAAgABAAIAAADz/wQAAgACAAIAAAD1/wQAAAAAAAAAAAD3/wQAAgACAAIAAAD+/wEAAgACAAIAAAABAP7/AgACAAIAAAD1/wIAAgAAAAIAAAD2/wIAAgABAAIAAADz//H/AgAAAAIAAAD0//H/AgABAAIAAADx//T/AgACAAIAAAD+//H/AgACAAIAAAABAPT/AgACAAIAAAA=")
 tile_set = SubResource("TileSet_hd66b")
 
 [node name="Carro2" parent="YSort" unique_id=633400680 instance=ExtResource("15_a6xj1")]
@@ -314,9 +322,7 @@ position = Vector2(-250, -354)
 
 [node name="Carro" parent="YSort" unique_id=843519661 instance=ExtResource("15_a6xj1")]
 position = Vector2(136, 144)
-
-[node name="DeleGadoCorredor" parent="YSort" unique_id=1549167953 instance=ExtResource("13_0sjix")]
-position = Vector2(136, -411)
+script = ExtResource("13_0sjix")
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=232321833]
 

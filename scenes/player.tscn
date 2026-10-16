@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://2014t1r18nai" path="res://sprites/Sheet/AdvoGadoSheet.png" id="4_tuyoq"]
 [ext_resource type="AudioStream" uid="uid://cmuy5kaedacaw" path="res://sounds/SFX/Passo_Piso.mp3" id="5_qlg0r"]
 [ext_resource type="AudioStream" uid="uid://dho13l4g7e0q5" path="res://sounds/SFX/Quack.mp3" id="6_tuyoq"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="7_fjrip"]
 
 [sub_resource type="Gradient" id="Gradient_tuyoq"]
 offsets = PackedFloat32Array(0, 0.27868852, 0.46721312, 1)
@@ -625,3 +626,8 @@ volume_db = 5.0
 [node name="Quack" type="AudioStreamPlayer" parent="." unique_id=72698709]
 stream = ExtResource("6_tuyoq")
 volume_db = -5.0
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=782604631]
+z_index = 4
+position = Vector2(29, -29)
+texture = ExtResource("7_fjrip")
