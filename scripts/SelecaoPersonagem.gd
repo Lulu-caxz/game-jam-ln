@@ -40,7 +40,7 @@ func _ready() -> void:
 		personagem.mouse_exited.connect(
 			_on_personagem_mouse_exited.bind(personagem)
 		)
-
+	
 	aplicar_bloqueios()
 	atualizar_selecao()
 
@@ -81,7 +81,8 @@ func aplicar_bloqueios() -> void:
 		"Pato": pato,
 		"Gado": gado
 	}
-
+	
+	var verify = true
 	for id in personagens:
 		var personagem = personagens[id]
 
@@ -92,6 +93,10 @@ func aplicar_bloqueios() -> void:
 			personagem.bloquear()
 		else:
 			personagem.desbloquear()
+			verify = false
+	
+	if verify:
+		Transicao.mudar_cena("res://scenes/cena_final.tscn")
 
 
 func deve_bloquear(id: String) -> bool:

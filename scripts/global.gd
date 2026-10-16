@@ -104,7 +104,11 @@ var sendoPersiguido = false
 #carros roubados
 var carrosRoubados = [] # 1 , 2 ,3 vai ser o id do carro fds
 
-
+var acoesJogadores = {
+	"Capivara": [],
+	"Pato": [],
+	"Gado": []
+}
 
 func tem_dinheiro(jogador: String) -> bool:
 	match jogador:
