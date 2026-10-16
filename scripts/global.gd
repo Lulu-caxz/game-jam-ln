@@ -72,7 +72,7 @@ var gadoVezesPreso = 0
 
 #true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
 var dinheiroCapivara = false
-var dinheiroPato = true 
+var dinheiroPato = false
 var dinheiroGado = false
 
 var capivaraJaPegouDinheiroNoBanco = false

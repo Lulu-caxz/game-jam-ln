@@ -212,7 +212,7 @@ const DIALOGOS = {
 		},
 		{
 			"quem": ["Player", ""],
-			"texto": "Você deveria éra estar preso!"
+			"texto": "Você deveria era estar preso!"
 		},
 		{
 			"quem": ["Npc", "Psico Pato"],
@@ -475,6 +475,32 @@ const DIALOGOS = {
 	"banco-roubado": [
 		{
 			"texto": "O banco foi roubado e não possui mais dinheiro.",
+			"fim": true
+		}
+	],
+	
+	"banco-pato": [
+		{
+			"tipo": "escolha",
+			"texto": "O banco está cheio de dinheiro... O que você vai fazer?",
+			"opcoes": [
+				{
+					"texto": "Roubar o banco",
+					"proxima_fala": 1
+				},
+				{
+					"texto": "Deixar quieto",
+					"proxima_fala": 2
+				}
+			]
+		},
+		{
+			"texto": "",
+			"resultado_banco": true,
+			"fim": true
+		},
+		{
+			"texto": "Melhor não arriscar hoje...",
 			"fim": true
 		}
 	],
