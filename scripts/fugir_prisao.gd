@@ -19,6 +19,8 @@ func gerar_dialogo() -> void:
 func _ao_realizar_escolha(resultado: int) -> void:
 	if resultado != 1:
 		return
+	var jogador: String = Global.sequencia_players[Global.atual]
+	Global.gastar_acao(jogador)
 	viajando = true
 	agendar_viagem_apos_dialogo()
 
