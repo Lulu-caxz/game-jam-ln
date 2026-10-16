@@ -29,11 +29,11 @@ const textures_dialogo = [
 	{"Psico Pato": "res://sprites/iconDialogo/Pato.png"},
 	
 	{"Cobra Dora": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
-	{"Pombo Correio": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
-	{"Tigrinho": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
-	{"Tigrão": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
-	{"Dele Gado": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
-	{"Zebra Va": "res://sprites/iconDialogo/CobraDoraDialogo.png"},
+	{"Pombo Correio": "res://sprites/iconDialogo/PomboDialogo.png"},
+	{"Tigrinho": "res://sprites/iconDialogo/TigrinhoDialogo.png"},
+	{"Tigrão": "res://sprites/iconDialogo/TigrinhoDialogo.png"},
+	{"Dele Gado": "res://sprites/iconDialogo/DeleGadoDialogo.png"},
+	{"Ze Brava": "res://sprites/iconDialogo/ZeBravaDialogo.png"},
 ]
 
 func bloquear_personagem(id: String) -> void:
@@ -72,7 +72,7 @@ var gadoVezesPreso = 0
 
 #true = ter dinheiro, false n ter , começa sem dinheiro, tem q conseguir no banco ou aposta
 var dinheiroCapivara = false
-var dinheiroPato = true 
+var dinheiroPato = false
 var dinheiroGado = false
 
 var capivaraJaPegouDinheiroNoBanco = false

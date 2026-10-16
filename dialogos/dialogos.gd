@@ -517,6 +517,32 @@ const DIALOGOS = {
 			"fim": true
 		}
 	],
+	
+	"banco-pato": [
+		{
+			"tipo": "escolha",
+			"texto": "O banco está cheio de dinheiro... O que você vai fazer?",
+			"opcoes": [
+				{
+					"texto": "Roubar o banco",
+					"proxima_fala": 1
+				},
+				{
+					"texto": "Deixar quieto",
+					"proxima_fala": 2
+				}
+			]
+		},
+		{
+			"texto": "",
+			"resultado_banco": true,
+			"fim": true
+		},
+		{
+			"texto": "Melhor não arriscar hoje...",
+			"fim": true
+		}
+	],
 
 	"banco-sem-dinheiro-capivara": [
 		{
