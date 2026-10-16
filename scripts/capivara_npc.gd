@@ -47,6 +47,7 @@ func _ao_realizar_escolha(resultado: int) -> void:
 			return
 
 		Global.patoAcoes -= 1
+		Global.acoesJogadores["Pato"].append("Matou a Capi Talista.")
 		morrer()
 
 func morrer() -> void:

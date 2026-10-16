@@ -50,6 +50,7 @@ func _input(event: InputEvent) -> void:
 							Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
 							body_entered.disconnect(_on_body_entered)
 							body_exited.disconnect(_on_body_exited)
+							Global.acoesJogadores[jogador].append("Foi preso.")
 							return
 					"Pato":
 						if Global.patoForagido:
@@ -59,6 +60,7 @@ func _input(event: InputEvent) -> void:
 							Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
 							body_entered.disconnect(_on_body_entered)
 							body_exited.disconnect(_on_body_exited)
+							Global.acoesJogadores[jogador].append("Foi preso.")
 							return
 					"Gado":
 						if Global.gadoForagido:
@@ -68,6 +70,7 @@ func _input(event: InputEvent) -> void:
 							Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
 							body_entered.disconnect(_on_body_entered)
 							body_exited.disconnect(_on_body_exited)
+							Global.acoesJogadores[jogador].append("Foi preso.")
 							return
 			
 			onArea = false

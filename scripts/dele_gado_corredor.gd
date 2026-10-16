@@ -33,7 +33,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	var jogador: String = Global.sequencia_players[Global.atual]
 	
 	Global.presos.append(jogador)
-	Global.acoesJogadores[jogador].append("")
+	Global.acoesJogadores[jogador].append("Pego tentando fugir.")
 	match jogador:
 		"Capivara":
 			Global.capivaraForagido = false

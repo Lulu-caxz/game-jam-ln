@@ -50,6 +50,7 @@ func viajar_para_cidade() -> void:
 	
 	var jogador: String = Global.sequencia_players[Global.atual]
 	
+	Global.acoesJogadores[jogador].append("Fugiu pelo buraco.")
 	match jogador:
 		"Capivara":
 			Global.presos.erase(jogador)

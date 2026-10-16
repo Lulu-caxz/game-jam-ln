@@ -177,3 +177,5 @@ func descansar(jogador):
 			Global.patoAcoes = 0
 		"Gado":
 			Global.gadoAcoes = 0
+			
+	Global.acoesJogadores[jogador].append("Usou seu tempo para descansar.")

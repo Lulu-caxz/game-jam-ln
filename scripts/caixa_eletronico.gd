@@ -40,6 +40,8 @@ func _ao_realizar_escolha(resultado: int) -> void:
 		Global.gastar_acao("Pato")
 		Global.bancoRoubado = true
 		Global.dinheiroPato = true
+		
+		Global.acoesJogadores["Pato"].append("Roubou o banco na cara dura.")
 
 		Global.resultadoBancoTexto = "Você roubou o banco e conseguiu dinheiro."
 
@@ -66,5 +68,8 @@ func _ao_realizar_escolha(resultado: int) -> void:
 		Global.gastar_acao("Capivara")
 		Global.dinheiroCapivara = true
 		Global.capivaraJaPegouDinheiroNoBanco = true
+		
+		
+		Global.acoesJogadores["Capivara"].append("Sacou dinheiro do banco.")
 
 		Global.resultadoBancoTexto = "Saque realizado! Você recebeu seu dinheiro."

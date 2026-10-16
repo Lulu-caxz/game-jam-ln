@@ -68,6 +68,7 @@ func _ao_realizar_escolha(resultado: int) -> void:
 	Global.gastar_dinheiro(jogador)
 	Global.gastar_acao(jogador)
 	Global.presos.append(alvo)
+	Global.acoesJogadores[jogador].append("Pagou Cobra Dora para ferra com" + alvo + ".")
 
 	match alvo:
 		"Capivara":

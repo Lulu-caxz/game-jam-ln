@@ -26,5 +26,7 @@ func _ao_realizar_escolha(resultado: int) -> void:
 	# Cobra o dinheiro e entrega o equipamento.
 	Global.gastar_dinheiro(jogador)
 	Global.entregar_equipamento(jogador)
+	
+	Global.acoesJogadores[jogador].append("Negociou com pombo correio.")
 
 	Global.resultadoPomboTexto = "Toma aqui, bom corre pra ti. PRRUUUU"
