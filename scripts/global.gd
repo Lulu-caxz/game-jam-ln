@@ -61,7 +61,7 @@ var capivaraAcoes = 3
 var patoAcoes = 3
 var gadoAcoes = 3
 
-var capivaraForagido = true
+var capivaraForagido = false
 var patoForagido = false
 var gadoForagido = false
 
