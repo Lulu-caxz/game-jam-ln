@@ -212,7 +212,7 @@ const DIALOGOS = {
 		},
 		{
 			"quem": ["Player", ""],
-			"texto": "Você deveria éra estar preso!"
+			"texto": "Você deveria era estar preso!"
 		},
 		{
 			"quem": ["Npc", "Psico Pato"],
@@ -241,22 +241,19 @@ const DIALOGOS = {
 			"opcoes": [
 				{
 					"texto": "Fugir",
-					"proxima_fala": 3
+					"proxima_fala": 4
 				},
 				{
 					"texto": "Melhor não",
-					"proxima_fala": 4
+					"proxima_fala": 3
 				}
 			]
 		},
 		{
-			"quem": ["Npc", "Pombo Correio"],
 			"texto": "",
-			"resultado_compra_pombo": true,
 			"fim": true
 		},
 		{
-			"quem": ["Npc", "Pombo Correio"],
 			"texto": "Melhor evitar uma perseguição",
 			"fim": true
 		}
@@ -287,6 +284,48 @@ const DIALOGOS = {
 		},
 		{
 			"quem": ["Npc", "Capi Talista"],
+			"texto": "Meu tempo é dinheiro"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "😡😡"
+		}
+	],
+	"delegado": [
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "Já nos falamos hoje, termine o que tem para fazer"
+		},
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "Meu tempo é dinheiro"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "😡😡"
+		}
+	],
+	"delegado1": [
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "Já nos falamos hoje, termine o que tem para fazer"
+		},
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "Meu tempo é dinheiro"
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "😡😡"
+		}
+	],
+	"delegado2": [
+		{
+			"quem": ["Npc", "Dele Gado"],
+			"texto": "Já nos falamos hoje, termine o que tem para fazer"
+		},
+		{
+			"quem": ["Npc", "Dele Gado"],
 			"texto": "Meu tempo é dinheiro"
 		},
 		{

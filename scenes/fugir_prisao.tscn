@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b4p52e4lqal2x"]
 
-[ext_resource type="Script" uid="uid://d0jyh4uii72x5" path="res://scripts/zebrava_npc.gd" id="1_7f8hc"]
+[ext_resource type="Script" uid="uid://drcuiarbkgi87" path="res://scripts/fugir_prisao.gd" id="1_7f8hc"]
 [ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_6oc2l"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4civj"]

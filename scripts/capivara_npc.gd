@@ -8,8 +8,8 @@ func _ready() -> void:
 	super._ready()
 	if get_tree().current_scene.name == "policia_interior":
 		id_dialogo = ["Capivara-prisao"]
-	elif get_tree().current_scene.name == "banco_interior":
-		id_dialogo = ["Capivara-banco"]
+	elif get_tree().current_scene.name == "Banco_interior":
+		id_dialogo = ["Capivara-banco", "Capivara-banco1"]
 	
 	match direcao:
 		"cima":

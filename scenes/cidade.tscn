@@ -14,6 +14,8 @@
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
+[ext_resource type="PackedScene" uid="uid://chfd08abq0gxp" path="res://scenes/npcs/dele_gado_corredor.tscn" id="13_0sjix"]
+[ext_resource type="PackedScene" uid="uid://t6eyyuei4sf2" path="res://scenes/carro.tscn" id="15_a6xj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v2a"]
 texture = ExtResource("8_7t1fb")
@@ -51,21 +53,13 @@ sources/0 = SubResource("TileSetAtlasSource_j7v2a")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o27u3"]
 texture = ExtResource("9_j7v2a")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
+texture_region_size = Vector2i(48, 32)
 3:0/0 = 0
 4:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
 3:1/0 = 0
 4:1/0 = 0
 3:2/0 = 0
 4:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
 3:3/0 = 0
 0:4/0 = 0
 1:4/0 = 0
@@ -78,42 +72,109 @@ texture = ExtResource("9_j7v2a")
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_a6xj1"]
+texture = ExtResource("9_j7v2a")
+margins = Vector2i(48, 0)
+texture_region_size = Vector2i(32, 48)
+3:0/0 = 0
+4:0/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0sjix"]
+texture = ExtResource("9_j7v2a")
+2:2/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y7wb4"]
+texture = ExtResource("9_j7v2a")
+margins = Vector2i(0, 48)
+texture_region_size = Vector2i(64, 32)
+1:0/0 = 0
+1:0/0/z_index = 4
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+6:4/0 = 0
+7:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+5:5/0 = 0
+6:5/0 = 0
+7:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+6:6/0 = 0
+0:0/0 = 0
+0:0/0/z_index = 4
 
 [sub_resource type="TileSet" id="TileSet_hd66b"]
 sources/0 = SubResource("TileSetAtlasSource_o27u3")
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e6m3j"]
-texture = ExtResource("9_j7v2a")
-0:0/0 = 0
-1:0/0 = 0
-2:0/0 = 0
-3:0/0 = 0
-4:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-3:1/0 = 0
-4:1/0 = 0
-3:2/0 = 0
-4:2/0 = 0
-0:3/0 = 0
-1:3/0 = 0
-2:3/0 = 0
-3:3/0 = 0
-0:4/0 = 0
-1:4/0 = 0
-2:4/0 = 0
-3:4/0 = 0
-0:5/0 = 0
-1:5/0 = 0
-2:5/0 = 0
-3:5/0 = 0
-0:6/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_1jtul"]
-sources/0 = SubResource("TileSetAtlasSource_e6m3j")
+sources/1 = SubResource("TileSetAtlasSource_a6xj1")
+sources/2 = SubResource("TileSetAtlasSource_0sjix")
+sources/3 = SubResource("TileSetAtlasSource_y7wb4")
 
 [node name="Jogo" type="Node2D" unique_id=748497634]
 script = ExtResource("1_1jtul")
@@ -241,12 +302,21 @@ tile_map_data = PackedByteArray("AAD4//b/AAACAAEAAAD5//b/AAADAAEAAAD6//b/AAAEAAE
 tile_set = SubResource("TileSet_o27u3")
 
 [node name="Decorações" type="TileMapLayer" parent="YSort" unique_id=1350839006]
-tile_map_data = PackedByteArray("AAD0/+7/AAAAAAAAAAD0/+//AAAAAAEAAAD1/+7/AAABAAAAAAD1/+//AAABAAEAAAD2/+7/AAACAAAAAAD2/+//AAACAAEAAADv/+7/AAAAAAAAAADv/+//AAAAAAEAAADw/+7/AAABAAAAAADw/+//AAABAAEAAADx/+7/AAACAAAAAADx/+//AAACAAEAAADu//D/AAADAAAAAADu//H/AAADAAEAAADu//L/AAADAAIAAADv//D/AAAEAAAAAADv//H/AAAEAAEAAADv//L/AAAEAAIAAADu//T/AAADAAAAAADu//X/AAADAAEAAADu//b/AAADAAIAAADv//T/AAAEAAAAAADv//X/AAAEAAEAAADv//b/AAAEAAIAAAADAO//AAADAAAAAAADAPD/AAADAAEAAAADAPH/AAADAAIAAAAEAO//AAAEAAAAAAAEAPD/AAAEAAEAAAAEAPH/AAAEAAIAAAADAPT/AAADAAAAAAADAPX/AAADAAEAAAADAPb/AAADAAIAAAAEAPT/AAAEAAAAAAAEAPX/AAAEAAEAAAAEAPb/AAAEAAIAAAADAPz/AAADAAAAAAADAP3/AAADAAEAAAADAP7/AAADAAIAAAAEAPz/AAAEAAAAAAAEAP3/AAAEAAEAAAAEAP7/AAAEAAIAAAADAAAAAAADAAAAAAADAAEAAAADAAEAAAADAAIAAAADAAIAAAAEAAAAAAAEAAAAAAAEAAEAAAAEAAEAAAAEAAIAAAAEAAIAAADu/wAAAAADAAAAAADu/wEAAAADAAEAAADu/wIAAAADAAIAAADv/wAAAAAEAAAAAADv/wEAAAAEAAEAAADv/wIAAAAEAAIAAADu//z/AAADAAAAAADu//3/AAADAAEAAADu//7/AAADAAIAAADv//z/AAAEAAAAAADv//3/AAAEAAEAAADv//7/AAAEAAIAAADv/wMAAAAAAAAAAADv/wQAAAAAAAEAAADw/wMAAAABAAAAAADw/wQAAAABAAEAAADx/wMAAAACAAAAAADx/wQAAAACAAEAAAD0/wMAAAAAAAAAAAD0/wQAAAAAAAEAAAD1/wMAAAABAAAAAAD1/wQAAAABAAEAAAD2/wMAAAACAAAAAAD2/wQAAAACAAEAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAEAAAD9/wMAAAABAAAAAAD9/wQAAAABAAEAAAD+/wMAAAACAAAAAAD+/wQAAAACAAEAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAEAAAABAAMAAAABAAAAAAABAAQAAAABAAEAAAACAAMAAAACAAAAAAACAAQAAAACAAEAAAD8/+7/AAAAAAAAAAD8/+//AAAAAAEAAAD9/+7/AAABAAAAAAD9/+//AAABAAEAAAD+/+7/AAACAAAAAAD+/+//AAACAAEAAAAAAO7/AAAAAAAAAAAAAO//AAAAAAEAAAABAO7/AAABAAAAAAABAO//AAABAAEAAAACAO7/AAACAAAAAAACAO//AAACAAEAAAA=")
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD9/wMAAAAAAAAAAAD1/wMAAAAAAAAAAAABAO//AAAAAAAAAAAEAPH/AQAAAAAAAAAEAPX/AQAAAAAAAADu//H/AQAAAAAAAADu//X/AQAAAAAAAADu//3/AQAAAAAAAADu/wEAAQAAAAAAAAAEAP3/AQAAAAAAAAAEAAEAAQAAAAAAAADw/wMAAgAAAAIAAADx/wMAAgABAAIAAAACAAMAAgAAAAIAAAADAAMAAgABAAIAAAAAAAMAAgACAAIAAADz/wMAAgACAAIAAAD3/wMAAgACAAIAAAD//wEAAgACAAIAAAAEAPv/AgACAAIAAAD8/+//AgAAAAIAAAD9/+//AgABAAIAAAD//+7/AgACAAIAAAAEAO//AgACAAIAAADu//P/AgACAAIAAADu//v/AgACAAIAAADx////AwAAAAAAAAACAPD/AwAAAAAAAADx//D/AwABAAAAAAACAAAAAwABAAAAAAD0/+7/AgACAAIAAAD2/+7/AgACAAIAAADx/+7/AAAAAAAAAADx/wEAAwAAAAEAAAACAPL/AwAAAAEAAAACAAIAAwABAAEAAADx//L/AwABAAEAAAA=")
 tile_set = SubResource("TileSet_hd66b")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="YSort/Decorações" unique_id=1906352414]
-tile_map_data = PackedByteArray("AADz/+//AAADAAMAAADx//H/AAABAAUAAADx//D/AAABAAQAAADz/wIAAAAAAAYAABDy/wIAAAABAAYAABDx/wIAAAACAAYAABDw/wEAAAADAAUAABDw/wAAAAADAAQAABDx/wAAAAACAAQAABDx////AAACAAMAABDy////AAABAAMAABDy/wAAAAABAAQAABDx/wEAAAACAAUAABDw////AAADAAMAABDz/wAAAAAAAAQAABDz////AAAAAAMAABDy/wEAAAABAAUAABDz/wEAAAAAAAUAABD/////AAAAAAMAAAAAAP//AAABAAMAAAABAP//AAACAAMAAAABAAAAAAACAAQAAAABAAEAAAACAAUAAAACAAEAAAADAAUAAAACAAAAAAADAAQAAAACAP//AAADAAMAAAAAAAAAAAABAAQAAAAAAAEAAAABAAUAAAD//wEAAAAAAAUAAAD//wAAAAAAAAQAAAD//wIAAAAAAAYAAAAAAAIAAAABAAYAAAABAAIAAAACAAYAAAD//+//AAADAAMAABAAAO//AAACAAMAABABAO//AAABAAMAABACAO//AAAAAAMAABACAPD/AAAAAAQAABABAPD/AAABAAQAABAAAPD/AAACAAQAABD///D/AAADAAQAABD///H/AAADAAUAABAAAPH/AAACAAUAABABAPH/AAABAAUAABACAPH/AAAAAAUAABACAPL/AAAAAAYAABABAPL/AAABAAYAABAAAPL/AAACAAYAABDw//L/AAAAAAYAAADw//H/AAAAAAUAAADw//D/AAAAAAQAAADx//L/AAABAAYAAADz//D/AAADAAQAAADy//L/AAACAAYAAADx/+//AAABAAMAAADy/+//AAACAAMAAADy//D/AAACAAQAAADy//H/AAACAAUAAADz//H/AAADAAUAAADw/+//AAAAAAMAAAA=")
-tile_set = SubResource("TileSet_1jtul")
+[node name="Carro2" parent="YSort" unique_id=633400680 instance=ExtResource("15_a6xj1")]
+position = Vector2(-264, 122)
+
+[node name="Carro3" parent="YSort" unique_id=938667890 instance=ExtResource("15_a6xj1")]
+position = Vector2(-250, -354)
+
+[node name="Carro" parent="YSort" unique_id=843519661 instance=ExtResource("15_a6xj1")]
+position = Vector2(136, 144)
+
+[node name="DeleGadoCorredor" parent="YSort" unique_id=1549167953 instance=ExtResource("13_0sjix")]
+position = Vector2(136, -411)
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=232321833]
 

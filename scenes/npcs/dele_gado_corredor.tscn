@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://chfd08abq0gxp"]
+
+[ext_resource type="Script" uid="uid://cp04atiatbu11" path="res://scripts/dele_gado_corredor.gd" id="1_mk1xv"]
+[ext_resource type="Texture2D" uid="uid://c4ar0o0m7fyd4" path="res://sprites/Sheet/DeleGadoSheet.png" id="2_l8l4u"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mk1xv"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(0, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fvhh"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(32, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8l4u"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(64, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qovs"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(96, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx02p"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(128, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6ofr"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(160, 48, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tqjkl"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(64, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wx5m"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(96, 0, 32, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tyff8"]
+atlas = ExtResource("2_l8l4u")
+region = Rect2(32, 0, 32, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_26022"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mk1xv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fvhh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8l4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qovs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx02p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6ofr")
+}],
+"loop": 1,
+"name": &"baixo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tqjkl")
+}],
+"loop": 1,
+"name": &"cima",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wx5m")
+}],
+"loop": 1,
+"name": &"direita",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tyff8")
+}],
+"loop": 1,
+"name": &"esquerda",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk806"]
+size = Vector2(9, 11.5)
+
+[node name="DeleGadoCorredor" type="RigidBody2D" unique_id=816674935]
+gravity_scale = 0.0
+script = ExtResource("1_mk1xv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=194065067]
+sprite_frames = SubResource("SpriteFrames_26022")
+animation = &"baixo"
+frame_progress = 0.19554044
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801904357]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_kk806")
