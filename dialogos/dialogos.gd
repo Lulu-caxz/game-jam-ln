@@ -700,6 +700,63 @@ const DIALOGOS = {
 			"fim": true
 		}
 	],
+	
+	"fazer-manifestação": [
+		{
+			"quem": ["Player", ""],
+			"texto": "Vamos revolucionar!"
+		},
+		{
+			"quem": ["Npc", "Manifestante"],
+			"texto": "Vamos derrubar o império do Capi Talista, tirar todo seu dinheiro e prendê-lo!"
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Fazer a manifestação. (Custa 1 ação e dinheiro)",
+			"opcoes": [
+				{
+					"texto": "Manifestar",
+					"proxima_fala": 3
+				},
+				{
+					"texto": "Deixar para lá",
+					"proxima_fala": 4
+				}
+			]
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Fora Capi Talista! A revolução começou!",
+			"resultado_manifestacao": true,
+			"fim": true
+		},
+		{
+			"quem": ["Player", ""],
+			"texto": "Melhor deixar isso para depois.",
+			"fim": true
+		}
+	],
+
+	"manifestacao-ja-feita": [
+		{
+			"quem": ["Npc", "Manifestante"],
+			"texto": "A manifestação já está acontecendo! O império vai cair!"
+		}
+	],
+
+	"manifestante-capivara": [
+		{
+			"quem": ["Npc", "Manifestante"],
+			"texto": "Fora daqui, burguês! Não conversamos com Capi Talistas!"
+		}
+	],
+
+	"manifestante-gado": [
+		{
+			"quem": ["Npc", "Manifestante"],
+			"texto": "Advogados do sistema não são bem-vindos aqui."
+		}
+	],
 }
 
 static func pegar_dialogo(nome_dialogo: String) -> Array:

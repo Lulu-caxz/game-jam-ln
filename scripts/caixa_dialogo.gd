@@ -147,6 +147,9 @@ func mostrar_texto() -> void:
 	if dialogo_data.get("resultado_banco", false):
 		texto_dialogo = Global.resultadoBancoTexto
 	
+	if dialogo_data.get("resultado_manifestacao", false):
+		texto_dialogo = Global.resultadoManifestacaoTexto
+	
 	Texto.text = texto_dialogo
 	Texto.visible_characters = 0
 
@@ -352,38 +355,61 @@ func selecionar_escolha(indice: int) -> void:
 		return
 
 	var opcao = dialogo[i_fala]["opcoes"][indice]
+	resultado_escolha = indice + 1
+
+	if idDialogo == "fazer-manifestação":
+		if resultado_escolha == 1: # Escolheu "Manifestar"
+			var jogador_atual = Global.sequencia_players[Global.atual]
+
+			if Global.manifestacaoRealizada:
+				Global.resultadoManifestacaoTexto = "A manifestação já está em andamento!"
+				opcao["proxima_fala"] = 3
+			elif not Global.tem_dinheiro(jogador_atual) or Global.patoAcoes <= 0:
+				Global.resultadoManifestacaoTexto = "Você não tem ações ou dinheiro suficiente para organizar a manifestação!"
+				opcao["proxima_fala"] = 3
+			else:
+				# Sucesso: gasta recursos e ativa a manifestação
+				Global.gastar_dinheiro(jogador_atual)
+				Global.gastar_acao(jogador_atual)
+				Global.manifestacaoRealizada = true
+				Global.manifestaçãoAtiva = true
+				Global.resultadoManifestacaoTexto = "A manifestação começou! Vamos derrubar tudo!"
+				
+				# Executa a transição de tela sem resetar a posição
+				_executar_transicao_manifestacao()
+				return
 
 	escolhas_visiveis = false
 	escolha_selecionada = 0
 	escolha1.hide()
 	escolha2.hide()
 
-	resultado_escolha = indice + 1
-
-	# Verifica se é uma escolha de prisão.
-	if idDialogo == "gado-zebra":
-		var alvo = ""
-
-		match resultado_escolha:
-			1:
-				alvo = "Capivara"
-			2:
-				alvo = "Pato"
-
-		if Global.presos.has(alvo):
-			dialogo[i_fala] = {
-				"quem": ["Npc", "Ze Brava"],
-				"texto": opcao.get("texto_se_preso", "Essa pessoa já está presa."),
-				"fim": true
-			}
-
-			mostrar_texto()
-			return
-
 	escolha_realizada.emit(resultado_escolha)
 
 	i_fala = int(opcao["proxima_fala"])
 	mostrar_texto()
+
+
+# Função auxiliar para fazer o fade de tela e atualizar o mapa
+func _executar_transicao_manifestacao() -> void:
+	# Encontra o nó do Player na cena atual para pegar a posição
+	var player_node = get_tree().current_scene.get_node_or_null("YSort/Player") # Ajuste o caminho do nó do seu Player
+	
+	if player_node:
+		Global.posicao_player = player_node.global_position
+		Global.definir_posicao = true
+
+	# Libera a trava de diálogo para o jogador poder andar após a transição
+	Global.dialogo_ativo = false
+	
+	hide() # Esconde a caixa de diálogo
+	
+	# Executa a transição usando o seu autoload de transição ou recarregando a cena
+	if get_node_or_null("/root/Transicao"):
+		var transicao = get_node("/root/Transicao")
+		await transicao.mudar_cena(get_tree().current_scene.scene_file_path)
+	else:
+		get_tree().reload_current_scene()
 
 
 func encerrar_dialogo() -> void:
