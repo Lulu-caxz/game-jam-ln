@@ -139,12 +139,19 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="texto" type="RichTextLabel" parent="PatoAcoes" unique_id=916556867]
+[node name="texto" type="RichTextLabel" parent="PatoAcoes" unique_id=1291892021]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 5.0
-offset_right = 68.0
-offset_bottom = 145.0
+offset_right = 67.0
+offset_bottom = 147.0
+theme_override_colors/default_color = Color(0.12941177, 0.0627451, 0.03529412, 1)
+theme_override_fonts/normal_font = ExtResource("3_xat1p")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
 
 [node name="GadoAcoes" type="NinePatchRect" parent="." unique_id=1719133940]
 offset_left = 272.0
@@ -158,9 +165,16 @@ patch_margin_top = 4
 patch_margin_right = 4
 patch_margin_bottom = 4
 
-[node name="texto" type="RichTextLabel" parent="GadoAcoes" unique_id=1663793193]
+[node name="texto" type="RichTextLabel" parent="GadoAcoes" unique_id=1866913883]
 layout_mode = 0
 offset_left = 7.0
 offset_top = 5.0
-offset_right = 68.0
-offset_bottom = 145.0
+offset_right = 67.0
+offset_bottom = 147.0
+theme_override_colors/default_color = Color(0.12941177, 0.0627451, 0.03529412, 1)
+theme_override_fonts/normal_font = ExtResource("3_xat1p")
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
