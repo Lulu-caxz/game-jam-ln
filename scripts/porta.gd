@@ -36,13 +36,47 @@ func _on_body_exited(body: Node2D) -> void:
 func _input(event: InputEvent) -> void:
 	if onArea and event.is_action_pressed("e"):
 		if cena_destino != "":
+			
+			if cena_destino == "uid://frraw5xikhqc":
+				
+				var jogador: String = Global.sequencia_players[Global.atual]
+				
+				match jogador:
+					"Capivara":
+						if Global.capivaraForagido:
+							Global.presos.append(jogador)
+							Global.capivaraForagido = false
+							Global.capivaraVezesPreso += 1
+							Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
+							body_entered.disconnect(_on_body_entered)
+							body_exited.disconnect(_on_body_exited)
+							return
+					"Pato":
+						if Global.patoForagido:
+							Global.presos.append(jogador)
+							Global.patoForagido = false
+							Global.patoVezesPreso += 1
+							Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
+							body_entered.disconnect(_on_body_entered)
+							body_exited.disconnect(_on_body_exited)
+							return
+					"Gado":
+						if Global.gadoForagido:
+							Global.presos.append(jogador)
+							Global.gadoForagido = false
+							Global.gadoVezesPreso += 1
+							Transicao.mudar_cena("res://scenes/locais/policia_interior.tscn")
+							body_entered.disconnect(_on_body_entered)
+							body_exited.disconnect(_on_body_exited)
+							return
+			
 			onArea = false
 			get_viewport().set_input_as_handled()
 			
 			Global.posicao_player = posicaoSaida
 			Global.definir_posicao = true
 			
-			Global.ultimaDirecao = direcao                                                                                                                                                        
+			Global.ultimaDirecao = direcao     
 			
 			Transicao.mudar_cena(cena_destino)
 			

@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bxsvngd6208f8" path="res://sprites/pa.png" id="13_inxe8"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="15_fti8x"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="16_k5d64"]
+[ext_resource type="PackedScene" uid="uid://cykcnwr6v1e2q" path="res://scenes/npcs/dele_gado_npc.tscn" id="17_1nflg"]
 [ext_resource type="PackedScene" uid="uid://b4p52e4lqal2x" path="res://scenes/fugir_prisao.tscn" id="17_k5d64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w6cyg"]
@@ -1052,6 +1053,9 @@ scale = Vector2(0.3027343, 0.5224607)
 color = Color(0.7294118, 0.09019608, 0.03529412, 1)
 texture = ExtResource("10_862n7")
 texture_scale = 1.35
+
+[node name="DeleGadoNPC" parent="Luz" unique_id=484401152 instance=ExtResource("17_1nflg")]
+position = Vector2(26, 8)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=569535624]
 color = Color(0.5330367, 0.5330367, 0.5330367, 1)
