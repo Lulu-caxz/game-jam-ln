@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
+[ext_resource type="Texture2D" uid="uid://c7qu1ykh2t3ml" path="res://sprites/Procurado.png" id="13_a6xj1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7v2a"]
 texture = ExtResource("8_7t1fb")
@@ -252,6 +253,9 @@ tile_set = SubResource("TileSet_1jtul")
 
 [node name="Dinheiro" type="Sprite2D" parent="HUD" unique_id=1700386160]
 texture = ExtResource("6_vkox8")
+
+[node name="Foragido" type="Sprite2D" parent="HUD" unique_id=1779052133]
+texture = ExtResource("13_a6xj1")
 
 [node name="Acoes" type="NinePatchRect" parent="HUD" unique_id=4277136]
 offset_top = -10.0
