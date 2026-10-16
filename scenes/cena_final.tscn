@@ -14,10 +14,10 @@ load_path = "res://.godot/imported/CaixaDialogoSheet.png-5db63fe84c537352ba45441
 script = ExtResource("1_0ppku")
 
 [node name="Pato2" type="NinePatchRect" parent="." unique_id=332651743]
-offset_left = 130.0
-offset_top = 8.0
-offset_right = 257.0
-offset_bottom = 26.0
+offset_left = 137.0
+offset_top = 7.0
+offset_right = 250.0
+offset_bottom = 25.0
 texture = SubResource("CompressedTexture2D_0ppku")
 patch_margin_left = 4
 patch_margin_top = 4
@@ -33,7 +33,7 @@ offset_bottom = 13.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_xat1p")
 theme_override_font_sizes/font_size = 9
-text = "Aperte Enter para ver os creditos"
+text = "Aperte E para ver os creditos"
 
 [node name="Capi" type="NinePatchRect" parent="." unique_id=1163256700]
 offset_left = 46.0

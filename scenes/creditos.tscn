@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://do0w2olvixwqg"]
+
+[ext_resource type="Script" uid="uid://b1ruhtr7s3tey" path="res://scripts/creditos.gd" id="1_6yhot"]
+[ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="1_spoww"]
+
+[node name="Creditos" type="Node2D" unique_id=1434170338]
+script = ExtResource("1_6yhot")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1192871753]
+
+[node name="nodecraditos" type="Node2D" parent="." unique_id=1723088545]
+
+[node name="textoCreditos" type="Label" parent="nodecraditos" unique_id=169360734]
+offset_left = 117.0
+offset_top = 44.0
+offset_right = 270.0
+offset_bottom = 511.0
+theme_override_fonts/font = ExtResource("1_spoww")
+theme_override_font_sizes/font_size = 9
+text = "Parabens!!!
+
+
+Muito obrigado por jogar!!
+
+
+Um jogo de THN
+
+Equipe
+João Marcelo Alves Moura
+Lucas Leite de Souza Nunes
+Luiz Henrique Mesquita Tavares
+Marcos Taylor da Silva Rocha
+
+
+
+Roteirista
+Luiz Henrique Mesquita Tavares
+Marcos Taylor da Silva Rocha
+
+
+
+Programadores
+João Marcelo Alves Moura
+Lucas Leite de Souza
+
+
+
+Artistas
+João Marcelo Alves Moura
+Marcos Taylor da Silva Rocha
+
+
+
+Ferramentas de IA para Programção
+Chat GTP
+Gemini
+
+
+Ferramenta de IA para criar a fonte
+Chat GPT
+
+
+
+
+
+
+
+
+
+
+
+
+ESTADO ANIMAL
+
+Por THN"
+horizontal_alignment = 1
