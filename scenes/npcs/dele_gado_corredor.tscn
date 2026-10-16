@@ -89,8 +89,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kk806"]
-size = Vector2(9, 11.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esn0y"]
+size = Vector2(12, 9.75)
 
 [node name="DeleGadoCorredor" type="RigidBody2D" unique_id=816674935]
 y_sort_enabled = true
@@ -102,6 +102,8 @@ sprite_frames = SubResource("SpriteFrames_26022")
 animation = &"baixo"
 frame_progress = 0.19554044
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=801904357]
-position = Vector2(0, 12)
-shape = SubResource("RectangleShape2D_kk806")
+[node name="Area2D" type="Area2D" parent="." unique_id=1219802034]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=797435830]
+position = Vector2(0, 21)
+shape = SubResource("RectangleShape2D_esn0y")
