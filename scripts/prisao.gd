@@ -13,3 +13,4 @@ func _ready() -> void:
 		PatoNPC.queue_free()
 	if !"Gado" in Global.presos or Global.sequencia_players[Global.atual] == "Gado":
 		GadoNPC.queue_free()
+	
