@@ -621,6 +621,85 @@ const DIALOGOS = {
 			"fim": true
 		}
 	],
+	
+	"gado-zebra": [
+		{
+			"quem": ["Player", "Advo Gado"],
+			"texto": "O que temos hoje chefe?"
+		},
+		{
+			"quem": ["Player", "Advo Gado"],
+			"texto": "Temos dois casos para você analisar."
+		},
+		{
+			"quem": ["Npc", "Ze Brava"],
+			"texto": "O Capi Talista e seus escandalos de roubo"
+		},
+		{
+			"quem": ["Npc", "Ze Brava"],
+			"texto": "E o Psico Pato com suas loucuras."
+		},
+		{
+			"tipo": "escolha",
+			"texto": "Prender quem (Custa uma ação)",
+			"opcoes": [
+				{
+					"texto": "Capi Talista",
+					"proxima_fala": 5,
+					"texto_se_preso": "O Capi Talista já está preso. Não posso prendê-lo novamente."
+				},
+				{
+					"texto": "Psico Pato",
+					"proxima_fala": 6,
+					"texto_se_preso": "O Psico Pato já está preso. Não posso prendê-lo novamente."
+				}
+			]
+		},
+		{
+			"quem": ["Npc", "Ze Brava"],
+			"texto": "Certo então",
+			"prender": "Capivara",
+			"fim": true
+		},
+		{
+			"quem": ["Npc", "Ze Brava"],
+			"texto": "Certo então",
+			"prender": "Pato",
+			"fim": true
+		}
+	],
+	
+	"zebra": [
+		{
+			"quem": ["Npc", "Ze Brava"],
+			"texto": "Não tenho nada o que conversar com você."
+		}
+	],
+	"descanso": [
+		{
+			"tipo": "escolha",
+			"texto": "Parece confortavel, deseja descansar? (Gasta todas as suas ações)",
+			"opcoes": [
+				{
+					"texto": "Descansar",
+					"proxima_fala": 1
+				},
+				{
+					"texto": "Deixar quieto",
+					"proxima_fala": 2
+				}
+			]
+		},
+		{
+			"texto": "Você descansou",
+			"descansar": true,
+			"fim": true
+		},
+		{
+			"texto": "Você decidiu continuar sua vida.",
+			"fim": true
+		}
+	],
 }
 
 static func pegar_dialogo(nome_dialogo: String) -> Array:

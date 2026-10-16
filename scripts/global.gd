@@ -51,7 +51,7 @@ func desbloquear_personagem(id: String) -> void:
 
 
 #VARIAVEIS DA HISTORIA
-var presos = ["Pato"]
+var presos = []
 var mortos = []
 var fugiu = []
 
@@ -161,3 +161,12 @@ func entregar_equipamento(jogador: String) -> void:
 func matar_personagem(personagem: String) -> void:
 	if not mortos.has(personagem):
 		mortos.append(personagem)
+
+func descansar(jogador):
+	match jogador:
+		"Capivara":
+			Global.capivaraAcoes = 0
+		"Pato":
+			Global.patoAcoes = 0
+		"Gado":
+			Global.gadoAcoes = 0

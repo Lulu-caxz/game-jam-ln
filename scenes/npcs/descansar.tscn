@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c48s251soosql"]
+
+[ext_resource type="Script" uid="uid://c3l5up06otd0" path="res://scripts/descansar.gd" id="1_hgxr3"]
+[ext_resource type="Texture2D" uid="uid://v18d6quskygn" path="res://sprites/BotaoE.png" id="2_3y8n8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7gv42"]
+size = Vector2(20, 25.5)
+
+[node name="Descansar" type="RigidBody2D" unique_id=816674935]
+gravity_scale = 0.0
+script = ExtResource("1_hgxr3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1324278492]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1266161956]
+position = Vector2(-19, 10)
+shape = SubResource("RectangleShape2D_7gv42")
+
+[node name="Botao" type="Sprite2D" parent="." unique_id=871259215]
+z_index = 4
+position = Vector2(0, -19)
+texture = ExtResource("2_3y8n8")

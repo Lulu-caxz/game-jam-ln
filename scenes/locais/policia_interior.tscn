@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dioqh3ruv3s0k" path="res://scenes/npcs/tigrinho_prisao.tscn" id="10_kltf1"]
 [ext_resource type="PackedScene" uid="uid://cg2xqlu850644" path="res://scenes/npcs/pombo_correio.tscn" id="11_inxe8"]
 [ext_resource type="PackedScene" uid="uid://dmy8n8vph7go6" path="res://scenes/npcs/gado_npc.tscn" id="11_w6cyg"]
+[ext_resource type="PackedScene" uid="uid://c48s251soosql" path="res://scenes/npcs/descansar.tscn" id="13_1nflg"]
 [ext_resource type="Texture2D" uid="uid://bxsvngd6208f8" path="res://sprites/pa.png" id="13_inxe8"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="15_fti8x"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="16_k5d64"]
@@ -976,6 +977,9 @@ position = Vector2(0, 10)
 color = Color(1, 1, 0.41568628, 1)
 texture = ExtResource("10_862n7")
 texture_scale = 0.3
+
+[node name="Descansar" parent="YSort" unique_id=299077360 instance=ExtResource("13_1nflg")]
+position = Vector2(128, 328)
 
 [node name="Teto" type="TileMapLayer" parent="YSort" unique_id=2004669845]
 z_index = 20

@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bunkk7kjhc8jf" path="res://sprites/construcoes/banco.png" id="8_7t1fb"]
 [ext_resource type="PackedScene" uid="uid://dxc3ru0i7rc4w" path="res://scenes/npcs/pato_npc.tscn" id="8_a6xj1"]
 [ext_resource type="Texture2D" uid="uid://4egmfhsrtkpn" path="res://sprites/tileset/matos.png" id="9_j7v2a"]
+[ext_resource type="PackedScene" uid="uid://c48s251soosql" path="res://scenes/npcs/descansar.tscn" id="9_kdv03"]
 [ext_resource type="Texture2D" uid="uid://c46mha5xi0byt" path="res://sprites/CaixaDialogoSheet.png" id="11_hd66b"]
 [ext_resource type="FontFile" uid="uid://7ru3xykfnibp" path="res://fonts/ByteBounce-PT-BR.ttf" id="12_e6m3j"]
 [ext_resource type="Texture2D" uid="uid://c7qu1ykh2t3ml" path="res://sprites/Procurado.png" id="13_a6xj1"]
@@ -229,13 +230,27 @@ texture_scale = 0.3
 
 [node name="PatoNPC" parent="YSort" unique_id=816674935 instance=ExtResource("8_a6xj1")]
 position = Vector2(-192, -216)
-direcao = "direita"
 
 [node name="PointLight2D" type="PointLight2D" parent="YSort/PatoNPC" unique_id=1573826061]
 position = Vector2(0, 14)
 color = Color(1, 1, 0.41568628, 1)
 texture = ExtResource("5_3pc5y")
 texture_scale = 0.3
+
+[node name="Descansar" parent="YSort" unique_id=886850602 instance=ExtResource("9_kdv03")]
+position = Vector2(-104, -152)
+direcao = "cima"
+
+[node name="Descansar2" parent="YSort" unique_id=1884302267 instance=ExtResource("9_kdv03")]
+position = Vector2(-152, -116)
+
+[node name="Descansar3" parent="YSort" unique_id=673917778 instance=ExtResource("9_kdv03")]
+position = Vector2(-56, -116)
+direcao = "direita"
+
+[node name="Descansar4" parent="YSort" unique_id=1353158926 instance=ExtResource("9_kdv03")]
+position = Vector2(-104, -60)
+direcao = "baixo"
 
 [node name="Postes" type="Node2D" parent="YSort" unique_id=250653623]
 y_sort_enabled = true

@@ -355,11 +355,31 @@ func selecionar_escolha(indice: int) -> void:
 
 	escolhas_visiveis = false
 	escolha_selecionada = 0
-
 	escolha1.hide()
 	escolha2.hide()
 
 	resultado_escolha = indice + 1
+
+	# Verifica se é uma escolha de prisão.
+	if idDialogo == "gado-zebra":
+		var alvo = ""
+
+		match resultado_escolha:
+			1:
+				alvo = "Capivara"
+			2:
+				alvo = "Pato"
+
+		if Global.presos.has(alvo):
+			dialogo[i_fala] = {
+				"quem": ["Npc", "Ze Brava"],
+				"texto": opcao.get("texto_se_preso", "Essa pessoa já está presa."),
+				"fim": true
+			}
+
+			mostrar_texto()
+			return
+
 	escolha_realizada.emit(resultado_escolha)
 
 	i_fala = int(opcao["proxima_fala"])
