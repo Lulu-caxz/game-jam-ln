@@ -54,6 +54,8 @@ func _enter_tree() -> void:
 		global_position = Global.posicao_player
 		Global.definir_posicao = false
 
+var timer := Timer.new()
+
 func _ready() -> void:
 	player_atual = Global.sequencia_players[Global.atual]
 	ultima_direcao_nome = Global.ultimaDirecao
@@ -73,6 +75,15 @@ func _ready() -> void:
 	
 	dinheiroHUD.modulate.a = 0.2
 	mudarAnimacao()
+	
+	# Cria um timer
+	timer.wait_time = 0.5
+	timer.one_shot = true 
+	add_child(timer) 
+	timer.timeout.connect(pode_clicar)
+
+var taAndando = false
+var podeClicar = true
 
 func _physics_process(delta: float) -> void:
 	
@@ -91,7 +102,18 @@ func _physics_process(delta: float) -> void:
 		somPassoPiso.stop()
 		return
 	
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir = Vector2.ZERO
+	if !Global.sendoPersiguido:
+		input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	elif (Input.is_action_just_pressed("e") and podeClicar) or taAndando:
+		input_dir = Vector2(0, 1)
+		taAndando = true
+		podeClicar = false
+		parar_andar()
+		
+		timer.start() # Inicia o timer
+	elif Input.is_action_just_pressed("e") and !podeClicar:
+		timer.start() # Reinicia o timer
 	
 	if input_dir != Vector2.ZERO:
 		var dir_chave := input_dir.round()
@@ -131,6 +153,11 @@ func _physics_process(delta: float) -> void:
 	atualizar_HUD()
 	verificarNumeroAcoes()
 
+func parar_andar():
+	await get_tree().create_timer(0.2).timeout
+	taAndando = false
+func pode_clicar():
+	podeClicar = true
 
 func atualizar_HUD():
 	player_atual = Global.sequencia_players[Global.atual]

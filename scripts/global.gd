@@ -99,9 +99,7 @@ var patoTemEquipamentoPraFugir = false
 var gadoTemEquipamentoPraFugir = false
 
 #apenas true para saber quer esta sendo perseguido(sla se vai usar isso)
-var capivaraSendoPersiguido = false
-var patoSendoPersiguido = false
-var gadoSendoPerseguido = false
+var sendoPersiguido = false
 
 #carros roubados
 var carrosRoubados = [] # 1 , 2 ,3 vai ser o id do carro fds

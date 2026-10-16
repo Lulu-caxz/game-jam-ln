@@ -14,18 +14,15 @@ func gerar_dialogo() -> void:
 		return
 	
 	super.gerar_dialogo()
-	
-	if jogador_tem_equipamento():
-		viajando = true
-		agendar_viagem_apos_dialogo()
 
 
-func jogador_tem_equipamento() -> bool:
-	var jogador: String = Global.sequencia_players[Global.atual].to_lower()
-	var nome_propriedade: String = jogador + "TemEquipamentoPraFugir"
-	
-	return Global.get(nome_propriedade) == true
-
+func _ao_realizar_escolha(resultado: int) -> void:
+	if resultado != 1:
+		return
+	var jogador: String = Global.sequencia_players[Global.atual]
+	Global.gastar_acao(jogador)
+	viajando = true
+	agendar_viagem_apos_dialogo()
 
 func agendar_viagem_apos_dialogo() -> void:
 	await get_tree().process_frame
@@ -37,7 +34,7 @@ func agendar_viagem_apos_dialogo() -> void:
 
 
 func viajar_para_cidade() -> void:
-	Global.posicao_player = Vector2(340, -330)
+	Global.posicao_player = Vector2(135, -300)
 	Global.definir_posicao = true
 	Global.ultimaDirecao = "baixo"
 	
@@ -46,12 +43,15 @@ func viajar_para_cidade() -> void:
 	match jogador:
 		"Capivara":
 			Global.capivaraVezesPreso += 1
-			Global.capivaraForagido = true
+			Global.capivaraForagida = true
+			Global.sendoPersiguido = true
 		"Pato":
 			Global.patoVezesPreso += 1
 			Global.patoForagido = true
+			Global.sendoPersiguido = true
 		"Gado":
 			Global.gadoVezesPreso += 1
 			Global.gadoForagido = true
+			Global.sendoPersiguido = true
 	
 	Transicao.mudar_cena("res://scenes/cidade.tscn")

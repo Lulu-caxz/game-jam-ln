@@ -9,7 +9,11 @@ func _ready() -> void:
 	if get_tree().current_scene.name == "policia_interior":
 		id_dialogo = ["Capivara-prisao"]
 	elif get_tree().current_scene.name == "Banco_interior":
+<<<<<<< HEAD
+		id_dialogo = ["Capivara-banco", "Capivara-banco1"]
+=======
 		id_dialogo = ["Capivara-banco" , "Capivara-banco1"]
+>>>>>>> 7ee254d9b07d257cbd7502b6b8d3ebd60611fd5f
 	
 	match direcao:
 		"cima":

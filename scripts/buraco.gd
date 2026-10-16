@@ -53,7 +53,7 @@ func viajar_para_cidade() -> void:
 	match jogador:
 		"Capivara":
 			Global.capivaraVezesPreso += 1
-			Global.capivaraForagido = true
+			Global.capivaraForagida = true
 		"Pato":
 			Global.patoVezesPreso += 1
 			Global.patoForagido = true
